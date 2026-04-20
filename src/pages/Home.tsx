@@ -10,6 +10,7 @@ import { CASES } from "@/data/cases";
 import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
+import ctaKid from "@/assets/cta-kid.jpg";
 
 const Home = () => {
   const [openDoc, setOpenDoc] = useState<Doctor | null>(null);
@@ -240,7 +241,7 @@ const Home = () => {
             </a>
           </div>
           <div className="rounded-2xl overflow-hidden aspect-square max-w-md mx-auto shadow-medium">
-            <img src="/src/assets/cta-kid.jpg" alt="Happy child after a dental visit" className="w-full h-full object-cover" loading="lazy" />
+            <img src={ctaKid} alt="Happy child after a dental visit" className="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </section>
