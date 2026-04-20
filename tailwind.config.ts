@@ -27,6 +27,17 @@ export default {
           soft: "hsl(var(--primary-soft))",
           dark: "hsl(var(--primary-dark))",
         },
+        sky: {
+          DEFAULT: "hsl(var(--sky))",
+          soft: "hsl(var(--sky-soft))",
+          deep: "hsl(var(--sky-deep))",
+        },
+        cta: {
+          DEFAULT: "hsl(var(--cta))",
+          foreground: "hsl(var(--cta-foreground))",
+          hover: "hsl(var(--cta-hover))",
+        },
+        pink: "hsl(var(--pink))",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
