@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,54 +6,66 @@
 
 @layer base {
   :root {
-    --background: 210 40% 99%;
-    --foreground: 215 35% 15%;
+    --background: 0 0% 100%;
+    --foreground: 215 35% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 35% 15%;
+    --card-foreground: 215 35% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 35% 15%;
+    --popover-foreground: 215 35% 18%;
 
-    /* Brand: Professional Blue #2E86DE */
-    --primary: 210 73% 53%;
+    /* Brand: Deep navy-blue text + bright sky cyan backgrounds + bright green CTA */
+    --primary: 211 100% 22%;          /* deep navy headings */
     --primary-foreground: 0 0% 100%;
-    --primary-soft: 210 90% 96%;
-    --primary-dark: 212 75% 42%;
+    --primary-soft: 195 80% 92%;
+    --primary-dark: 211 100% 14%;
 
-    /* Soft mint/green accent */
-    --secondary: 158 64% 52%;
+    /* Sky cyan accent (section backgrounds) */
+    --sky: 195 90% 78%;
+    --sky-soft: 195 90% 90%;
+    --sky-deep: 200 75% 55%;
+
+    /* Bright green CTA */
+    --cta: 142 71% 45%;
+    --cta-foreground: 0 0% 100%;
+    --cta-hover: 142 71% 38%;
+
+    /* Pink/magenta link accents (from logo) */
+    --pink: 335 85% 55%;
+
+    --secondary: 142 71% 45%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-soft: 160 60% 95%;
+    --secondary-soft: 142 60% 92%;
 
-    --muted: 210 30% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 200 30% 96%;
+    --muted-foreground: 215 16% 45%;
 
-    --accent: 158 64% 52%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 195 80% 92%;
+    --accent-foreground: 211 100% 22%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --success: 142 71% 45%;
 
-    --border: 214 28% 90%;
-    --input: 214 28% 90%;
-    --ring: 210 73% 53%;
+    --border: 200 30% 88%;
+    --input: 200 30% 88%;
+    --ring: 200 75% 55%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 90% 96%) 0%, hsl(160 60% 95%) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(210 73% 53%) 0%, hsl(212 75% 42%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(210 73% 53%) 0%, hsl(158 64% 52%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 90% 98%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(195 90% 88%) 0%, hsl(195 90% 78%) 100%);
+    --gradient-sky-soft: linear-gradient(180deg, hsl(195 90% 95%) 0%, hsl(195 90% 88%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 22%) 0%, hsl(211 100% 14%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(142 71% 50%) 0%, hsl(142 71% 40%) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(210 73% 53% / 0.1);
-    --shadow-medium: 0 10px 40px -10px hsl(210 73% 53% / 0.18);
-    --shadow-glow: 0 0 40px hsl(210 73% 53% / 0.25);
-    --shadow-card: 0 2px 12px -2px hsl(215 35% 15% / 0.06), 0 8px 24px -8px hsl(215 35% 15% / 0.08);
+    --shadow-soft: 0 6px 20px -8px hsl(200 60% 30% / 0.15);
+    --shadow-medium: 0 14px 40px -12px hsl(200 60% 25% / 0.22);
+    --shadow-card: 0 4px 14px -4px hsl(215 35% 15% / 0.08), 0 12px 32px -12px hsl(215 35% 15% / 0.1);
+    --shadow-cta: 0 8px 24px -6px hsl(142 71% 35% / 0.4);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -66,73 +78,56 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .dark {
-    --background: 215 35% 8%;
-    --foreground: 210 40% 98%;
-    --card: 215 35% 10%;
-    --card-foreground: 210 40% 98%;
-    --popover: 215 35% 10%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 73% 58%;
-    --primary-foreground: 215 35% 8%;
-    --secondary: 158 64% 52%;
-    --secondary-foreground: 215 35% 8%;
-    --muted: 215 30% 18%;
-    --muted-foreground: 215 16% 65%;
-    --accent: 158 64% 52%;
-    --accent-foreground: 215 35% 8%;
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 215 30% 20%;
-    --input: 215 30% 20%;
-    --ring: 210 73% 58%;
-  }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     @apply tracking-tight;
+    color: hsl(var(--primary));
   }
 }
 
 @layer components {
-  .container-page {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
-  }
-  .section-pad {
-    @apply py-16 md:py-24;
-  }
-  .gradient-text {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section-pad { @apply py-16 md:py-24; }
+  .eyebrow {
+    @apply text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-primary;
   }
 }
 
 @layer utilities {
-  .bg-hero-gradient { background: var(--gradient-hero); }
+  .bg-sky-gradient { background: var(--gradient-sky); }
+  .bg-sky-soft-gradient { background: var(--gradient-sky-soft); }
   .bg-primary-gradient { background: var(--gradient-primary); }
-  .bg-accent-gradient { background: var(--gradient-accent); }
-  .bg-soft-gradient { background: var(--gradient-soft); }
+  .bg-cta-gradient { background: var(--gradient-cta); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-medium { box-shadow: var(--shadow-medium); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
   .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-cta { box-shadow: var(--shadow-cta); }
   .transition-smooth { transition: var(--transition-smooth); }
+  .text-pink { color: hsl(var(--pink)); }
 }
+
+/* SVG wave dividers */
+.wave-divider-top,
+.wave-divider-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+.wave-divider-top { top: -1px; transform: scaleY(-1); }
+.wave-divider-bottom { bottom: -1px; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
