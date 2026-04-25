@@ -11,6 +11,7 @@ import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
 import { HandwritingCTA } from "@/components/ui/handwriting-cta";
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
 
