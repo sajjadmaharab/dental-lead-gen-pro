@@ -9,6 +9,7 @@ import { SERVICES } from "@/data/services";
 import { CASES } from "@/data/cases";
 import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
+import { HandWrittenTitle } from "@/components/HandWrittenTitle";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
 
@@ -51,22 +52,7 @@ const Home = () => {
       {/* HERO */}
       <section className="relative bg-sky-gradient overflow-hidden">
         <div className="container-page relative pt-10 pb-20 md:pt-14 md:pb-28 grid lg:grid-cols-2 gap-10 items-center">
-          <div className="animate-fade-in-up">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.05] text-primary">
-              Your Brightest<br />Smile With<br />
-              <span className="text-pink">Motiur's</span> Dental
-            </h1>
-            <p className="mt-5 text-base md:text-lg text-primary/80 max-w-xl">
-              Experience the artistry of our skilled dentists, harnessing advanced technology to craft radiant smiles that transform lives and instil unwavering confidence.
-            </p>
-            <div className="mt-7">
-              <a href={waLink()} target="_blank" rel="noopener noreferrer">
-                <Button variant="cta" size="lg" className="gap-2 rounded-md h-12 px-7">
-                  <MessageCircle className="h-5 w-5" /> Book Your Appointment
-                </Button>
-              </a>
-            </div>
-          </div>
+          <HandWrittenTitle />
 
           {/* Before/After hero card */}
           <div className="relative max-w-xl mx-auto w-full">
