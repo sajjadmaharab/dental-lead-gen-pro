@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Phone, MessageCircle, Star, Check, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,13 +10,13 @@ import { CASES } from "@/data/cases";
 import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
 import { HandwritingCTA } from "@/components/ui/handwriting-cta";
+import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
 
 const Home = () => {
   const [openDoc, setOpenDoc] = useState<Doctor | null>(null);
   const [caseIdx, setCaseIdx] = useState(0);
-  const [reviewIdx, setReviewIdx] = useState(0);
   const featuredCases = CASES;
   const c = featuredCases[caseIdx];
 
@@ -26,6 +26,11 @@ const Home = () => {
     { name: "Md Nazrul", date: "3 Months Ago", text: "Best braces treatment centre in Debidwar. Highly recommend Motiur's Dental for any orthodontic work." },
     { name: "Rahima Begum", date: "1 Month Ago", text: "Painless root canal in just 2 visits. Very impressed with the modern equipment and the calm, caring approach." },
   ];
+
+  const staggerItems = useMemo(
+    () => reviews.map((r, i) => ({ tempId: i, testimonial: r.text, by: `${r.name}, ${r.date}` })),
+    []
+  );
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
