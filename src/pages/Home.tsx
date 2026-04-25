@@ -155,6 +155,42 @@ const Home = () => {
         </div>
       </section>
 
+      {/* SCROLL REVEAL — SMILE TRANSFORMATION */}
+      <section className="bg-white">
+        <ContainerScroll
+          titleComponent={
+            <div className="pb-6">
+              <div className="text-xs font-bold tracking-[0.2em] text-primary/70">REAL RESULTS</div>
+              <h2 className="mt-3 text-3xl md:text-5xl font-display font-extrabold text-primary leading-tight">
+                Smile transformations <br />
+                <span className="text-pink">crafted at Motiur's Dental</span>
+              </h2>
+              <p className="mt-4 text-sm md:text-base text-foreground/70 max-w-2xl mx-auto">
+                Scroll to reveal the artistry — every smile is a story of confidence restored.
+              </p>
+            </div>
+          }
+        >
+          <div className="relative h-full w-full">
+            <img
+              src={featuredCases[0].after}
+              alt={`${featuredCases[0].title} — after treatment at Motiur's Dental`}
+              className="h-full w-full object-cover rounded-2xl"
+              loading="lazy"
+            />
+            <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:max-w-md bg-primary/90 backdrop-blur-sm text-primary-foreground p-4 md:p-5 rounded-xl">
+              <h3 className="font-display font-bold text-base md:text-lg">{featuredCases[0].title}</h3>
+              <p className="text-xs md:text-sm text-primary-foreground/85 mt-1">
+                {featuredCases[0].description.slice(0, 120)}…
+              </p>
+              <Link to="/before-after">
+                <Button variant="cta" size="sm" className="mt-3 rounded-md">See All Cases</Button>
+              </Link>
+            </div>
+          </div>
+        </ContainerScroll>
+      </section>
+
       {/* OUR TOP SERVICES */}
       <section className="relative bg-sky-gradient pt-20 pb-24">
         <Wave className="wave-divider-top" fill="white" />
