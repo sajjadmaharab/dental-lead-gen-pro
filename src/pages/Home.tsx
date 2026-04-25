@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Phone, MessageCircle, Star, Check, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,13 +10,13 @@ import { CASES } from "@/data/cases";
 import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
 import { HandwritingCTA } from "@/components/ui/handwriting-cta";
+import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
 
 const Home = () => {
   const [openDoc, setOpenDoc] = useState<Doctor | null>(null);
   const [caseIdx, setCaseIdx] = useState(0);
-  const [reviewIdx, setReviewIdx] = useState(0);
   const featuredCases = CASES;
   const c = featuredCases[caseIdx];
 
@@ -26,6 +26,11 @@ const Home = () => {
     { name: "Md Nazrul", date: "3 Months Ago", text: "Best braces treatment centre in Debidwar. Highly recommend Motiur's Dental for any orthodontic work." },
     { name: "Rahima Begum", date: "1 Month Ago", text: "Painless root canal in just 2 visits. Very impressed with the modern equipment and the calm, caring approach." },
   ];
+
+  const staggerItems = useMemo(
+    () => reviews.map((r, i) => ({ tempId: i, testimonial: r.text, by: `${r.name}, ${r.date}` })),
+    []
+  );
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -105,29 +110,8 @@ const Home = () => {
             </span>
           </div>
 
-          <div className="mt-8 grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {reviews.slice(reviewIdx, reviewIdx + 3).concat(reviews.slice(0, Math.max(0, reviewIdx + 3 - reviews.length))).slice(0, 3).map((r, i) => (
-              <div key={i} className="bg-white rounded-xl border border-border shadow-card p-5 text-left">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-sky-soft flex items-center justify-center font-bold text-primary">{r.name[0]}</div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-sm text-primary">{r.name}</div>
-                    <div className="text-[11px] text-muted-foreground">{r.date}</div>
-                  </div>
-                  <span className="text-base font-bold">G</span>
-                </div>
-                <div className="flex gap-0.5 mt-2 text-amber-400">
-                  {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="h-3.5 w-3.5 fill-current" />)}
-                </div>
-                <p className="text-sm text-foreground/80 mt-2 line-clamp-3">{r.text}</p>
-                <button className="text-xs text-primary font-semibold mt-2">Read more</button>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6 flex justify-center gap-2">
-            <button onClick={() => setReviewIdx((i) => (i - 1 + reviews.length) % reviews.length)} aria-label="Previous reviews" className="h-9 w-9 rounded-full bg-sky-soft text-primary flex items-center justify-center hover:bg-sky"><ChevronLeft className="h-4 w-4" /></button>
-            <button onClick={() => setReviewIdx((i) => (i + 1) % reviews.length)} aria-label="Next reviews" className="h-9 w-9 rounded-full bg-sky-soft text-primary flex items-center justify-center hover:bg-sky"><ChevronRight className="h-4 w-4" /></button>
+          <div className="mt-10 max-w-6xl mx-auto">
+            <StaggerTestimonials items={staggerItems} />
           </div>
         </div>
       </section>
