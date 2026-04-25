@@ -9,6 +9,7 @@ import { SERVICES } from "@/data/services";
 import { CASES } from "@/data/cases";
 import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
+import { HandwritingCTA } from "@/components/ui/handwriting-cta";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
 
