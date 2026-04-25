@@ -61,11 +61,7 @@ const Home = () => {
               Experience the artistry of our skilled dentists, harnessing advanced technology to craft radiant smiles that transform lives and instil unwavering confidence.
             </p>
             <div className="mt-7">
-              <a href={waLink()} target="_blank" rel="noopener noreferrer">
-                <Button variant="cta" size="lg" className="gap-2 rounded-md h-12 px-7">
-                  <MessageCircle className="h-5 w-5" /> Book Your Appointment
-                </Button>
-              </a>
+              <HandwritingCTA buttonText="Book Your Appointment" />
             </div>
           </div>
 
