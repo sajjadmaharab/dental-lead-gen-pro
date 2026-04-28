@@ -13,6 +13,57 @@ import { HandwritingCTA } from "@/components/ui/handwriting-cta";
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
+import iconScaling from "@/assets/services/scaling-polishing-whitening.png";
+import iconFilling from "@/assets/services/cosmetic-filling.png";
+import iconRootCanal from "@/assets/services/root-canal.png";
+import iconCapBridge from "@/assets/services/cap-bridge.png";
+import iconSpacing from "@/assets/services/spacing-treatment.png";
+import iconReplacement from "@/assets/services/teeth-replacement.png";
+
+const HOME_SERVICES = [
+  {
+    slug: "scaling-polishing-whitening",
+    name: "Scaling, Polishing & Teeth Whitening",
+    icon: iconScaling,
+    description:
+      "Revitalize your smile at Motiur's Dental. Our scaling, polishing, and teeth whitening services guarantee a refreshed, plaque-free smile. Experience professional care for a brighter, confident look.",
+  },
+  {
+    slug: "cosmetic-filling",
+    name: "Cosmetic Filling",
+    icon: iconFilling,
+    description:
+      "Transform your smile with Cosmetic Filling at Motiur's Dental. Our expert team crafts seamless, natural-looking fillings to enhance your teeth's appearance — durable and beautiful.",
+  },
+  {
+    slug: "root-canal-treatment",
+    name: "Root Canal Treatment",
+    icon: iconRootCanal,
+    description:
+      "Experience relief with Root Canal Treatment at Motiur's Dental. Our skilled team employs advanced techniques to alleviate pain and preserve your natural tooth — comfortable and efficient.",
+  },
+  {
+    slug: "dental-bridges-caps",
+    name: "Cap & Bridge",
+    icon: iconCapBridge,
+    description:
+      "Restore your smile with custom-made Caps & Bridges at Motiur's Dental. High-quality porcelain and zirconia work that looks natural, lasts long, and protects damaged teeth.",
+  },
+  {
+    slug: "tooth-gap-treatment",
+    name: "Treatment Of Spacing in Between Teeth",
+    icon: iconSpacing,
+    description:
+      "Close unwanted gaps between teeth with painless cosmetic bonding, veneers, or orthodontic options at Motiur's Dental. Boost your confidence with a seamless smile.",
+  },
+  {
+    slug: "teeth-replacement",
+    name: "Teeth Replacement",
+    icon: iconReplacement,
+    description:
+      "Missing teeth? Choose from dentures, bridges, or implants at Motiur's Dental. Restore chewing, speech, and confidence with long-lasting, natural-looking replacement options.",
+  },
+];
 
 const Home = () => {
   const [openDoc, setOpenDoc] = useState<Doctor | null>(null);
