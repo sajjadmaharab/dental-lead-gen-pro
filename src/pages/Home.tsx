@@ -210,23 +210,32 @@ const Home = () => {
         <Wave className="wave-divider-top" fill="white" />
         <div className="container-page relative z-10">
           <h2 className="text-center font-display font-extrabold text-2xl md:text-3xl tracking-[0.18em] text-primary">OUR TOP SERVICES</h2>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SERVICES.slice(0, 6).map((s, i) => {
-              const tints = [
-                "bg-sky-soft text-sky-deep",
-                "bg-amber-100 text-amber-600",
-                "bg-rose-100 text-rose-500",
-                "bg-emerald-100 text-emerald-600",
-                "bg-violet-100 text-violet-600",
-                "bg-cyan-100 text-cyan-600",
-              ];
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {HOME_SERVICES.map((s) => {
+              const words = s.description.split(" ");
+              const preview = words.slice(0, 28).join(" ");
               return (
-                <Link key={s.slug} to={`/services/${s.slug}`} className="group bg-white rounded-2xl p-6 shadow-card hover:shadow-medium hover:-translate-y-1 transition-smooth">
-                  <div className={`h-14 w-14 rounded-xl ${tints[i % tints.length]} flex items-center justify-center text-3xl mb-4`}>
-                    {s.icon}
+                <Link
+                  key={s.slug}
+                  to={`/services/${s.slug}`}
+                  className="group relative bg-sky-soft/70 backdrop-blur-sm rounded-2xl p-7 shadow-card hover:shadow-medium hover:-translate-y-1 transition-smooth flex flex-col min-h-[360px] overflow-hidden"
+                >
+                  <div className="flex justify-center mb-5">
+                    <img
+                      src={s.icon}
+                      alt={`${s.name} icon`}
+                      className="h-24 w-24 object-contain drop-shadow-sm"
+                      loading="lazy"
+                    />
                   </div>
-                  <h3 className="font-display font-bold text-lg text-primary group-hover:text-pink transition-smooth">{s.name}</h3>
-                  <p className="text-sm text-foreground/70 mt-2 line-clamp-4">{s.description.slice(0, 140)}… <span className="text-pink font-semibold">Read More.</span></p>
+                  <h3 className="font-display font-extrabold text-xl md:text-2xl text-primary leading-tight group-hover:text-pink transition-smooth">
+                    {s.name}
+                  </h3>
+                  <p className="text-sm text-foreground/70 mt-3 leading-relaxed">
+                    {preview}
+                    {words.length > 28 ? "… " : " "}
+                    <span className="text-pink font-semibold whitespace-nowrap">Read More..</span>
+                  </p>
                 </Link>
               );
             })}
