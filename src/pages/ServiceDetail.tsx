@@ -9,7 +9,7 @@ import { CLINIC, telLink, waLink } from "@/lib/clinic";
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = SERVICES.find((s) => s.slug === slug);
-  if (!service) return <Navigate to="/services" replace />;
+  if (!service) return <Navigate to="/" replace />;
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -31,7 +31,7 @@ const ServiceDetail = () => {
       />
       <section className="bg-hero-gradient py-12 md:py-16">
         <div className="container-page">
-          <Link to="/services" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
+          <Link to="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
             <ChevronLeft className="h-4 w-4" /> All Services
           </Link>
           <div className="flex items-start gap-4">
