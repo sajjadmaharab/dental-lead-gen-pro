@@ -9,7 +9,7 @@ import { CLINIC, telLink, waLink } from "@/lib/clinic";
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = SERVICES.find((s) => s.slug === slug);
-  if (!service) return <Navigate to="/services" replace />;
+  if (!service) return <Navigate to="/" replace />;
 
   const faqSchema = {
     "@context": "https://schema.org",

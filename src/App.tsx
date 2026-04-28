@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/layout/Layout";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import BeforeAfter from "./pages/BeforeAfter";
 import About from "./pages/About";
@@ -26,7 +25,6 @@ const App = () => (
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/before-after" element={<BeforeAfter />} />
               <Route path="/about" element={<About />} />
