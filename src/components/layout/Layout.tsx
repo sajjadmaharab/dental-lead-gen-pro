@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { FloatingButtons } from "./FloatingButtons";
+import { ServicesDialog } from "@/components/ServicesDialog";
 
 export const Layout = () => {
   const { pathname } = useLocation();
@@ -15,6 +16,7 @@ export const Layout = () => {
       </main>
       <Footer />
       <FloatingButtons />
+      <ServicesDialog />
     </div>
   );
 };

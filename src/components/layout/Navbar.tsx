@@ -5,10 +5,11 @@ import logo from "@/assets/logo.png";
 import { CLINIC, telLink } from "@/lib/clinic";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { openServiceDialog } from "@/components/ServicesDialog";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
+  { to: "__services__", label: "Services" },
   { to: "/before-after", label: "Before & After" },
   { to: "/about", label: "About Us" },
   { to: "/contact", label: "Contact Us" },
@@ -46,21 +47,32 @@ export const Navbar = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.to === "/"}
-              className={({ isActive }) =>
-                cn(
-                  "px-3.5 py-2 text-sm font-semibold transition-smooth relative",
-                  isActive ? "text-pink" : "text-primary hover:text-pink"
-                )
-              }
-            >
-              {l.label}
-            </NavLink>
-          ))}
+          {links.map((l) =>
+            l.to === "__services__" ? (
+              <button
+                key={l.label}
+                type="button"
+                onClick={() => openServiceDialog()}
+                className="px-3.5 py-2 text-sm font-semibold text-primary hover:text-pink transition-smooth"
+              >
+                {l.label}
+              </button>
+            ) : (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                end={l.to === "/"}
+                className={({ isActive }) =>
+                  cn(
+                    "px-3.5 py-2 text-sm font-semibold transition-smooth relative",
+                    isActive ? "text-pink" : "text-primary hover:text-pink"
+                  )
+                }
+              >
+                {l.label}
+              </NavLink>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -82,18 +94,29 @@ export const Navbar = () => {
       {open && (
         <div className="lg:hidden border-t border-border/60 bg-white/95 backdrop-blur">
           <nav className="container-page py-3 flex flex-col">
-            {links.map((l) => (
-              <NavLink
-                key={l.to}
-                to={l.to}
-                end={l.to === "/"}
-                className={({ isActive }) =>
-                  cn("px-3 py-3 rounded-lg text-base font-semibold", isActive ? "text-pink bg-primary-soft" : "text-primary")
-                }
-              >
-                {l.label}
-              </NavLink>
-            ))}
+            {links.map((l) =>
+              l.to === "__services__" ? (
+                <button
+                  key={l.label}
+                  type="button"
+                  onClick={() => { setOpen(false); openServiceDialog(); }}
+                  className="px-3 py-3 rounded-lg text-base font-semibold text-primary text-left"
+                >
+                  {l.label}
+                </button>
+              ) : (
+                <NavLink
+                  key={l.to}
+                  to={l.to}
+                  end={l.to === "/"}
+                  className={({ isActive }) =>
+                    cn("px-3 py-3 rounded-lg text-base font-semibold", isActive ? "text-pink bg-primary-soft" : "text-primary")
+                  }
+                >
+                  {l.label}
+                </NavLink>
+              )
+            )}
             <a href={telLink} className="mt-2">
               <Button variant="cta" className="w-full gap-2 rounded-full">
                 <Phone className="h-4 w-4" /> Call {CLINIC.phone}

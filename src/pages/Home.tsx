@@ -11,6 +11,7 @@ import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
 import { HandwritingCTA } from "@/components/ui/handwriting-cta";
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
+import { openServiceDialog } from "@/components/ServicesDialog";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
 import iconScaling from "@/assets/services/scaling-polishing-whitening.png";
@@ -215,10 +216,11 @@ const Home = () => {
               const words = s.description.split(" ");
               const preview = words.slice(0, 28).join(" ");
               return (
-                <Link
+                <button
                   key={s.slug}
-                  to={`/services/${s.slug}`}
-                  className="group relative bg-sky-soft/70 backdrop-blur-sm rounded-2xl p-7 shadow-card hover:shadow-medium hover:-translate-y-1 transition-smooth flex flex-col min-h-[360px] overflow-hidden"
+                  type="button"
+                  onClick={() => openServiceDialog({ slug: s.slug })}
+                  className="group relative bg-sky-soft/70 backdrop-blur-sm rounded-2xl p-7 shadow-card hover:shadow-medium hover:-translate-y-1 transition-smooth flex flex-col min-h-[360px] overflow-hidden text-left w-full"
                 >
                   <div className="flex justify-center mb-5">
                     <img
@@ -236,12 +238,9 @@ const Home = () => {
                     {words.length > 28 ? "… " : " "}
                     <span className="text-pink font-semibold whitespace-nowrap">Read More..</span>
                   </p>
-                </Link>
+                </button>
               );
             })}
-          </div>
-          <div className="text-center mt-10">
-            <Link to="/services"><Button variant="cta" size="lg" className="rounded-md">View All Services</Button></Link>
           </div>
         </div>
         <Wave className="wave-divider-bottom" fill="white" />
