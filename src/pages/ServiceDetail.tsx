@@ -31,7 +31,7 @@ const ServiceDetail = () => {
       />
       <section className="bg-hero-gradient py-12 md:py-16">
         <div className="container-page">
-          <Link to="/services" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
+          <Link to="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
             <ChevronLeft className="h-4 w-4" /> All Services
           </Link>
           <div className="flex items-start gap-4">
