@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Wave } from "@/components/Wave";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
-import { SERVICES } from "@/data/services";
+
 import { CASES } from "@/data/cases";
 import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
@@ -13,6 +13,57 @@ import { HandwritingCTA } from "@/components/ui/handwriting-cta";
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
+import iconScaling from "@/assets/services/scaling-polishing-whitening.png";
+import iconFilling from "@/assets/services/cosmetic-filling.png";
+import iconRootCanal from "@/assets/services/root-canal.png";
+import iconCapBridge from "@/assets/services/cap-bridge.png";
+import iconSpacing from "@/assets/services/spacing-treatment.png";
+import iconReplacement from "@/assets/services/teeth-replacement.png";
+
+const HOME_SERVICES = [
+  {
+    slug: "scaling-polishing-whitening",
+    name: "Scaling, Polishing & Teeth Whitening",
+    icon: iconScaling,
+    description:
+      "Revitalize your smile at Motiur's Dental. Our scaling, polishing, and teeth whitening services guarantee a refreshed, plaque-free smile. Experience professional care for a brighter, confident look.",
+  },
+  {
+    slug: "cosmetic-filling",
+    name: "Cosmetic Filling",
+    icon: iconFilling,
+    description:
+      "Transform your smile with Cosmetic Filling at Motiur's Dental. Our expert team crafts seamless, natural-looking fillings to enhance your teeth's appearance — durable and beautiful.",
+  },
+  {
+    slug: "root-canal-treatment",
+    name: "Root Canal Treatment",
+    icon: iconRootCanal,
+    description:
+      "Experience relief with Root Canal Treatment at Motiur's Dental. Our skilled team employs advanced techniques to alleviate pain and preserve your natural tooth — comfortable and efficient.",
+  },
+  {
+    slug: "dental-bridges-caps",
+    name: "Cap & Bridge",
+    icon: iconCapBridge,
+    description:
+      "Restore your smile with custom-made Caps & Bridges at Motiur's Dental. High-quality porcelain and zirconia work that looks natural, lasts long, and protects damaged teeth.",
+  },
+  {
+    slug: "tooth-gap-treatment",
+    name: "Treatment Of Spacing in Between Teeth",
+    icon: iconSpacing,
+    description:
+      "Close unwanted gaps between teeth with painless cosmetic bonding, veneers, or orthodontic options at Motiur's Dental. Boost your confidence with a seamless smile.",
+  },
+  {
+    slug: "teeth-replacement",
+    name: "Teeth Replacement",
+    icon: iconReplacement,
+    description:
+      "Missing teeth? Choose from dentures, bridges, or implants at Motiur's Dental. Restore chewing, speech, and confidence with long-lasting, natural-looking replacement options.",
+  },
+];
 
 const Home = () => {
   const [openDoc, setOpenDoc] = useState<Doctor | null>(null);
@@ -159,23 +210,32 @@ const Home = () => {
         <Wave className="wave-divider-top" fill="white" />
         <div className="container-page relative z-10">
           <h2 className="text-center font-display font-extrabold text-2xl md:text-3xl tracking-[0.18em] text-primary">OUR TOP SERVICES</h2>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SERVICES.slice(0, 6).map((s, i) => {
-              const tints = [
-                "bg-sky-soft text-sky-deep",
-                "bg-amber-100 text-amber-600",
-                "bg-rose-100 text-rose-500",
-                "bg-emerald-100 text-emerald-600",
-                "bg-violet-100 text-violet-600",
-                "bg-cyan-100 text-cyan-600",
-              ];
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {HOME_SERVICES.map((s) => {
+              const words = s.description.split(" ");
+              const preview = words.slice(0, 28).join(" ");
               return (
-                <Link key={s.slug} to={`/services/${s.slug}`} className="group bg-white rounded-2xl p-6 shadow-card hover:shadow-medium hover:-translate-y-1 transition-smooth">
-                  <div className={`h-14 w-14 rounded-xl ${tints[i % tints.length]} flex items-center justify-center text-3xl mb-4`}>
-                    {s.icon}
+                <Link
+                  key={s.slug}
+                  to={`/services/${s.slug}`}
+                  className="group relative bg-sky-soft/70 backdrop-blur-sm rounded-2xl p-7 shadow-card hover:shadow-medium hover:-translate-y-1 transition-smooth flex flex-col min-h-[360px] overflow-hidden"
+                >
+                  <div className="flex justify-center mb-5">
+                    <img
+                      src={s.icon}
+                      alt={`${s.name} icon`}
+                      className="h-24 w-24 object-contain drop-shadow-sm"
+                      loading="lazy"
+                    />
                   </div>
-                  <h3 className="font-display font-bold text-lg text-primary group-hover:text-pink transition-smooth">{s.name}</h3>
-                  <p className="text-sm text-foreground/70 mt-2 line-clamp-4">{s.description.slice(0, 140)}… <span className="text-pink font-semibold">Read More.</span></p>
+                  <h3 className="font-display font-extrabold text-xl md:text-2xl text-primary leading-tight group-hover:text-pink transition-smooth">
+                    {s.name}
+                  </h3>
+                  <p className="text-sm text-foreground/70 mt-3 leading-relaxed">
+                    {preview}
+                    {words.length > 28 ? "… " : " "}
+                    <span className="text-pink font-semibold whitespace-nowrap">Read More..</span>
+                  </p>
                 </Link>
               );
             })}
