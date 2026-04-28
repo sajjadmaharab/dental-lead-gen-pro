@@ -4,6 +4,7 @@ import logo from "@/assets/logo.png";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { openServiceDialog } from "@/components/ServicesDialog";
 
 export const Footer = () => {
   return (
@@ -43,13 +44,25 @@ export const Footer = () => {
           <ul className="space-y-2 text-sm">
             {[
               ["Home", "/"],
-              ["Services", "/services"],
+              ["Services", "__services__"],
               ["Before & After", "/before-after"],
               ["About Us", "/about"],
               ["Contact Us", "/contact"],
               ["Blog", "/blog"],
             ].map(([n, p]) => (
-              <li key={p}><Link to={p} className="text-white/75 hover:text-white transition-smooth">{n}</Link></li>
+              <li key={n}>
+                {p === "__services__" ? (
+                  <button
+                    type="button"
+                    onClick={() => openServiceDialog()}
+                    className="text-white/75 hover:text-white transition-smooth text-left"
+                  >
+                    {n}
+                  </button>
+                ) : (
+                  <Link to={p} className="text-white/75 hover:text-white transition-smooth">{n}</Link>
+                )}
+              </li>
             ))}
           </ul>
         </div>
