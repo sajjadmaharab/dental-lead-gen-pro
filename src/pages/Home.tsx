@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Wave } from "@/components/Wave";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
-import { SERVICES } from "@/data/services";
+
 import { CASES } from "@/data/cases";
 import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
