@@ -57,7 +57,7 @@ export const Navbar = () => {
         <Link to="/" className="flex items-center gap-2.5 shrink-0" aria-label={CLINIC.name}>
           <img src={logo} alt={`${CLINIC.name} logo`} className="h-10 w-10 md:h-12 md:w-12 object-contain" width={48} height={48} />
           <div className="leading-tight">
-            <div className="font-display font-extrabold text-base md:text-lg text-primary">Motiur's Dental</div>
+            <img src={logoText} alt="Motiur's Dental" className="h-5 md:h-6 w-auto object-contain" />
             <div className="text-[10px] md:text-xs text-muted-foreground -mt-0.5">Debidwar • Comilla</div>
           </div>
         </Link>
