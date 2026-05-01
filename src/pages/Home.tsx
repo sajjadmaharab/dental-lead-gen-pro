@@ -13,7 +13,6 @@ import type { GoogleReview } from "@/components/GoogleReviewCard";
 import { openServiceDialog } from "@/components/ServicesDialog";
 import drMotiurAbout from "@/assets/dr-motiur-about.png";
 import debidwarBg from "@/assets/debidwar-bg.jpeg";
-import debidwarBg from "@/assets/debidwar-bg.jpeg";
 import iconScaling from "@/assets/services/scaling-polishing-whitening.png";
 import iconFilling from "@/assets/services/cosmetic-filling.png";
 import iconRootCanal from "@/assets/services/root-canal.png";
