@@ -14,6 +14,7 @@ import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
 import { openServiceDialog } from "@/components/ServicesDialog";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
+import debidwarBg from "@/assets/debidwar-bg.jpeg";
 import iconScaling from "@/assets/services/scaling-polishing-whitening.png";
 import iconFilling from "@/assets/services/cosmetic-filling.png";
 import iconRootCanal from "@/assets/services/root-canal.png";
@@ -247,10 +248,15 @@ const Home = () => {
       </section>
 
       {/* FIND US */}
-      <section className="py-14 md:py-20 bg-white">
-        <div className="container-page">
-          <h2 className="text-center font-display font-extrabold text-2xl md:text-3xl tracking-[0.18em] text-primary">FIND US</h2>
-          <div className="mt-8 rounded-2xl overflow-hidden border border-border aspect-[16/7] shadow-card">
+      <section
+        className="relative py-14 md:py-20 bg-fixed bg-cover bg-center"
+        style={{ backgroundImage: `url(${debidwarBg})` }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-primary/75 backdrop-blur-[2px]" />
+        <div className="container-page relative z-10">
+          <h2 className="text-center font-display font-extrabold text-2xl md:text-3xl tracking-[0.18em] text-white">FIND US</h2>
+          <div className="mt-8 rounded-2xl overflow-hidden border border-white/20 aspect-[16/7] shadow-card">
             <iframe
               title="Motiur's Dental clinic location"
               src={CLINIC.mapEmbed}
@@ -261,9 +267,9 @@ const Home = () => {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-white/80">
             <MapPin className="h-4 w-4 text-pink" />
-            <a href={CLINIC.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary">{CLINIC.address}</a>
+            <a href={CLINIC.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">{CLINIC.address}</a>
           </div>
         </div>
       </section>
