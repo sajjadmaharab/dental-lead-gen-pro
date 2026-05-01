@@ -35,19 +35,19 @@ const CosmeticFillingArticle = () => {
       <ul className="space-y-3 my-6">
         <li className="flex items-start gap-3">
           <CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" />
-          <span><strong>Chipped or cracked teeth</strong> — Whether it happened from an accident or just everyday wear, a cosmetic filling can rebuild the shape and strength of your tooth.</span>
+          <span><strong>Chipped or cracked teeth:</strong> Whether it happened from an accident or just everyday wear, a cosmetic filling can rebuild the shape and strength of your tooth.</span>
         </li>
         <li className="flex items-start gap-3">
           <CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" />
-          <span><strong>Tooth decay and cavities</strong> — Early-stage cavities respond very well to composite fillings. Treating them early also stops the decay from spreading further.</span>
+          <span><strong>Tooth decay and cavities:</strong> Early-stage cavities respond very well to composite fillings. Treating them early also stops the decay from spreading further.</span>
         </li>
         <li className="flex items-start gap-3">
           <CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" />
-          <span><strong>Discolored teeth</strong> — If a tooth has mild to moderate staining or discoloration, a filling can cover it and bring back a natural, even look.</span>
+          <span><strong>Discolored teeth:</strong> If a tooth has mild to moderate staining or discoloration, a filling can cover it and bring back a natural, even look.</span>
         </li>
         <li className="flex items-start gap-3">
           <CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" />
-          <span><strong>Gaps between teeth</strong> — Small gaps between front teeth can often be closed with a cosmetic filling, giving you a more uniform smile without needing braces or veneers.</span>
+          <span><strong>Gaps between teeth:</strong> Small gaps between front teeth can often be closed with a cosmetic filling, giving you a more uniform smile without needing braces or veneers.</span>
         </li>
       </ul>
 
@@ -57,19 +57,19 @@ const CosmeticFillingArticle = () => {
       <ul className="space-y-3 my-6">
         <li className="flex items-start gap-3">
           <ChevronRight className="h-5 w-5 text-primary mt-1 shrink-0" />
-          <span><strong>Lowest cost in the area</strong> — Patients from Debidwar, Muradnagar, Chandina, Brahmanpara, and Comilla city regularly choose us because our fees are significantly lower than other clinics, with no drop in quality.</span>
+          <span><strong>Lowest cost in the area.</strong> Patients from Debidwar, Muradnagar, Chandina, Brahmanpara, and Comilla city regularly choose us because our fees are significantly lower than other clinics, with no drop in quality.</span>
         </li>
         <li className="flex items-start gap-3">
           <ChevronRight className="h-5 w-5 text-primary mt-1 shrink-0" />
-          <span><strong>No unnecessary procedures</strong> — We only recommend what you actually need. You will never be pushed into a treatment that is not right for your situation.</span>
+          <span><strong>No unnecessary procedures.</strong> We only recommend what you actually need. You will never be pushed into a treatment that is not right for your situation.</span>
         </li>
         <li className="flex items-start gap-3">
           <ChevronRight className="h-5 w-5 text-primary mt-1 shrink-0" />
-          <span><strong>Comfortable and pain-free experience</strong> — We use local anesthesia so the procedure is as comfortable as possible. Most patients are surprised by how smooth and quick it is.</span>
+          <span><strong>Comfortable and pain-free experience.</strong> We use local anesthesia so the procedure is as comfortable as possible. Most patients are surprised by how smooth and quick it is.</span>
         </li>
         <li className="flex items-start gap-3">
           <ChevronRight className="h-5 w-5 text-primary mt-1 shrink-0" />
-          <span><strong>Local and trusted</strong> — We are part of the Debidwar community. You do not need to travel to Comilla city or Dhaka for good dental care.</span>
+          <span><strong>Local and trusted.</strong> We are part of the Debidwar community. You do not need to travel to Comilla city or Dhaka for good dental care.</span>
         </li>
       </ul>
 
@@ -95,7 +95,7 @@ const CosmeticFillingArticle = () => {
         <li>We examine your tooth and talk through your options.</li>
         <li>We apply local anesthesia to numb the area completely.</li>
         <li>We remove any decayed or damaged tissue and clean the tooth.</li>
-        <li>We place the filling material — for composite fillings, a special curing light hardens the resin.</li>
+        <li>We place the filling material. For composite fillings, a special curing light hardens the resin.</li>
         <li>We polish it so it feels and looks natural.</li>
       </ol>
       <p>The whole process usually takes <strong>one appointment</strong>.</p>
@@ -115,7 +115,7 @@ const CosmeticFillingArticle = () => {
         <li>✅ Where in the mouth the filling is placed</li>
       </ul>
       <p>
-        To get the most out of your filling, brush twice a day, floss daily, avoid very hard or sticky foods, and visit us for regular checkups. If you grind your teeth at night, let us know — we can suggest a simple solution for that too.
+        To get the most out of your filling, brush twice a day, floss daily, avoid very hard or sticky foods, and visit us for regular checkups. If you grind your teeth at night, let us know and we can suggest a simple solution for that too.
       </p>
 
       {/* Cost - TARGET KEYWORD */}
