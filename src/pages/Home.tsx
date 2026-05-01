@@ -164,36 +164,46 @@ const Home = () => {
         </div>
       </section>
 
-      {/* DOCTOR FEATURE */}
+      {/* DR MOTIUR - ABOUT */}
       <section className="py-14 md:py-20 bg-white">
         <div className="container-page grid lg:grid-cols-2 gap-10 items-center">
-          <button onClick={() => setOpenDoc(DOCTORS[0])} className="text-left group">
-            <div className="rounded-2xl overflow-hidden bg-sky-soft aspect-[4/5] max-w-md mx-auto shadow-card">
-              <img src={drShahSultan} alt={`${DOCTORS[0].name} - ${DOCTORS[0].role}`} className="w-full h-full object-cover object-top group-hover:scale-105 transition-smooth" />
+          <div className="flex justify-center">
+            <div className="rounded-2xl overflow-hidden max-w-md w-full shadow-card">
+              <img src={drMotiurAbout} alt="Dr Motiur - Trusted Dental Expert" className="w-full h-full object-cover" />
             </div>
-            <div className="text-center mt-4 max-w-md mx-auto">
-              <h3 className="font-display font-bold text-xl text-primary">{DOCTORS[0].name}</h3>
-              <p className="text-sm text-pink font-semibold mt-1">BDS (RU) • Dental Surgeon</p>
-              <p className="text-xs text-primary/70 mt-1">Specialist in Smile Designing • Cosmetic Filling • Crowns & Bridges</p>
-              <p className="text-xs text-muted-foreground mt-2">Senior Dental Surgeon, Dental Department<br />Ibn Sina Hospital (Pvt.) Ltd, Debidwar, Cumilla</p>
-            </div>
-          </button>
+          </div>
 
           <div>
-            <h2 className="text-3xl md:text-4xl font-display font-extrabold leading-tight">
-              Experience top-tier, personalised <span className="text-pink">dental care at Motiur's Dental</span>
+            <h1 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '23px', fontWeight: 700 }} className="text-primary leading-tight">
+              Dr Motiur - Trusted Dental Expert in Comilla Debidwar
+            </h1>
+
+            <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '17px', fontWeight: 600 }} className="text-primary mt-6">
+              About Dr Motiur
             </h2>
-            <p className="mt-4 text-foreground/75">Welcome to Motiur's Dental, where modern technology meets compassionate care for patients of all ages. Our commitment is simple — an honest dentist dedicated to your well-being.</p>
-            <ul className="mt-5 space-y-3">
+            <p className="mt-3 text-foreground/75 text-sm leading-relaxed">
+              Dr Motiur brings more than two decades of hands-on experience in dentistry. Over the years he has built strong trust with his patients by focusing on honest advice, gentle treatment and consistent results. At Motiur's Dental his vision is simple — to make quality dental care accessible, reliable and stress free for everyone.
+            </p>
+
+            <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '17px', fontWeight: 600 }} className="text-primary mt-6">
+              Key Highlights
+            </h3>
+            <ul className="mt-3 space-y-2.5">
               {[
-                "Discover trust at Motiur's Dental — an honest approach to your dental well-being.",
-                "Honest care, extended hours and special offers — because your smile deserves the best.",
-                "Motiur's Dental, your partner in optimal dental care.",
-                "Special offer for our new patient exam and X-Ray.",
+                "Uses updated tools and safe dental practices",
+                "Founder and CEO of Motiur's Dental",
+                "Focuses on comfort and pain free procedures",
+                "Known for a patient friendly and caring approach",
+                "Takes time to listen and explain every treatment clearly",
+                "Trusted by generations of patients",
               ].map((line) => (
-                <li key={line} className="flex gap-2.5 items-start"><Check className="h-5 w-5 text-cta shrink-0 mt-0.5" /><span className="text-sm text-foreground/85">{line}</span></li>
+                <li key={line} className="flex gap-2.5 items-start">
+                  <Check className="h-5 w-5 text-cta shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground/85">{line}</span>
+                </li>
               ))}
             </ul>
+
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={telLink}><Button variant="cta" size="lg" className="gap-2 rounded-md"><Phone className="h-5 w-5" />Call {CLINIC.phone}</Button></a>
               <a href={waLink()} target="_blank" rel="noopener noreferrer"><Button variant="outline" size="lg" className="gap-2 rounded-md"><MessageCircle className="h-5 w-5" />WhatsApp</Button></a>
