@@ -15,21 +15,7 @@ const About = () => {
         path="/about"
       />
 
-      <section className="section-pad">
-        <div className="container-page grid md:grid-cols-3 gap-5">
-          {[
-            { icon: HeartPulse, title: "Our Mission", text: "To make high-quality dental care accessible and affordable for every family in Debidwar and Comilla." },
-            { icon: Smile, title: "Our Vision", text: "To be the most trusted dental clinic in our region — known for honest advice, modern care and beautiful results." },
-            { icon: ShieldCheck, title: "Our Values", text: "Patient safety, transparent pricing, gentle care and continuous learning in modern dentistry." },
-          ].map(({ icon: Icon, title, text }) => (
-            <div key={title} className="bg-card border border-border/60 rounded-2xl p-6 shadow-card">
-              <div className="h-12 w-12 rounded-xl bg-primary-soft text-primary flex items-center justify-center mb-4"><Icon className="h-6 w-6" /></div>
-              <h3 className="font-display font-bold text-lg">{title}</h3>
-              <p className="text-sm text-muted-foreground mt-2">{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+
 
       <section className="section-pad bg-soft-gradient">
         <div className="container-page">
