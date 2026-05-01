@@ -252,8 +252,8 @@ const Home = () => {
         className="relative py-14 md:py-20 bg-fixed bg-cover bg-center"
         style={{ backgroundImage: `url(${debidwarBg})` }}
       >
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-primary/75 backdrop-blur-[2px]" />
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-black/20" />
         <div className="container-page relative z-10">
           <h2 className="text-center font-display font-extrabold text-2xl md:text-3xl tracking-[0.18em] text-white">FIND US</h2>
           <div className="mt-8 rounded-2xl overflow-hidden border border-white/20 aspect-[16/7] shadow-card">
