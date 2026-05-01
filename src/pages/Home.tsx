@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Phone, MessageCircle, Star, Check, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,7 +10,8 @@ import { CASES } from "@/data/cases";
 import { DOCTORS } from "@/data/doctors";
 import { DoctorModal, type Doctor } from "@/components/DoctorModal";
 import { HandwritingCTA } from "@/components/ui/handwriting-cta";
-import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
+import { GoogleReviewCarousel } from "@/components/GoogleReviewCarousel";
+import type { GoogleReview } from "@/components/GoogleReviewCard";
 import { openServiceDialog } from "@/components/ServicesDialog";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
@@ -73,17 +74,14 @@ const Home = () => {
   const featuredCases = CASES;
   const c = featuredCases[caseIdx];
 
-  const reviews = [
-    { name: "Shahida Akter", date: "1 Month Ago", text: "অনেক দিন ধরেই দাঁতের সমস্যায় ভুগছিলাম। মতিউর'স ডেন্টালে এসে সব সমস্যার সমাধান পেলাম। ডাক্তার ও সকল স্টাফ অত্যন্ত আন্তরিক।" },
-    { name: "Md Aryan Hossan", date: "2 Months Ago", text: "Alhamdulillah bare onek valo treatment paisi ekhane. Friendly doctors and very clean environment." },
-    { name: "Md Nazrul", date: "3 Months Ago", text: "Best braces treatment centre in Debidwar. Highly recommend Motiur's Dental for any orthodontic work." },
-    { name: "Rahima Begum", date: "1 Month Ago", text: "Painless root canal in just 2 visits. Very impressed with the modern equipment and the calm, caring approach." },
+  const reviews: GoogleReview[] = [
+    { name: "Md Aryan Hossan", date: "25 March 2026", text: "Alhamdulillah bare onek valo treatment paisi ekhane. Friendly doctors and very clean environment.", rating: 5 },
+    { name: "Md Nazrul", date: "25 March 2026", text: "Best braces treatment centre in Debidwar. Highly recommend Motiur's Dental for any orthodontic work.", rating: 5 },
+    { name: "Shahida Akter", date: "20 March 2026", text: "অনেক দিন ধরেই দাঁতের সমস্যায় ভুগছিলাম। মতিউর'স ডেন্টালে এসে সব সমস্যার সমাধান পেলাম। ডাক্তার ও সকল স্টাফ অত্যন্ত আন্তরিক। সবাইকে এখানে আসার জন্য সুপারিশ করছি।", rating: 5 },
+    { name: "Rahima Begum", date: "18 March 2026", text: "Painless root canal in just 2 visits. Very impressed with the modern equipment and the calm, caring approach.", rating: 5 },
+    { name: "Alif Hassan", date: "25 March 2026", text: "I recently received dental treatment at Motiur's Dental Care, and I'm very satisfied with my experience. The clinic is clean, well-maintained, and equipped with modern technology. The staff was friendly and professional throughout.", rating: 5 },
+    { name: "Kamal Uddin", date: "15 March 2026", text: "Very good experience. Doctor is very friendly and professional. Reasonable pricing. Highly recommended for dental care in Debidwar area.", rating: 5 },
   ];
-
-  const staggerItems = useMemo(
-    () => reviews.map((r, i) => ({ tempId: i, testimonial: r.text, by: `${r.name}, ${r.date}` })),
-    []
-  );
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -163,8 +161,8 @@ const Home = () => {
             </span>
           </div>
 
-          <div className="mt-10 max-w-6xl mx-auto">
-            <StaggerTestimonials items={staggerItems} />
+          <div className="mt-10 max-w-6xl mx-auto px-6">
+            <GoogleReviewCarousel reviews={reviews} />
           </div>
         </div>
       </section>
