@@ -178,9 +178,6 @@ const Home = () => {
               Dr Motiur - Trusted Dental Expert in Comilla Debidwar
             </h1>
 
-            <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '17px', fontWeight: 600 }} className="text-primary mt-6">
-              About Dr Motiur
-            </h2>
             <p className="mt-3 text-foreground/75 text-sm leading-relaxed">
               Dr Motiur brings more than two decades of hands-on experience in dentistry. Over the years he has built strong trust with his patients by focusing on honest advice, gentle treatment and consistent results. At Motiur's Dental his vision is simple — to make quality dental care accessible, reliable and stress free for everyone.
             </p>
