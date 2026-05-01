@@ -14,6 +14,7 @@ import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
 import { openServiceDialog } from "@/components/ServicesDialog";
 import drShahSultan from "@/assets/dr-shah-sultan.png";
 import ctaKid from "@/assets/cta-kid.jpg";
+import debidwarBg from "@/assets/debidwar-bg.jpeg";
 import iconScaling from "@/assets/services/scaling-polishing-whitening.png";
 import iconFilling from "@/assets/services/cosmetic-filling.png";
 import iconRootCanal from "@/assets/services/root-canal.png";
