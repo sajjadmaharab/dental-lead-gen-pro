@@ -38,9 +38,10 @@ const ServiceDetail = () => {
   return (
     <>
       <SEO
-        title={`${service.name} in Debidwar, Comilla | Motiur's Dental`}
-        description={`${service.short} Affordable ${service.name.toLowerCase()} at Motiur's Dental, Debidwar. Trusted dentist serving Comilla. Call ${CLINIC.phone}.`}
+        title={customSeo?.title ?? `${service.name} in Debidwar, Comilla | Motiur's Dental`}
+        description={customSeo?.description ?? `${service.short} Affordable ${service.name.toLowerCase()} at Motiur's Dental, Debidwar. Trusted dentist serving Comilla. Call ${CLINIC.phone}.`}
         path={`/services/${service.slug}`}
+        schema={customSchema}
       />
       <section className="bg-hero-gradient py-12 md:py-16">
         <div className="container-page">
