@@ -1,10 +1,11 @@
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Facebook, MapPin, Phone, Clock } from "lucide-react";
+import { Facebook, MapPin, Phone, Clock, ChevronUp } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { openServiceDialog } from "@/components/ServicesDialog";
+import { SERVICES } from "@/data/services";
 
 export const Footer = () => {
   return (
