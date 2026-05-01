@@ -179,7 +179,7 @@ const Home = () => {
             </h1>
 
             <p className="mt-3 text-foreground/75 text-sm leading-relaxed">
-              Dr Motiur brings more than two decades of hands-on experience in dentistry. Over the years he has built strong trust with his patients by focusing on honest advice, gentle treatment and consistent results. At Motiur's Dental his vision is simple — to make quality dental care accessible, reliable and stress free for everyone.
+              Dr Motiur brings more than two decades of hands-on experience in dentistry. Over the years he has built strong trust with his patients by focusing on honest advice, gentle treatment and consistent results. At Motiur's Dental his vision is simple - to make quality dental care accessible, reliable and stress free for everyone.
             </p>
 
             <ul className="mt-3 space-y-2.5">
