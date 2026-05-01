@@ -51,15 +51,9 @@ export const Footer = () => {
               ["Contact Us", "/contact"],
               ["Blog", "/blog"],
             ].map(([n, p]) => (
-              <li key={n}>
+              <li key={n} className={p === "__services__" ? "relative" : ""}>
                 {p === "__services__" ? (
-                  <button
-                    type="button"
-                    onClick={() => openServiceDialog()}
-                    className="text-white/75 hover:text-white transition-smooth text-left"
-                  >
-                    {n}
-                  </button>
+                  <ServicesDropup />
                 ) : (
                   <Link to={p} className="text-white/75 hover:text-white transition-smooth">{n}</Link>
                 )}
