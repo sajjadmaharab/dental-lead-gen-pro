@@ -297,7 +297,7 @@ const Home = () => {
         </div>
       </section>
 
-      <DoctorModal doctor={openDoc} open={!!openDoc} onOpenChange={(v) => !v && setOpenDoc(null)} />
+      
     </>
   );
 };
