@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import logoText from "@/assets/logo-text.png";
 import { CLINIC, telLink } from "@/lib/clinic";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
