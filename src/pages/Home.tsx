@@ -186,7 +186,7 @@ const Home = () => {
             </p>
 
             <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '17px', fontWeight: 600 }} className="text-primary mt-6">
-              Key Highlights
+              ​
             </h3>
             <ul className="mt-3 space-y-2.5">
               {[
