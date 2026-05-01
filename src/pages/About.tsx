@@ -14,15 +14,6 @@ const About = () => {
         description="Learn about Motiur's Dental, a modern dental clinic in Debidwar (Ibn Sina Hospital) serving Comilla. Meet our experienced doctors and our mission."
         path="/about"
       />
-      <section className="bg-hero-gradient py-14 md:py-20">
-        <div className="container-page grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-          </div>
-          <div className="rounded-3xl overflow-hidden shadow-medium aspect-[4/3]">
-            <img src={clinicImg} alt="Motiur's Dental clinic in Debidwar" className="w-full h-full object-cover" loading="lazy" />
-          </div>
-        </div>
-      </section>
 
       <section className="section-pad">
         <div className="container-page grid md:grid-cols-3 gap-5">
