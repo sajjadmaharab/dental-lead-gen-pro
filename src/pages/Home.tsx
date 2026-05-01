@@ -7,13 +7,11 @@ import { Wave } from "@/components/Wave";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
 
 import { CASES } from "@/data/cases";
-import { DOCTORS } from "@/data/doctors";
-import { DoctorModal, type Doctor } from "@/components/DoctorModal";
 import { HandwritingCTA } from "@/components/ui/handwriting-cta";
 import { GoogleReviewCarousel } from "@/components/GoogleReviewCarousel";
 import type { GoogleReview } from "@/components/GoogleReviewCard";
 import { openServiceDialog } from "@/components/ServicesDialog";
-import drShahSultan from "@/assets/dr-shah-sultan.png";
+import drMotiurAbout from "@/assets/dr-motiur-about.png";
 import ctaKid from "@/assets/cta-kid.jpg";
 import debidwarBg from "@/assets/debidwar-bg.jpeg";
 import iconScaling from "@/assets/services/scaling-polishing-whitening.png";
