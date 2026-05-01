@@ -7,6 +7,47 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SERVICES } from "@/data/services";
 
+const ServicesDropup = () => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="text-white/75 hover:text-white transition-smooth text-left inline-flex items-center gap-1"
+      >
+        Services
+        <ChevronUp className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="absolute bottom-full left-0 mb-2 w-56 rounded-lg bg-[#0d4060] border border-white/15 shadow-xl py-2 z-50 max-h-64 overflow-y-auto">
+          {SERVICES.map((s) => (
+            <Link
+              key={s.slug}
+              to={`/services/${s.slug}`}
+              onClick={() => setOpen(false)}
+              className="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-smooth"
+            >
+              <span className="mr-2">{s.icon}</span>
+              {s.name}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export const Footer = () => {
   return (
     <footer className="relative mt-0 bg-[#0b3550] text-white/85">
