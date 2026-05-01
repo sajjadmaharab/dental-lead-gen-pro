@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { CLINIC, telLink } from "@/lib/clinic";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { SERVICES } from "@/data/services";
 import { openServiceDialog } from "@/components/ServicesDialog";
 
 const links = [
@@ -19,6 +20,9 @@ const links = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,7 +32,18 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [location.pathname]);
+  useEffect(() => { setOpen(false); setServicesOpen(false); setMobileServicesOpen(false); }, [location.pathname]);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
 
   return (
     <header
@@ -49,14 +64,40 @@ export const Navbar = () => {
         <nav className="hidden lg:flex items-center gap-1">
           {links.map((l) =>
             l.to === "__services__" ? (
-              <button
-                key={l.label}
-                type="button"
-                onClick={() => openServiceDialog()}
-                className="px-3.5 py-2 text-sm font-semibold text-primary hover:text-pink transition-smooth"
-              >
-                {l.label}
-              </button>
+              <div key={l.label} className="relative" ref={servicesRef}>
+                <button
+                  type="button"
+                  onClick={() => setServicesOpen((v) => !v)}
+                  onMouseEnter={() => setServicesOpen(true)}
+                  className={cn(
+                    "px-3.5 py-2 text-sm font-semibold transition-smooth inline-flex items-center gap-1",
+                    servicesOpen ? "text-pink" : "text-primary hover:text-pink"
+                  )}
+                >
+                  {l.label}
+                  <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", servicesOpen && "rotate-180")} />
+                </button>
+                {servicesOpen && (
+                  <div
+                    className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-xl border border-border/60 py-2 z-50"
+                    onMouseLeave={() => setServicesOpen(false)}
+                  >
+                    {SERVICES.map((s) => (
+                      <button
+                        key={s.slug}
+                        type="button"
+                        onClick={() => {
+                          setServicesOpen(false);
+                          openServiceDialog({ slug: s.slug });
+                        }}
+                        className="w-full text-left px-5 py-2.5 text-sm text-foreground hover:bg-primary-soft hover:text-primary transition-smooth"
+                      >
+                        {s.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             ) : (
               <NavLink
                 key={l.to}
@@ -96,14 +137,34 @@ export const Navbar = () => {
           <nav className="container-page py-3 flex flex-col">
             {links.map((l) =>
               l.to === "__services__" ? (
-                <button
-                  key={l.label}
-                  type="button"
-                  onClick={() => { setOpen(false); openServiceDialog(); }}
-                  className="px-3 py-3 rounded-lg text-base font-semibold text-primary text-left"
-                >
-                  {l.label}
-                </button>
+                <div key={l.label}>
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((v) => !v)}
+                    className="w-full px-3 py-3 rounded-lg text-base font-semibold text-primary text-left flex items-center justify-between"
+                  >
+                    {l.label}
+                    <ChevronDown className={cn("h-4 w-4 transition-transform", mobileServicesOpen && "rotate-180")} />
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="pl-6 pb-2 space-y-0.5">
+                      {SERVICES.map((s) => (
+                        <button
+                          key={s.slug}
+                          type="button"
+                          onClick={() => {
+                            setOpen(false);
+                            setMobileServicesOpen(false);
+                            openServiceDialog({ slug: s.slug });
+                          }}
+                          className="w-full text-left px-3 py-2 text-sm text-foreground/80 hover:text-primary rounded-md"
+                        >
+                          {s.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <NavLink
                   key={l.to}
