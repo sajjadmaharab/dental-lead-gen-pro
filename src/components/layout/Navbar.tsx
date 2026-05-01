@@ -83,17 +83,14 @@ export const Navbar = () => {
                     onMouseLeave={() => setServicesOpen(false)}
                   >
                     {SERVICES.map((s) => (
-                      <button
+                      <Link
                         key={s.slug}
-                        type="button"
-                        onClick={() => {
-                          setServicesOpen(false);
-                          openServiceDialog({ slug: s.slug });
-                        }}
-                        className="w-full text-left px-5 py-2.5 text-sm text-foreground hover:bg-primary-soft hover:text-primary transition-smooth"
+                        to={`/services/${s.slug}`}
+                        onClick={() => setServicesOpen(false)}
+                        className="block px-5 py-2.5 text-sm text-foreground hover:bg-primary-soft hover:text-primary transition-smooth"
                       >
                         {s.name}
-                      </button>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -149,18 +146,14 @@ export const Navbar = () => {
                   {mobileServicesOpen && (
                     <div className="pl-6 pb-2 space-y-0.5">
                       {SERVICES.map((s) => (
-                        <button
+                        <Link
                           key={s.slug}
-                          type="button"
-                          onClick={() => {
-                            setOpen(false);
-                            setMobileServicesOpen(false);
-                            openServiceDialog({ slug: s.slug });
-                          }}
-                          className="w-full text-left px-3 py-2 text-sm text-foreground/80 hover:text-primary rounded-md"
+                          to={`/services/${s.slug}`}
+                          onClick={() => { setOpen(false); setMobileServicesOpen(false); }}
+                          className="block px-3 py-2 text-sm text-foreground/80 hover:text-primary rounded-md"
                         >
                           {s.name}
-                        </button>
+                        </Link>
                       ))}
                     </div>
                   )}
