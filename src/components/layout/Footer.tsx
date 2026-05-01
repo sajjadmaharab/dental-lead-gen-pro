@@ -30,15 +30,14 @@ const ServicesDropup = () => {
         <ChevronUp className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
-        <div className="absolute bottom-full left-0 mb-2 w-56 rounded-lg bg-[#0d4060] border border-white/15 shadow-xl py-2 z-50 max-h-64 overflow-y-auto">
+        <div className="absolute bottom-full left-0 mb-2 w-56 rounded-lg bg-gray-100 border border-gray-200 shadow-xl py-2 z-50 max-h-64 overflow-y-auto">
           {SERVICES.map((s) => (
             <Link
               key={s.slug}
               to={`/services/${s.slug}`}
               onClick={() => setOpen(false)}
-              className="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-smooth"
+              className="block px-4 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-200/60 transition-smooth"
             >
-              <span className="mr-2">{s.icon}</span>
               {s.name}
             </Link>
           ))}
