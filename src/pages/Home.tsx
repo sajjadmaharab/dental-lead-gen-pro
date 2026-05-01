@@ -161,8 +161,8 @@ const Home = () => {
             </span>
           </div>
 
-          <div className="mt-10 max-w-6xl mx-auto">
-            <StaggerTestimonials items={staggerItems} />
+          <div className="mt-10 max-w-6xl mx-auto px-6">
+            <GoogleReviewCarousel reviews={reviews} />
           </div>
         </div>
       </section>
