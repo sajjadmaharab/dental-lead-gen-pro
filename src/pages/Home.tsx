@@ -244,15 +244,13 @@ const Home = () => {
             })}
           </div>
         </div>
-        <Wave className="wave-divider-bottom" fill="transparent" />
       </section>
 
       {/* FIND US */}
       <section
-        className="relative pt-0 pb-14 md:pb-20 bg-fixed bg-cover bg-center"
+        className="relative pt-14 md:pt-20 pb-14 md:pb-20 bg-fixed bg-cover bg-center"
         style={{ backgroundImage: `url(${debidwarBg})` }}
       >
-        <Wave className="wave-divider-top" fill="hsl(199 95% 90%)" />
         {/* Subtle overlay */}
         <div className="absolute inset-0 bg-black/20 z-0" />
         <div className="container-page relative z-10">
