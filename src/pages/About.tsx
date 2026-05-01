@@ -17,9 +17,6 @@ const About = () => {
       <section className="bg-hero-gradient py-14 md:py-20">
         <div className="container-page grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <span className="text-sm font-semibold text-primary">About Us</span>
-            <h1 className="mt-2 text-4xl md:text-5xl font-display font-extrabold">Caring for Smiles Across Debidwar & Comilla</h1>
-            <p className="mt-4 text-muted-foreground text-lg">Motiur's Dental is a modern dental clinic located inside Ibn Sina Hospital (Pvt.) Ltd, Debidwar. We combine experienced dentists, modern equipment and a warm patient experience to deliver dental care you can trust.</p>
           </div>
           <div className="rounded-3xl overflow-hidden shadow-medium aspect-[4/3]">
             <img src={clinicImg} alt="Motiur's Dental clinic in Debidwar" className="w-full h-full object-cover" loading="lazy" />
