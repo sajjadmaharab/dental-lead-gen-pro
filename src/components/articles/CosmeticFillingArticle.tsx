@@ -10,6 +10,11 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
 const CosmeticFillingArticle = () => {
   return (
     <article className="max-w-none">
+      {/* Hero H1 */}
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
+        Cosmetic Teeth Filling: Enhance Your Smile
+      </h1>
+
       {/* Intro */}
       <p className="text-lg leading-relaxed text-foreground/90">
         If you have a chipped, cracked, or discolored tooth, you do not have to live with it. At <strong>Motiur's Dental in Debidwar, Comilla</strong>, we help patients restore their smiles with high-quality <strong>cosmetic teeth fillings</strong> at a cost that is genuinely affordable. We are one of the few dental clinics in the Debidwar and Comilla area where you get professional-grade treatment without paying city-level prices.
