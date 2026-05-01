@@ -67,7 +67,6 @@ const HOME_SERVICES = [
 ];
 
 const Home = () => {
-  const [openDoc, setOpenDoc] = useState<Doctor | null>(null);
   const [caseIdx, setCaseIdx] = useState(0);
   const featuredCases = CASES;
   const c = featuredCases[caseIdx];
