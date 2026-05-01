@@ -12,7 +12,6 @@ import { GoogleReviewCarousel } from "@/components/GoogleReviewCarousel";
 import type { GoogleReview } from "@/components/GoogleReviewCard";
 import { openServiceDialog } from "@/components/ServicesDialog";
 import drMotiurAbout from "@/assets/dr-motiur-about.png";
-import ctaKid from "@/assets/cta-kid.jpg";
 import debidwarBg from "@/assets/debidwar-bg.jpeg";
 import iconScaling from "@/assets/services/scaling-polishing-whitening.png";
 import iconFilling from "@/assets/services/cosmetic-filling.png";
@@ -279,23 +278,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* LET US TAKE CARE OF YOU */}
-      <section className="bg-sky-soft-gradient py-14 md:py-20">
-        <div className="container-page grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <div className="text-xs font-bold tracking-[0.2em] text-primary/70">TREAT YOURSELF</div>
-            <h2 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-display font-black leading-[1.02] text-primary">LET US TAKE CARE OF YOU</h2>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-block mt-7">
-              <Button size="lg" className="bg-primary hover:bg-primary-dark text-white rounded-md gap-2 h-12 px-7">
-                <Phone className="h-5 w-5" /> Book Your Appointment
-              </Button>
-            </a>
-          </div>
-          <div className="rounded-2xl overflow-hidden aspect-square max-w-md mx-auto shadow-medium">
-            <img src={ctaKid} alt="Happy child after a dental visit" className="w-full h-full object-cover" loading="lazy" />
-          </div>
-        </div>
-      </section>
 
       
     </>
