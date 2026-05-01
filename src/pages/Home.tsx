@@ -182,9 +182,6 @@ const Home = () => {
               Dr Motiur brings more than two decades of hands-on experience in dentistry. Over the years he has built strong trust with his patients by focusing on honest advice, gentle treatment and consistent results. At Motiur's Dental his vision is simple — to make quality dental care accessible, reliable and stress free for everyone.
             </p>
 
-            <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '17px', fontWeight: 600 }} className="text-primary mt-6">
-              ​
-            </h3>
             <ul className="mt-3 space-y-2.5">
               {[
                 "Uses updated tools and safe dental practices",
