@@ -35,6 +35,10 @@ const ServiceDetail = () => {
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return <Navigate to="/" replace />;
 
+  const customSeo = CUSTOM_SEO[service.slug];
+  const customSchema = CUSTOM_SCHEMA[service.slug];
+  const ArticleComponent = ARTICLE_MAP[service.slug];
+
   return (
     <>
       <SEO
@@ -64,10 +68,9 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Article content will be added per service */}
       <section className="section-pad">
         <div className="container-page max-w-4xl mx-auto">
-          {/* Custom article text, H1, images will go here */}
+          {ArticleComponent ? <ArticleComponent /> : null}
         </div>
       </section>
     </>
