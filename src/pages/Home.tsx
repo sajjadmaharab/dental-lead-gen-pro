@@ -96,8 +96,8 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Best Dental Clinic in Debidwar, Comilla | Motiur's Dental"
-        description="Motiur's Dental in Debidwar (Ibn Sina Hospital) offers expert dental care: implants, root canal, braces, whitening & more. Trusted dentist in Comilla. Call 01816010194."
+        title="Dr Motiur Trusted Dentist in Comilla Debidwar"
+        description="Experienced dentist Dr Motiur offers trusted and comfortable dental care in Comilla Debidwar for over 25 years"
         path="/"
         schema={localBusinessSchema}
       />
