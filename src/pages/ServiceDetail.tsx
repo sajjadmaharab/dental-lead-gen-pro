@@ -7,6 +7,7 @@ import { CLINIC, telLink, waLink } from "@/lib/clinic";
 import CosmeticFillingArticle from "@/components/articles/CosmeticFillingArticle";
 import DentalImplantsArticle from "@/components/articles/DentalImplantsArticle";
 import ToothGapArticle from "@/components/articles/ToothGapArticle";
+import ScalingWhiteningArticle from "@/components/articles/ScalingWhiteningArticle";
 
 const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "cosmetic-filling": {
