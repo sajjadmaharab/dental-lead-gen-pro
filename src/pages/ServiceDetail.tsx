@@ -7,6 +7,7 @@ import { CLINIC, telLink, waLink } from "@/lib/clinic";
 import CosmeticFillingArticle from "@/components/articles/CosmeticFillingArticle";
 import DentalImplantsArticle from "@/components/articles/DentalImplantsArticle";
 import ToothGapArticle from "@/components/articles/ToothGapArticle";
+import ScalingWhiteningArticle from "@/components/articles/ScalingWhiteningArticle";
 
 const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "cosmetic-filling": {
@@ -20,6 +21,10 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "tooth-gap-treatment": {
     title: "Tooth Gap Treatment in Debidwar Comilla | Fix Gaps Between Teeth | Motiur's Dental",
     description: "Looking for affordable tooth gap treatment in Debidwar, Comilla? Motiur's Dental offers dental bonding, veneers, and clear aligners to close gaps between teeth at the lowest cost in Comilla district. Call 01816010194.",
+  },
+  "scaling-polishing-whitening": {
+    title: "Scaling Polishing and Teeth Whitening in Debidwar Comilla | Motiur's Dental",
+    description: "Professional teeth scaling, polishing, and whitening in Debidwar, Comilla at the most affordable prices in the area. Motiur's Dental removes tartar, freshens breath, and brightens your smile. Call 01816010194.",
   },
 };
 
@@ -56,12 +61,25 @@ const CUSTOM_SCHEMA: Record<string, object> = {
       { "@type": "Question", name: "Can I get tooth gap treatment in Debidwar?", acceptedAnswer: { "@type": "Answer", text: "Yes. Motiur's Dental in Debidwar offers the full range of tooth gap treatments including bonding, veneers, and clear aligners." } },
     ],
   },
+  "scaling-polishing-whitening": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Is scaling and polishing good for your teeth?", acceptedAnswer: { "@type": "Answer", text: "Yes, absolutely. It is one of the most important preventive dental procedures. It removes tartar that causes gum disease and keeps your teeth and gums healthy." } },
+      { "@type": "Question", name: "Does scaling whiten teeth?", acceptedAnswer: { "@type": "Answer", text: "Scaling removes tartar and polishing removes surface stains, making teeth look brighter. For genuine whitening of the enamel, a separate whitening treatment is needed." } },
+      { "@type": "Question", name: "Is scaling and polishing painful?", acceptedAnswer: { "@type": "Answer", text: "For most patients it is comfortable. You may feel pressure and vibration, and some sensitivity if gums are inflamed. We can use numbing agents if needed." } },
+      { "@type": "Question", name: "Should I do scaling before whitening?", acceptedAnswer: { "@type": "Answer", text: "Yes, always. Scaling and polishing before whitening removes tartar and stains that block the whitening gel from reaching the enamel evenly." } },
+      { "@type": "Question", name: "How often should I get professional teeth cleaning?", acceptedAnswer: { "@type": "Answer", text: "Every six months is the standard recommendation. Some patients with heavier buildup may benefit from more frequent visits." } },
+      { "@type": "Question", name: "Can scaling damage my teeth?", acceptedAnswer: { "@type": "Answer", text: "No. When performed by a trained dental professional, scaling is completely safe and does not damage tooth enamel or root surfaces." } },
+    ],
+  },
 };
 
 const ARTICLE_MAP: Record<string, React.ComponentType> = {
   "cosmetic-filling": CosmeticFillingArticle,
   "dental-implants": DentalImplantsArticle,
   "tooth-gap-treatment": ToothGapArticle,
+  "scaling-polishing-whitening": ScalingWhiteningArticle,
 };
 
 const ServiceDetail = () => {
