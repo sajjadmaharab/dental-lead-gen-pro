@@ -16,15 +16,6 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
-const Lightbox = ({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) => (
-  <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onClick={onClose}>
-    <button onClick={onClose} className="absolute top-4 right-4 text-white/80 hover:text-white z-50">
-      <X className="h-8 w-8" />
-    </button>
-    <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain" />
-  </div>
-);
-
 const xrayImages = [
   { src: xray1, alt: "Dental implant X-ray showing titanium post fused with jawbone at Motiur's Dental Debidwar Comilla", caption: "Implant post integrated with jawbone" },
   { src: xray2, alt: "Dental implant placement X-ray at Motiur's Dental clinic Debidwar Comilla Bangladesh", caption: "Implant placement in jawbone" },
@@ -33,13 +24,8 @@ const xrayImages = [
 ];
 
 const DentalImplantsArticle = () => {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
-  const [xrayIndex, setXrayIndex] = useState(0);
-  const isMobile = useIsMobile();
-
   return (
     <article className="max-w-none">
-      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
 
       {/* Hero Image */}
       <div className="w-full overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
