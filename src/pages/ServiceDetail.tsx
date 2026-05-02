@@ -22,6 +22,10 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
     title: "Tooth Gap Treatment in Debidwar Comilla | Fix Gaps Between Teeth | Motiur's Dental",
     description: "Looking for affordable tooth gap treatment in Debidwar, Comilla? Motiur's Dental offers dental bonding, veneers, and clear aligners to close gaps between teeth at the lowest cost in Comilla district. Call 01816010194.",
   },
+  "scaling-polishing-whitening": {
+    title: "Scaling Polishing and Teeth Whitening in Debidwar Comilla | Motiur's Dental",
+    description: "Professional teeth scaling, polishing, and whitening in Debidwar, Comilla at the most affordable prices in the area. Motiur's Dental removes tartar, freshens breath, and brightens your smile. Call 01816010194.",
+  },
 };
 
 const CUSTOM_SCHEMA: Record<string, object> = {
