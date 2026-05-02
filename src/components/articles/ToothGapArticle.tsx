@@ -1,6 +1,6 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
-import { ImageCarousel } from "@/components/ImageCarousel";
+import ImageCarousel from "@/components/ImageCarousel";
 
 import heroImg from "@/assets/tooth-gap-hero.jpg";
 import ab1 from "@/assets/tooth-gap-ab-1.png";
