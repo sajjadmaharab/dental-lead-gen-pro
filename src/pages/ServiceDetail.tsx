@@ -12,6 +12,10 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
     title: "Cosmetic Teeth Filling in Debidwar Comilla | Affordable Dental Filling | Motiur's Dental",
     description: "Looking for affordable cosmetic teeth filling in Debidwar, Comilla? Motiur's Dental offers high-quality composite, amalgam and porcelain fillings at the lowest cost in the area. Call 01816010194.",
   },
+  "dental-implants": {
+    title: "Dental Implants in Debidwar Comilla | Affordable Implant Treatment | Motiur's Dental",
+    description: "Looking for affordable dental implants in Debidwar, Comilla? Motiur's Dental offers permanent, natural-looking implant treatment at the lowest cost in the area. Call 01816010194 to book your consultation today.",
+  },
 };
 
 const CUSTOM_SCHEMA: Record<string, object> = {
