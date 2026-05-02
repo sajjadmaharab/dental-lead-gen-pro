@@ -6,6 +6,7 @@ import { SERVICES } from "@/data/services";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
 import CosmeticFillingArticle from "@/components/articles/CosmeticFillingArticle";
 import DentalImplantsArticle from "@/components/articles/DentalImplantsArticle";
+import ToothGapArticle from "@/components/articles/ToothGapArticle";
 
 const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "cosmetic-filling": {
@@ -15,6 +16,10 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "dental-implants": {
     title: "Dental Implants in Debidwar Comilla | Affordable Implant Treatment | Motiur's Dental",
     description: "Looking for affordable dental implants in Debidwar, Comilla? Motiur's Dental offers permanent, natural-looking implant treatment at the lowest cost in the area. Call 01816010194 to book your consultation today.",
+  },
+  "tooth-gap-treatment": {
+    title: "Tooth Gap Treatment in Debidwar Comilla | Fix Gaps Between Teeth | Motiur's Dental",
+    description: "Looking for affordable tooth gap treatment in Debidwar, Comilla? Motiur's Dental offers dental bonding, veneers, and clear aligners to close gaps between teeth at the lowest cost in Comilla district. Call 01816010194.",
   },
 };
 
@@ -40,11 +45,23 @@ const CUSTOM_SCHEMA: Record<string, object> = {
       { "@type": "Question", name: "Can I get implants for all my teeth?", acceptedAnswer: { "@type": "Answer", text: "Yes. Implant-supported full bridges or full dentures are an option for patients who have lost all or most of their teeth." } },
     ],
   },
+  "tooth-gap-treatment": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Can gaps between teeth be fixed permanently?", acceptedAnswer: { "@type": "Answer", text: "Yes. Dental bonding and porcelain veneers both offer long-lasting results. Veneers can last 10 to 15 years or more. Aligners and braces move teeth permanently with retainer maintenance." } },
+      { "@type": "Question", name: "Is tooth gap treatment painful?", acceptedAnswer: { "@type": "Answer", text: "Most treatments are comfortable and require little or no anesthesia. Bonding and contouring involve no injections at all." } },
+      { "@type": "Question", name: "What is the cheapest way to fix a gap between teeth?", acceptedAnswer: { "@type": "Answer", text: "Dental bonding is the most affordable option for small to moderate gaps. At Motiur's Dental, our bonding prices are among the lowest in the Comilla area." } },
+      { "@type": "Question", name: "What is diastema?", acceptedAnswer: { "@type": "Answer", text: "Diastema is the medical term for a gap between teeth. It is a common condition and can occur between any two teeth, though it is most noticeable between the upper front teeth." } },
+      { "@type": "Question", name: "Can I get tooth gap treatment in Debidwar?", acceptedAnswer: { "@type": "Answer", text: "Yes. Motiur's Dental in Debidwar offers the full range of tooth gap treatments including bonding, veneers, and clear aligners." } },
+    ],
+  },
 };
 
 const ARTICLE_MAP: Record<string, React.ComponentType> = {
   "cosmetic-filling": CosmeticFillingArticle,
   "dental-implants": DentalImplantsArticle,
+  "tooth-gap-treatment": ToothGapArticle,
 };
 
 const ServiceDetail = () => {
