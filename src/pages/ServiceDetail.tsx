@@ -44,6 +44,7 @@ const CUSTOM_SCHEMA: Record<string, object> = {
 
 const ARTICLE_MAP: Record<string, React.ComponentType> = {
   "cosmetic-filling": CosmeticFillingArticle,
+  "dental-implants": DentalImplantsArticle,
 };
 
 const ServiceDetail = () => {
