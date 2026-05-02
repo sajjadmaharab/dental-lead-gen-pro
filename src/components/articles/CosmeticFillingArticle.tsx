@@ -1,5 +1,10 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import heroImg from "@/assets/cosmetic-filling-hero.jpg";
+import dentalFillingAB from "@/assets/dental-filling-before-after.webp";
+import cosmeticFillingAB from "@/assets/cosmetic-filling-before-after.webp";
+import toothFillingAB from "@/assets/tooth-filling-before-after.webp";
+import fillingProcess from "@/assets/dental-filling-process.webp";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -10,10 +15,19 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
 const CosmeticFillingArticle = () => {
   return (
     <article className="max-w-none">
-      {/* Hero H1 */}
+      {/* Hero H1 + Image */}
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Cosmetic Teeth Filling: Enhance Your Smile
       </h1>
+
+      <div className="w-full rounded-2xl overflow-hidden mb-8 max-h-[280px] md:max-h-[340px]">
+        <img
+          src={heroImg}
+          alt="Cosmetic teeth filling procedure at Motiur's Dental in Debidwar Comilla"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
 
       {/* Intro */}
       <p className="text-lg leading-relaxed text-foreground/90">
@@ -39,6 +53,37 @@ const CosmeticFillingArticle = () => {
       <p className="mt-3 text-foreground/85 leading-relaxed">
         This is very different from the old silver amalgam fillings. Those were strong but visible. Cosmetic fillings give you the strength you need and the appearance you want.
       </p>
+
+      {/* Before/After Images */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+        <figure className="rounded-xl overflow-hidden border border-border">
+          <img
+            src={dentalFillingAB}
+            alt="Dental filling before and after result at Motiur's Dental Debidwar Comilla"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Dental filling: before and after</figcaption>
+        </figure>
+        <figure className="rounded-xl overflow-hidden border border-border">
+          <img
+            src={cosmeticFillingAB}
+            alt="Cosmetic teeth filling before and after at Motiur's Dental Debidwar"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Cosmetic filling: before and after</figcaption>
+        </figure>
+        <figure className="rounded-xl overflow-hidden border border-border">
+          <img
+            src={toothFillingAB}
+            alt="Tooth cavity filling before and after treatment Comilla Bangladesh"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Cavity filling: before and after</figcaption>
+        </figure>
+      </div>
 
       {/* What problems */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What Problems Can Cosmetic Fillings Fix?</h2>
@@ -91,17 +136,31 @@ const CosmeticFillingArticle = () => {
         ))}
       </div>
 
-      {/* Procedure */}
+      {/* Procedure with Process Image */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">How the Filling Procedure Works</h2>
       <p className="mt-3 text-foreground/85">People often worry about dental procedures, but at Motiur's Dental the process is simple and straightforward:</p>
-      <ol className="space-y-2 my-6 list-decimal list-inside text-foreground/85 marker:text-primary marker:font-bold">
-        <li>We examine your tooth and talk through your options.</li>
-        <li>We apply local anesthesia to numb the area completely.</li>
-        <li>We remove any decayed or damaged tissue and clean the tooth.</li>
-        <li>We place the filling material. For composite fillings, a special curing light hardens the resin.</li>
-        <li>We polish it so it feels and looks natural.</li>
-      </ol>
-      <p className="text-foreground/85">The whole process usually takes <strong>one appointment</strong>.</p>
+
+      <div className="flex flex-col md:flex-row gap-6 my-6">
+        <div className="flex-1">
+          <ol className="space-y-2 list-decimal list-inside text-foreground/85 marker:text-primary marker:font-bold">
+            <li>We examine your tooth and talk through your options.</li>
+            <li>We apply local anesthesia to numb the area completely.</li>
+            <li>We remove any decayed or damaged tissue and clean the tooth.</li>
+            <li>We place the filling material. For composite fillings, a special curing light hardens the resin.</li>
+            <li>We polish it so it feels and looks natural.</li>
+          </ol>
+          <p className="mt-4 text-foreground/85">The whole process usually takes <strong>one appointment</strong>.</p>
+        </div>
+        <figure className="md:w-[280px] lg:w-[320px] shrink-0 rounded-xl overflow-hidden border border-border self-start">
+          <img
+            src={fillingProcess}
+            alt="Dental filling procedure steps: decay detection, cleaning, composite resin filling, and curing"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Step-by-step dental filling process</figcaption>
+        </figure>
+      </div>
 
       {/* How long - TARGET KEYWORD */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground" id="how-long-do-front-teeth-fillings-last">
