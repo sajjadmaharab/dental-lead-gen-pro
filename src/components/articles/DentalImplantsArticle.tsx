@@ -184,20 +184,34 @@ const DentalImplantsArticle = () => {
 
       {/* Problems we solve */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What Dental Implant Problems Can We Solve?</h2>
-      <ul className="space-y-4 my-6 list-none p-0">
-        <Bullet>
-          <strong>Single missing tooth:</strong> A single implant with a crown is the cleanest and most natural solution for replacing one missing tooth. It looks exactly like a real tooth and does not affect the teeth around it.
-        </Bullet>
-        <Bullet>
-          <strong>Multiple missing teeth:</strong> If you are missing several teeth in a row, implant-supported bridges are an excellent option. Instead of placing an implant for every single missing tooth, we place implants at key points and attach a bridge across them.
-        </Bullet>
-        <Bullet>
-          <strong>All teeth missing:</strong> For patients who have lost all or most of their teeth, implant-supported full dentures or full bridges are a permanent and much more stable alternative to traditional removable dentures.
-        </Bullet>
-        <Bullet>
-          <strong>Failed or broken old implants:</strong> If you have had implant work done elsewhere that has not held up, we can assess the situation and often provide a successful solution.
-        </Bullet>
-      </ul>
+      <div className="flex flex-col md:flex-row gap-6 my-6 items-start">
+        <ul className="space-y-4 list-none p-0 flex-1">
+          <Bullet>
+            <strong>Single missing tooth:</strong> A single implant with a crown is the cleanest and most natural solution for replacing one missing tooth. It looks exactly like a real tooth and does not affect the teeth around it.
+          </Bullet>
+          <Bullet>
+            <strong>Multiple missing teeth:</strong> If you are missing several teeth in a row, implant-supported bridges are an excellent option. Instead of placing an implant for every single missing tooth, we place implants at key points and attach a bridge across them.
+          </Bullet>
+          <Bullet>
+            <strong>All teeth missing:</strong> For patients who have lost all or most of their teeth, implant-supported full dentures or full bridges are a permanent and much more stable alternative to traditional removable dentures.
+          </Bullet>
+          <Bullet>
+            <strong>Failed or broken old implants:</strong> If you have had implant work done elsewhere that has not held up, we can assess the situation and often provide a successful solution.
+          </Bullet>
+        </ul>
+        <figure className="w-full max-w-[260px] md:max-w-[240px] lg:max-w-[280px] shrink-0 overflow-hidden border border-border self-start mx-auto md:mx-0">
+          <video
+            src="/videos/implant-procedure.mp4"
+            controls
+            preload="none"
+            playsInline
+            muted
+            className="w-full h-auto"
+            title="Dental implant procedure video at Motiur's Dental Debidwar Comilla"
+          />
+          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Implant procedure at our clinic</figcaption>
+        </figure>
+      </div>
 
       {/* Implant Brands */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Implant Brands We Use at Motiur's Dental</h2>
