@@ -12,16 +12,6 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
     {children}
   </li>
 );
-
-const Lightbox = ({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) => (
-  <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onClick={onClose}>
-    <button onClick={onClose} className="absolute top-4 right-4 text-white/80 hover:text-white z-50">
-      <X className="h-8 w-8" />
-    </button>
-    <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-lg" />
-  </div>
-);
-
 const beforeAfterImages = [
   { src: dentalFillingAB, alt: "Dental filling before and after result at Motiur's Dental Debidwar Comilla", caption: "Dental filling: before and after" },
   { src: cosmeticFillingAB, alt: "Cosmetic teeth filling before and after at Motiur's Dental Debidwar", caption: "Cosmetic filling: before and after" },
@@ -29,13 +19,8 @@ const beforeAfterImages = [
 ];
 
 const CosmeticFillingArticle = () => {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
-  const [abIndex, setAbIndex] = useState(0);
-  const isMobile = useIsMobile();
-
   return (
     <article className="max-w-none">
-      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
 
       {/* Hero Image first, then H1 */}
       <div className="w-full rounded-2xl overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
