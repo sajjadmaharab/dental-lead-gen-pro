@@ -20,11 +20,11 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
 );
 
 const beforeAfterImages = [
-  { src: ab1, alt: "Tooth gap before and after treatment at Motiur's Dental Debidwar case 1" },
-  { src: ab2, alt: "Diastema closure before and after dental bonding Comilla case 2" },
-  { src: ab3, alt: "Gap between teeth fixed with cosmetic treatment Debidwar case 3" },
-  { src: ab4, alt: "Front teeth gap treatment before and after Motiur's Dental case 4" },
-  { src: ab5, alt: "Tooth gap closed with porcelain veneers before after Comilla case 5" },
+  { src: ab1, alt: "Tooth gap before and after treatment at Motiur's Dental Debidwar case 1", caption: "Case 1" },
+  { src: ab2, alt: "Diastema closure before and after dental bonding Comilla case 2", caption: "Case 2" },
+  { src: ab3, alt: "Gap between teeth fixed with cosmetic treatment Debidwar case 3", caption: "Case 3" },
+  { src: ab4, alt: "Front teeth gap treatment before and after Motiur's Dental case 4", caption: "Case 4" },
+  { src: ab5, alt: "Tooth gap closed with porcelain veneers before after Comilla case 5", caption: "Case 5" },
 ];
 
 const ToothGapArticle = () => {
