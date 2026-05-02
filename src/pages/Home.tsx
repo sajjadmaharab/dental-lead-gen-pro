@@ -96,8 +96,8 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Mr Motiur Trusted Dentist in Comilla Debidwar"
-        description="Experienced dentist Mr Motiur offers trusted and comfortable dental care in Comilla Debidwar for over 25 years"
+        title="Mr Motiur - Expert in preventive Dentistry"
+        description="Mr Motiur is an expert in preventive dentistry, offering trusted and comfortable dental care in Comilla Debidwar for over 25 years"
         path="/"
         schema={localBusinessSchema}
       />
