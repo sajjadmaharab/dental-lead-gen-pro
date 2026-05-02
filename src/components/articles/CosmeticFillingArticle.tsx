@@ -23,8 +23,16 @@ const Lightbox = ({ src, alt, onClose }: { src: string; alt: string; onClose: ()
   </div>
 );
 
+const beforeAfterImages = [
+  { src: dentalFillingAB, alt: "Dental filling before and after result at Motiur's Dental Debidwar Comilla", caption: "Dental filling: before and after" },
+  { src: cosmeticFillingAB, alt: "Cosmetic teeth filling before and after at Motiur's Dental Debidwar", caption: "Cosmetic filling: before and after" },
+  { src: toothFillingAB, alt: "Tooth cavity filling before and after treatment Comilla Bangladesh", caption: "Cavity filling: before and after" },
+];
+
 const CosmeticFillingArticle = () => {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const [abIndex, setAbIndex] = useState(0);
+  const isMobile = useIsMobile();
 
   return (
     <article className="max-w-none">
