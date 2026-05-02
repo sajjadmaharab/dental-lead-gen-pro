@@ -77,24 +77,56 @@ const CosmeticFillingArticle = () => {
         This is very different from the old silver amalgam fillings. Those were strong but visible. Cosmetic fillings give you the strength you need and the appearance you want.
       </p>
 
-      {/* Before/After Images - clickable */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
-        {[
-          { src: dentalFillingAB, alt: "Dental filling before and after result at Motiur's Dental Debidwar Comilla", caption: "Dental filling: before and after" },
-          { src: cosmeticFillingAB, alt: "Cosmetic teeth filling before and after at Motiur's Dental Debidwar", caption: "Cosmetic filling: before and after" },
-          { src: toothFillingAB, alt: "Tooth cavity filling before and after treatment Comilla Bangladesh", caption: "Cavity filling: before and after" },
-        ].map((img, i) => (
-          <figure key={i} className="rounded-xl overflow-hidden border border-border cursor-pointer group" onClick={() => setLightbox({ src: img.src, alt: img.alt })}>
+      {/* Before/After Images - carousel on mobile, grid on desktop */}
+      {isMobile ? (
+        <div className="relative my-8">
+          <figure
+            className="rounded-xl overflow-hidden border border-border cursor-pointer"
+            onClick={() => setLightbox({ src: beforeAfterImages[abIndex].src, alt: beforeAfterImages[abIndex].alt })}
+          >
             <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-auto object-cover transition-transform group-hover:scale-105"
+              src={beforeAfterImages[abIndex].src}
+              alt={beforeAfterImages[abIndex].alt}
+              className="w-full h-auto object-cover"
               loading="lazy"
             />
-            <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{img.caption}</figcaption>
+            <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{beforeAfterImages[abIndex].caption}</figcaption>
           </figure>
-        ))}
-      </div>
+          <button
+            onClick={() => setAbIndex((prev) => (prev - 1 + beforeAfterImages.length) % beforeAfterImages.length)}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="h-5 w-5 text-foreground" />
+          </button>
+          <button
+            onClick={() => setAbIndex((prev) => (prev + 1) % beforeAfterImages.length)}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
+            aria-label="Next image"
+          >
+            <ChevronRight className="h-5 w-5 text-foreground" />
+          </button>
+          <div className="flex justify-center gap-1.5 mt-3">
+            {beforeAfterImages.map((_, i) => (
+              <span key={i} className={`w-2 h-2 rounded-full transition-colors ${i === abIndex ? 'bg-primary' : 'bg-muted-foreground/30'}`} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-3 gap-4 my-8">
+          {beforeAfterImages.map((img, i) => (
+            <figure key={i} className="rounded-xl overflow-hidden border border-border cursor-pointer group" onClick={() => setLightbox({ src: img.src, alt: img.alt })}>
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-auto object-cover transition-transform group-hover:scale-105"
+                loading="lazy"
+              />
+              <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{img.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
 
       {/* What problems */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What Problems Can Cosmetic Fillings Fix?</h2>
