@@ -1,4 +1,5 @@
-import { Phone, MapPin } from "lucide-react";
+import { useState } from "react";
+import { Phone, MapPin, X } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
 import heroImg from "@/assets/cosmetic-filling-hero.jpg";
 import dentalFillingAB from "@/assets/dental-filling-before-after.webp";
@@ -12,15 +13,24 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
+const Lightbox = ({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) => (
+  <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onClick={onClose}>
+    <button onClick={onClose} className="absolute top-4 right-4 text-white/80 hover:text-white z-50">
+      <X className="h-8 w-8" />
+    </button>
+    <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-lg" />
+  </div>
+);
+
 const CosmeticFillingArticle = () => {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <article className="max-w-none">
-      {/* Hero H1 + Image */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
-        Cosmetic Teeth Filling: Enhance Your Smile
-      </h1>
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
 
-      <div className="w-full rounded-2xl overflow-hidden mb-8 max-h-[280px] md:max-h-[340px]">
+      {/* Hero Image first, then H1 */}
+      <div className="w-full rounded-2xl overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
         <img
           src={heroImg}
           alt="Cosmetic teeth filling procedure at Motiur's Dental in Debidwar Comilla"
@@ -28,6 +38,10 @@ const CosmeticFillingArticle = () => {
           loading="eager"
         />
       </div>
+
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
+        Cosmetic Teeth Filling: Enhance Your Smile
+      </h1>
 
       {/* Intro */}
       <p className="text-lg leading-relaxed text-foreground/90">
@@ -54,35 +68,23 @@ const CosmeticFillingArticle = () => {
         This is very different from the old silver amalgam fillings. Those were strong but visible. Cosmetic fillings give you the strength you need and the appearance you want.
       </p>
 
-      {/* Before/After Images */}
+      {/* Before/After Images - clickable */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
-        <figure className="rounded-xl overflow-hidden border border-border">
-          <img
-            src={dentalFillingAB}
-            alt="Dental filling before and after result at Motiur's Dental Debidwar Comilla"
-            className="w-full h-auto object-cover"
-            loading="lazy"
-          />
-          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Dental filling: before and after</figcaption>
-        </figure>
-        <figure className="rounded-xl overflow-hidden border border-border">
-          <img
-            src={cosmeticFillingAB}
-            alt="Cosmetic teeth filling before and after at Motiur's Dental Debidwar"
-            className="w-full h-auto object-cover"
-            loading="lazy"
-          />
-          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Cosmetic filling: before and after</figcaption>
-        </figure>
-        <figure className="rounded-xl overflow-hidden border border-border">
-          <img
-            src={toothFillingAB}
-            alt="Tooth cavity filling before and after treatment Comilla Bangladesh"
-            className="w-full h-auto object-cover"
-            loading="lazy"
-          />
-          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Cavity filling: before and after</figcaption>
-        </figure>
+        {[
+          { src: dentalFillingAB, alt: "Dental filling before and after result at Motiur's Dental Debidwar Comilla", caption: "Dental filling: before and after" },
+          { src: cosmeticFillingAB, alt: "Cosmetic teeth filling before and after at Motiur's Dental Debidwar", caption: "Cosmetic filling: before and after" },
+          { src: toothFillingAB, alt: "Tooth cavity filling before and after treatment Comilla Bangladesh", caption: "Cavity filling: before and after" },
+        ].map((img, i) => (
+          <figure key={i} className="rounded-xl overflow-hidden border border-border cursor-pointer group" onClick={() => setLightbox({ src: img.src, alt: img.alt })}>
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-auto object-cover transition-transform group-hover:scale-105"
+              loading="lazy"
+            />
+            <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{img.caption}</figcaption>
+          </figure>
+        ))}
       </div>
 
       {/* What problems */}
@@ -151,7 +153,7 @@ const CosmeticFillingArticle = () => {
           </ol>
           <p className="mt-4 text-foreground/85">The whole process usually takes <strong>one appointment</strong>.</p>
         </div>
-        <figure className="md:w-[280px] lg:w-[320px] shrink-0 rounded-xl overflow-hidden border border-border self-start">
+        <figure className="w-full max-w-[200px] md:max-w-[240px] lg:max-w-[280px] shrink-0 rounded-xl overflow-hidden border border-border self-start mx-auto md:mx-0">
           <img
             src={fillingProcess}
             alt="Dental filling procedure steps: decay detection, cleaning, composite resin filling, and curing"
