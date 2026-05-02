@@ -61,6 +61,18 @@ const CUSTOM_SCHEMA: Record<string, object> = {
       { "@type": "Question", name: "Can I get tooth gap treatment in Debidwar?", acceptedAnswer: { "@type": "Answer", text: "Yes. Motiur's Dental in Debidwar offers the full range of tooth gap treatments including bonding, veneers, and clear aligners." } },
     ],
   },
+  "scaling-polishing-whitening": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Is scaling and polishing good for your teeth?", acceptedAnswer: { "@type": "Answer", text: "Yes, absolutely. It is one of the most important preventive dental procedures. It removes tartar that causes gum disease and keeps your teeth and gums healthy." } },
+      { "@type": "Question", name: "Does scaling whiten teeth?", acceptedAnswer: { "@type": "Answer", text: "Scaling removes tartar and polishing removes surface stains, making teeth look brighter. For genuine whitening of the enamel, a separate whitening treatment is needed." } },
+      { "@type": "Question", name: "Is scaling and polishing painful?", acceptedAnswer: { "@type": "Answer", text: "For most patients it is comfortable. You may feel pressure and vibration, and some sensitivity if gums are inflamed. We can use numbing agents if needed." } },
+      { "@type": "Question", name: "Should I do scaling before whitening?", acceptedAnswer: { "@type": "Answer", text: "Yes, always. Scaling and polishing before whitening removes tartar and stains that block the whitening gel from reaching the enamel evenly." } },
+      { "@type": "Question", name: "How often should I get professional teeth cleaning?", acceptedAnswer: { "@type": "Answer", text: "Every six months is the standard recommendation. Some patients with heavier buildup may benefit from more frequent visits." } },
+      { "@type": "Question", name: "Can scaling damage my teeth?", acceptedAnswer: { "@type": "Answer", text: "No. When performed by a trained dental professional, scaling is completely safe and does not damage tooth enamel or root surfaces." } },
+    ],
+  },
 };
 
 const ARTICLE_MAP: Record<string, React.ComponentType> = {
