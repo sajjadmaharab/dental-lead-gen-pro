@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Phone, MapPin, X } from "lucide-react";
+import { Phone, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import { useIsMobile } from "@/hooks/use-mobile";
 import heroImg from "@/assets/cosmetic-filling-hero.jpg";
 import dentalFillingAB from "@/assets/dental-filling-before-after.webp";
 import cosmeticFillingAB from "@/assets/cosmetic-filling-before-after.webp";
