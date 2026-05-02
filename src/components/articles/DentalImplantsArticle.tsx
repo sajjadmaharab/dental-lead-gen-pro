@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { Phone, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
-import { useIsMobile } from "@/hooks/use-mobile";
+import ImageCarousel from "@/components/ImageCarousel";
 import heroImg from "@/assets/implant-hero.jpg";
 import processImg from "@/assets/implant-process.jpg";
 import xray1 from "@/assets/implant-xray-1.jpg";
@@ -17,15 +16,6 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
-const Lightbox = ({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) => (
-  <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onClick={onClose}>
-    <button onClick={onClose} className="absolute top-4 right-4 text-white/80 hover:text-white z-50">
-      <X className="h-8 w-8" />
-    </button>
-    <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain" />
-  </div>
-);
-
 const xrayImages = [
   { src: xray1, alt: "Dental implant X-ray showing titanium post fused with jawbone at Motiur's Dental Debidwar Comilla", caption: "Implant post integrated with jawbone" },
   { src: xray2, alt: "Dental implant placement X-ray at Motiur's Dental clinic Debidwar Comilla Bangladesh", caption: "Implant placement in jawbone" },
@@ -34,13 +24,8 @@ const xrayImages = [
 ];
 
 const DentalImplantsArticle = () => {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
-  const [xrayIndex, setXrayIndex] = useState(0);
-  const isMobile = useIsMobile();
-
   return (
     <article className="max-w-none">
-      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
 
       {/* Hero Image */}
       <div className="w-full overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
@@ -87,55 +72,7 @@ const DentalImplantsArticle = () => {
       </p>
 
       {/* X-ray images gallery */}
-      {isMobile ? (
-        <div className="relative my-8">
-          <figure
-            className="overflow-hidden border border-border cursor-pointer"
-            onClick={() => setLightbox({ src: xrayImages[xrayIndex].src, alt: xrayImages[xrayIndex].alt })}
-          >
-            <img
-              src={xrayImages[xrayIndex].src}
-              alt={xrayImages[xrayIndex].alt}
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
-            <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{xrayImages[xrayIndex].caption}</figcaption>
-          </figure>
-          <button
-            onClick={() => setXrayIndex((prev) => (prev - 1 + xrayImages.length) % xrayImages.length)}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
-            aria-label="Previous X-ray image"
-          >
-            <ChevronLeft className="h-5 w-5 text-foreground" />
-          </button>
-          <button
-            onClick={() => setXrayIndex((prev) => (prev + 1) % xrayImages.length)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
-            aria-label="Next X-ray image"
-          >
-            <ChevronRight className="h-5 w-5 text-foreground" />
-          </button>
-          <div className="flex justify-center gap-1.5 mt-3">
-            {xrayImages.map((_, i) => (
-              <span key={i} className={`w-2 h-2 rounded-full transition-colors ${i === xrayIndex ? 'bg-primary' : 'bg-muted-foreground/30'}`} />
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-          {xrayImages.map((img, i) => (
-            <figure key={i} className="overflow-hidden border border-border cursor-pointer group" onClick={() => setLightbox({ src: img.src, alt: img.alt })}>
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-auto object-cover transition-transform group-hover:scale-105"
-                loading="lazy"
-              />
-              <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{img.caption}</figcaption>
-            </figure>
-          ))}
-        </div>
-      )}
+      <ImageCarousel images={xrayImages} mobileMaxH="180px" desktopCols={4} />
 
       {/* Why implants */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Why Dental Implants and Not Dentures or Bridges?</h2>
@@ -156,7 +93,7 @@ const DentalImplantsArticle = () => {
       </p>
 
       {/* Implants vs Dentures image */}
-      <figure className="my-8 overflow-hidden border border-border cursor-pointer" onClick={() => setLightbox({ src: implantsVsDentures, alt: "Dental implants vs dentures comparison Motiur's Dental Debidwar Comilla" })}>
+      <figure className="my-8 overflow-hidden border border-border">
         <img
           src={implantsVsDentures}
           alt="Dental implants vs dentures comparison: why implants are better long-term solution at Motiur's Dental Debidwar Comilla"
@@ -227,7 +164,7 @@ const DentalImplantsArticle = () => {
 
       {/* Implant post image */}
       <div className="flex flex-col md:flex-row gap-6 my-8 items-start">
-        <figure className="w-full md:w-1/2 overflow-hidden border border-border cursor-pointer" onClick={() => setLightbox({ src: implantPost, alt: "Dental implant titanium post and cylinder used at Motiur's Dental Debidwar" })}>
+        <figure className="w-full md:w-1/2 overflow-hidden border border-border">
           <img
             src={implantPost}
             alt="Dental implant titanium post and cylinder used at Motiur's Dental clinic Debidwar Comilla Bangladesh"

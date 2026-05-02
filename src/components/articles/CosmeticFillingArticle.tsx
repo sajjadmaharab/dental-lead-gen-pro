@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { Phone, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
-import { useIsMobile } from "@/hooks/use-mobile";
+import ImageCarousel from "@/components/ImageCarousel";
 import heroImg from "@/assets/cosmetic-filling-hero.jpg";
 import dentalFillingAB from "@/assets/dental-filling-before-after.webp";
 import cosmeticFillingAB from "@/assets/cosmetic-filling-before-after.webp";
@@ -13,16 +12,6 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
     {children}
   </li>
 );
-
-const Lightbox = ({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) => (
-  <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onClick={onClose}>
-    <button onClick={onClose} className="absolute top-4 right-4 text-white/80 hover:text-white z-50">
-      <X className="h-8 w-8" />
-    </button>
-    <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-lg" />
-  </div>
-);
-
 const beforeAfterImages = [
   { src: dentalFillingAB, alt: "Dental filling before and after result at Motiur's Dental Debidwar Comilla", caption: "Dental filling: before and after" },
   { src: cosmeticFillingAB, alt: "Cosmetic teeth filling before and after at Motiur's Dental Debidwar", caption: "Cosmetic filling: before and after" },
@@ -30,13 +19,8 @@ const beforeAfterImages = [
 ];
 
 const CosmeticFillingArticle = () => {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
-  const [abIndex, setAbIndex] = useState(0);
-  const isMobile = useIsMobile();
-
   return (
     <article className="max-w-none">
-      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
 
       {/* Hero Image first, then H1 */}
       <div className="w-full rounded-2xl overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
@@ -77,56 +61,8 @@ const CosmeticFillingArticle = () => {
         This is very different from the old silver amalgam fillings. Those were strong but visible. Cosmetic fillings give you the strength you need and the appearance you want.
       </p>
 
-      {/* Before/After Images - carousel on mobile, grid on desktop */}
-      {isMobile ? (
-        <div className="relative my-8">
-          <figure
-            className="rounded-xl overflow-hidden border border-border cursor-pointer"
-            onClick={() => setLightbox({ src: beforeAfterImages[abIndex].src, alt: beforeAfterImages[abIndex].alt })}
-          >
-            <img
-              src={beforeAfterImages[abIndex].src}
-              alt={beforeAfterImages[abIndex].alt}
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
-            <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{beforeAfterImages[abIndex].caption}</figcaption>
-          </figure>
-          <button
-            onClick={() => setAbIndex((prev) => (prev - 1 + beforeAfterImages.length) % beforeAfterImages.length)}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
-            aria-label="Previous image"
-          >
-            <ChevronLeft className="h-5 w-5 text-foreground" />
-          </button>
-          <button
-            onClick={() => setAbIndex((prev) => (prev + 1) % beforeAfterImages.length)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
-            aria-label="Next image"
-          >
-            <ChevronRight className="h-5 w-5 text-foreground" />
-          </button>
-          <div className="flex justify-center gap-1.5 mt-3">
-            {beforeAfterImages.map((_, i) => (
-              <span key={i} className={`w-2 h-2 rounded-full transition-colors ${i === abIndex ? 'bg-primary' : 'bg-muted-foreground/30'}`} />
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div className="grid grid-cols-3 gap-4 my-8">
-          {beforeAfterImages.map((img, i) => (
-            <figure key={i} className="rounded-xl overflow-hidden border border-border cursor-pointer group" onClick={() => setLightbox({ src: img.src, alt: img.alt })}>
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-auto object-cover transition-transform group-hover:scale-105"
-                loading="lazy"
-              />
-              <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{img.caption}</figcaption>
-            </figure>
-          ))}
-        </div>
-      )}
+      {/* Before/After Images */}
+      <ImageCarousel images={beforeAfterImages} mobileMaxH="200px" desktopCols={3} />
 
       {/* What problems */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What Problems Can Cosmetic Fillings Fix?</h2>
