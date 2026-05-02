@@ -198,10 +198,6 @@ const Home = () => {
               ))}
             </ul>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href={telLink}><Button variant="cta" size="lg" className="gap-2 rounded-md"><Phone className="h-5 w-5" />Call {CLINIC.phone}</Button></a>
-              <a href={waLink()} target="_blank" rel="noopener noreferrer"><Button variant="outline" size="lg" className="gap-2 rounded-md"><MessageCircle className="h-5 w-5" />WhatsApp</Button></a>
-            </div>
           </div>
         </div>
       </section>
