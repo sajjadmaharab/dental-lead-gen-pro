@@ -79,6 +79,7 @@ const ARTICLE_MAP: Record<string, React.ComponentType> = {
   "cosmetic-filling": CosmeticFillingArticle,
   "dental-implants": DentalImplantsArticle,
   "tooth-gap-treatment": ToothGapArticle,
+  "scaling-polishing-whitening": ScalingWhiteningArticle,
 };
 
 const ServiceDetail = () => {
