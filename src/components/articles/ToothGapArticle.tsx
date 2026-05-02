@@ -1,5 +1,17 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import ImageCarousel from "@/components/ImageCarousel";
+
+import heroImg from "@/assets/tooth-gap-hero.jpg";
+import ab1 from "@/assets/tooth-gap-ab-1.png";
+import ab2 from "@/assets/tooth-gap-ab-2.png";
+import ab3 from "@/assets/tooth-gap-ab-3.png";
+import ab4 from "@/assets/tooth-gap-ab-4.png";
+import ab5 from "@/assets/tooth-gap-ab-5.webp";
+import bondingImg from "@/assets/tooth-gap-bonding.jpg";
+import veneersImg from "@/assets/tooth-gap-veneers.jpg";
+import alignersImg from "@/assets/tooth-gap-aligners.jpg";
+import bracesImg from "@/assets/tooth-gap-braces.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -7,13 +19,28 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
+const beforeAfterImages = [
+  { src: ab1, alt: "Tooth gap before and after treatment at Motiur's Dental Debidwar case 1", caption: "Case 1" },
+  { src: ab2, alt: "Diastema closure before and after dental bonding Comilla case 2", caption: "Case 2" },
+  { src: ab3, alt: "Gap between teeth fixed with cosmetic treatment Debidwar case 3", caption: "Case 3" },
+  { src: ab4, alt: "Front teeth gap treatment before and after Motiur's Dental case 4", caption: "Case 4" },
+  { src: ab5, alt: "Tooth gap closed with porcelain veneers before after Comilla case 5", caption: "Case 5" },
+];
+
 const ToothGapArticle = () => {
   return (
     <article className="max-w-none">
 
-      {/* placeholder hero — will be replaced with uploaded image */}
-      <div className="w-full overflow-hidden mb-6 max-h-[280px] md:max-h-[340px] bg-muted flex items-center justify-center">
-        <span className="text-muted-foreground text-sm">Hero image coming soon</span>
+      {/* Hero image */}
+      <div className="w-full overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
+        <img
+          src={heroImg}
+          alt="Tooth gap treatment before and after illustration showing gap closure between front teeth at Motiur's Dental Debidwar Comilla"
+          className="w-full h-full object-cover"
+          loading="eager"
+          width={800}
+          height={340}
+        />
       </div>
 
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
@@ -27,6 +54,11 @@ const ToothGapArticle = () => {
       <p className="mt-3 text-lg leading-relaxed text-foreground/90">
         And if you are worried about cost, here is something worth knowing upfront: our prices for tooth gap treatment are among the lowest in the Debidwar and Comilla area, with no compromise on quality.
       </p>
+
+      {/* Before & After gallery */}
+      <div className="my-8">
+        <ImageCarousel images={beforeAfterImages} mobileMaxH="240px" desktopCols={3} />
+      </div>
 
       <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
         <div className="flex items-center gap-2 text-primary font-semibold">
@@ -133,6 +165,19 @@ const ToothGapArticle = () => {
         <p className="text-foreground/85"><strong>Approximate cost in Bangladesh:</strong> BDT 3,000 to BDT 15,000 per tooth. At Motiur's Dental, our bonding prices are at the lower end of this range.</p>
       </div>
 
+      {/* Bonding image */}
+      <figure className="my-6">
+        <img
+          src={bondingImg}
+          alt="Dental bonding before and after for tooth gap closure showing natural-looking results Debidwar Comilla"
+          className="w-full object-cover"
+          loading="lazy"
+          width={800}
+          height={400}
+        />
+        <figcaption className="text-xs text-muted-foreground mt-2 text-center">Dental bonding: before and after gap closure</figcaption>
+      </figure>
+
       {/* 2. Veneers */}
       <h3 className="text-xl md:text-2xl font-display font-bold mt-10 text-foreground">2. Porcelain Veneers for Wider Gaps</h3>
       <p className="mt-3 text-foreground/85 leading-relaxed">
@@ -151,6 +196,19 @@ const ToothGapArticle = () => {
         <p className="text-foreground/85"><strong>Approximate cost in Bangladesh:</strong> BDT 6,000 to BDT 20,000 per tooth. At Motiur's Dental, we offer competitive veneer pricing that is significantly lower than clinics in Comilla city or Dhaka.</p>
       </div>
 
+      {/* Veneers image */}
+      <figure className="my-6">
+        <img
+          src={veneersImg}
+          alt="Porcelain veneers before and after results for closing tooth gaps at dental clinic Debidwar Comilla"
+          className="w-full object-cover"
+          loading="lazy"
+          width={800}
+          height={400}
+        />
+        <figcaption className="text-xs text-muted-foreground mt-2 text-center">Porcelain veneers: before and after gap treatment</figcaption>
+      </figure>
+
       {/* 3. Clear Aligners */}
       <h3 className="text-xl md:text-2xl font-display font-bold mt-10 text-foreground">3. Clear Aligners for Minor Gap Closure</h3>
       <p className="mt-3 text-foreground/85 leading-relaxed">
@@ -166,6 +224,21 @@ const ToothGapArticle = () => {
         <p className="text-foreground/85"><strong>Approximate cost in Bangladesh:</strong> BDT 100,000 to BDT 200,000 for the full treatment course.</p>
       </div>
 
+      {/* Aligners image - smaller */}
+      <figure className="my-6 flex justify-center">
+        <div className="max-w-xs md:max-w-sm">
+          <img
+            src={alignersImg}
+            alt="Clear aligners for closing minor tooth gaps without braces affordable treatment Debidwar Comilla"
+            className="w-full object-cover"
+            loading="lazy"
+            width={400}
+            height={300}
+          />
+          <figcaption className="text-xs text-muted-foreground mt-2 text-center">Clear aligners for minor gap closure</figcaption>
+        </div>
+      </figure>
+
       {/* 4. Traditional Braces */}
       <h3 className="text-xl md:text-2xl font-display font-bold mt-10 text-foreground">4. Traditional Braces for Complex Cases</h3>
       <p className="mt-3 text-foreground/85 leading-relaxed">
@@ -178,6 +251,19 @@ const ToothGapArticle = () => {
         <p className="text-foreground/85"><strong>Best for:</strong> Large gaps, multiple gaps, cases involving significant misalignment alongside spacing.</p>
         <p className="text-foreground/85"><strong>Approximate cost in Bangladesh:</strong> BDT 20,000 to BDT 80,000 depending on the type of braces and complexity of treatment.</p>
       </div>
+
+      {/* Braces image */}
+      <figure className="my-6">
+        <img
+          src={bracesImg}
+          alt="Traditional braces for complex tooth gap and misalignment treatment orthodontic care Debidwar Comilla"
+          className="w-full object-cover"
+          loading="lazy"
+          width={800}
+          height={400}
+        />
+        <figcaption className="text-xs text-muted-foreground mt-2 text-center">Traditional braces for complex gap and alignment cases</figcaption>
+      </figure>
 
       {/* 5. Cosmetic Contouring */}
       <h3 className="text-xl md:text-2xl font-display font-bold mt-10 text-foreground">5. Cosmetic Contouring for Very Minor Gaps</h3>
