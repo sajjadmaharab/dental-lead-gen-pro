@@ -93,7 +93,7 @@ const DentalImplantsArticle = () => {
       </p>
 
       {/* Implants vs Dentures image */}
-      <figure className="my-8 overflow-hidden border border-border cursor-pointer" onClick={() => setLightbox({ src: implantsVsDentures, alt: "Dental implants vs dentures comparison Motiur's Dental Debidwar Comilla" })}>
+      <figure className="my-8 overflow-hidden border border-border">
         <img
           src={implantsVsDentures}
           alt="Dental implants vs dentures comparison: why implants are better long-term solution at Motiur's Dental Debidwar Comilla"
@@ -164,7 +164,7 @@ const DentalImplantsArticle = () => {
 
       {/* Implant post image */}
       <div className="flex flex-col md:flex-row gap-6 my-8 items-start">
-        <figure className="w-full md:w-1/2 overflow-hidden border border-border cursor-pointer" onClick={() => setLightbox({ src: implantPost, alt: "Dental implant titanium post and cylinder used at Motiur's Dental Debidwar" })}>
+        <figure className="w-full md:w-1/2 overflow-hidden border border-border">
           <img
             src={implantPost}
             alt="Dental implant titanium post and cylinder used at Motiur's Dental clinic Debidwar Comilla Bangladesh"
