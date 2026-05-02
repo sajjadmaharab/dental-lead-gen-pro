@@ -72,55 +72,7 @@ const DentalImplantsArticle = () => {
       </p>
 
       {/* X-ray images gallery */}
-      {isMobile ? (
-        <div className="relative my-8">
-          <figure
-            className="overflow-hidden border border-border cursor-pointer"
-            onClick={() => setLightbox({ src: xrayImages[xrayIndex].src, alt: xrayImages[xrayIndex].alt })}
-          >
-            <img
-              src={xrayImages[xrayIndex].src}
-              alt={xrayImages[xrayIndex].alt}
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
-            <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{xrayImages[xrayIndex].caption}</figcaption>
-          </figure>
-          <button
-            onClick={() => setXrayIndex((prev) => (prev - 1 + xrayImages.length) % xrayImages.length)}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
-            aria-label="Previous X-ray image"
-          >
-            <ChevronLeft className="h-5 w-5 text-foreground" />
-          </button>
-          <button
-            onClick={() => setXrayIndex((prev) => (prev + 1) % xrayImages.length)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
-            aria-label="Next X-ray image"
-          >
-            <ChevronRight className="h-5 w-5 text-foreground" />
-          </button>
-          <div className="flex justify-center gap-1.5 mt-3">
-            {xrayImages.map((_, i) => (
-              <span key={i} className={`w-2 h-2 rounded-full transition-colors ${i === xrayIndex ? 'bg-primary' : 'bg-muted-foreground/30'}`} />
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-          {xrayImages.map((img, i) => (
-            <figure key={i} className="overflow-hidden border border-border cursor-pointer group" onClick={() => setLightbox({ src: img.src, alt: img.alt })}>
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-auto object-cover transition-transform group-hover:scale-105"
-                loading="lazy"
-              />
-              <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{img.caption}</figcaption>
-            </figure>
-          ))}
-        </div>
-      )}
+      <ImageCarousel images={xrayImages} mobileMaxH="180px" desktopCols={4} />
 
       {/* Why implants */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Why Dental Implants and Not Dentures or Bridges?</h2>
