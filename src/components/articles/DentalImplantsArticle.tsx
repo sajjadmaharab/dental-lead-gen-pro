@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { Phone, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
-import { useIsMobile } from "@/hooks/use-mobile";
+import ImageCarousel from "@/components/ImageCarousel";
 import heroImg from "@/assets/implant-hero.jpg";
 import processImg from "@/assets/implant-process.jpg";
 import xray1 from "@/assets/implant-xray-1.jpg";
