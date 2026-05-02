@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, MapPin, Phone, Clock, ChevronUp } from "lucide-react";
 import logo from "@/assets/logo.png";
+import brandText from "@/assets/motiurs-dental-text.png";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,8 +53,9 @@ export const Footer = () => {
     <footer className="relative mt-0 bg-[#0b3550] text-white/85">
       <div className="container-page py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
-          <div className="mb-4">
-            <img src={logo} alt="Motiur's Dental logo" className="h-14 w-auto object-contain" width={56} height={56} />
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt="Motiur's Dental logo" className="h-14 w-14 object-contain" width={56} height={56} />
+            <img src={brandText} alt="Motiur's Dental" className="h-8 w-auto object-contain" />
           </div>
           <a href={CLINIC.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-2 px-3 py-1.5 bg-[#1877F2] rounded-md text-sm text-white hover:opacity-90">
             <Facebook className="h-4 w-4" /> Facebook
