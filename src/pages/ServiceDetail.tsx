@@ -17,6 +17,10 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
     title: "Dental Implants in Debidwar Comilla | Affordable Implant Treatment | Motiur's Dental",
     description: "Looking for affordable dental implants in Debidwar, Comilla? Motiur's Dental offers permanent, natural-looking implant treatment at the lowest cost in the area. Call 01816010194 to book your consultation today.",
   },
+  "tooth-gap-treatment": {
+    title: "Tooth Gap Treatment in Debidwar Comilla | Fix Gaps Between Teeth | Motiur's Dental",
+    description: "Looking for affordable tooth gap treatment in Debidwar, Comilla? Motiur's Dental offers dental bonding, veneers, and clear aligners to close gaps between teeth at the lowest cost in Comilla district. Call 01816010194.",
+  },
 };
 
 const CUSTOM_SCHEMA: Record<string, object> = {
