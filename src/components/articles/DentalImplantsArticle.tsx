@@ -1,5 +1,15 @@
-import { Phone, MapPin } from "lucide-react";
+import { useState } from "react";
+import { Phone, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import { useIsMobile } from "@/hooks/use-mobile";
+import heroImg from "@/assets/implant-hero.jpg";
+import processImg from "@/assets/implant-process.jpg";
+import xray1 from "@/assets/implant-xray-1.jpg";
+import xray2 from "@/assets/implant-xray-2.jpg";
+import xray3 from "@/assets/implant-xray-3.jpg";
+import xray4 from "@/assets/implant-xray-4.jpg";
+import implantsVsDentures from "@/assets/implants-vs-dentures.jpg";
+import implantPost from "@/assets/implant-post-cylinder.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -7,10 +17,42 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
+const Lightbox = ({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) => (
+  <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onClick={onClose}>
+    <button onClick={onClose} className="absolute top-4 right-4 text-white/80 hover:text-white z-50">
+      <X className="h-8 w-8" />
+    </button>
+    <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain" />
+  </div>
+);
+
+const xrayImages = [
+  { src: xray1, alt: "Dental implant X-ray showing titanium post fused with jawbone at Motiur's Dental Debidwar Comilla", caption: "Implant post integrated with jawbone" },
+  { src: xray2, alt: "Dental implant placement X-ray at Motiur's Dental clinic Debidwar Comilla Bangladesh", caption: "Implant placement in jawbone" },
+  { src: xray3, alt: "X-ray of dental implant surgery procedure at Motiur's Dental Debidwar", caption: "Implant surgical procedure X-ray" },
+  { src: xray4, alt: "Successful dental implant osseointegration X-ray Motiur's Dental Comilla", caption: "Implant after osseointegration" },
+];
+
 const DentalImplantsArticle = () => {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const [xrayIndex, setXrayIndex] = useState(0);
+  const isMobile = useIsMobile();
+
   return (
     <article className="max-w-none">
-      {/* Hero placeholder - images will be added later */}
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
+
+      {/* Hero Image */}
+      <div className="w-full overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
+        <img
+          src={heroImg}
+          alt="Dental implant procedure at Motiur's Dental clinic in Debidwar Comilla Bangladesh"
+          className="w-full h-full object-cover"
+          loading="eager"
+          width={1200}
+          height={340}
+        />
+      </div>
 
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Dental Implants in Debidwar, Comilla
@@ -44,6 +86,57 @@ const DentalImplantsArticle = () => {
         Once that healing is complete, a custom-made dental crown is attached on top. The crown is designed to match the color, shape, and size of your surrounding teeth so it looks completely natural. Most people cannot tell the difference between an implant and a real tooth, and that is exactly the point.
       </p>
 
+      {/* X-ray images gallery */}
+      {isMobile ? (
+        <div className="relative my-8">
+          <figure
+            className="overflow-hidden border border-border cursor-pointer"
+            onClick={() => setLightbox({ src: xrayImages[xrayIndex].src, alt: xrayImages[xrayIndex].alt })}
+          >
+            <img
+              src={xrayImages[xrayIndex].src}
+              alt={xrayImages[xrayIndex].alt}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{xrayImages[xrayIndex].caption}</figcaption>
+          </figure>
+          <button
+            onClick={() => setXrayIndex((prev) => (prev - 1 + xrayImages.length) % xrayImages.length)}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
+            aria-label="Previous X-ray image"
+          >
+            <ChevronLeft className="h-5 w-5 text-foreground" />
+          </button>
+          <button
+            onClick={() => setXrayIndex((prev) => (prev + 1) % xrayImages.length)}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border rounded-full p-1.5 shadow-md"
+            aria-label="Next X-ray image"
+          >
+            <ChevronRight className="h-5 w-5 text-foreground" />
+          </button>
+          <div className="flex justify-center gap-1.5 mt-3">
+            {xrayImages.map((_, i) => (
+              <span key={i} className={`w-2 h-2 rounded-full transition-colors ${i === xrayIndex ? 'bg-primary' : 'bg-muted-foreground/30'}`} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
+          {xrayImages.map((img, i) => (
+            <figure key={i} className="overflow-hidden border border-border cursor-pointer group" onClick={() => setLightbox({ src: img.src, alt: img.alt })}>
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-auto object-cover transition-transform group-hover:scale-105"
+                loading="lazy"
+              />
+              <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">{img.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+
       {/* Why implants */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Why Dental Implants and Not Dentures or Bridges?</h2>
       <p className="mt-3 text-foreground/85 leading-relaxed">
@@ -61,6 +154,17 @@ const DentalImplantsArticle = () => {
       <p className="mt-3 text-foreground/85 leading-relaxed">
         For most patients who are eligible, a dental implant is simply the better long-term decision.
       </p>
+
+      {/* Implants vs Dentures image */}
+      <figure className="my-8 overflow-hidden border border-border cursor-pointer" onClick={() => setLightbox({ src: implantsVsDentures, alt: "Dental implants vs dentures comparison Motiur's Dental Debidwar Comilla" })}>
+        <img
+          src={implantsVsDentures}
+          alt="Dental implants vs dentures comparison: why implants are better long-term solution at Motiur's Dental Debidwar Comilla"
+          className="w-full h-auto object-cover"
+          loading="lazy"
+        />
+        <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Dental implants vs traditional dentures</figcaption>
+      </figure>
 
       {/* Candidates */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Who is a Good Candidate for Dental Implants?</h2>
@@ -107,24 +211,48 @@ const DentalImplantsArticle = () => {
         Using world-class implant brands means your implant has the best possible chance of lasting a lifetime with proper care.
       </p>
 
+      {/* Implant post image */}
+      <div className="flex flex-col md:flex-row gap-6 my-8 items-start">
+        <figure className="w-full md:w-1/2 overflow-hidden border border-border cursor-pointer" onClick={() => setLightbox({ src: implantPost, alt: "Dental implant titanium post and cylinder used at Motiur's Dental Debidwar" })}>
+          <img
+            src={implantPost}
+            alt="Dental implant titanium post and cylinder used at Motiur's Dental clinic Debidwar Comilla Bangladesh"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Titanium implant post used at our clinic</figcaption>
+        </figure>
+      </div>
+
       {/* Procedure Steps */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">The Dental Implant Procedure: Step by Step</h2>
       <p className="mt-3 text-foreground/85 leading-relaxed">We want our patients to know exactly what to expect. Here is how the process works from start to finish.</p>
 
-      <div className="grid gap-4 my-6">
-        {[
-          { title: "Step 1: Consultation and Assessment", desc: "You come in, we examine your teeth, gums, and jawbone. We may take X-rays or other imaging to understand your bone structure clearly. We talk through your situation, answer your questions, and give you a transparent cost estimate with no hidden fees." },
-          { title: "Step 2: Treatment Planning", desc: "Using the information from your assessment, we create a precise treatment plan. This includes the number of implants needed, whether a bone graft is required, and the timeline for the full procedure." },
-          { title: "Step 3: Implant Placement", desc: "Under local anesthesia, we carefully place the titanium implant post into your jawbone. The procedure is much more comfortable than most people expect. You will feel pressure but not pain. The appointment typically takes one to two hours depending on how many implants are being placed." },
-          { title: "Step 4: Healing Period", desc: "Over the next two to six months, your jawbone naturally grows around and bonds with the implant. During this time, we provide a temporary solution so you are not walking around with a visible gap." },
-          { title: "Step 5: Abutment Placement", desc: "Once the implant has fully fused with the bone, we attach a small connector piece called an abutment. This is what the final crown will sit on." },
-          { title: "Step 6: Crown Fitting", desc: "Your custom crown is placed onto the abutment. We make sure the fit, color, and bite are perfect before you leave. At this point, the process is complete and your new tooth is fully functional." },
-        ].map((item) => (
-          <div key={item.title} className="bg-card border border-border rounded-xl p-5">
-            <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
-            <p className="text-muted-foreground mt-1 text-sm">{item.desc}</p>
-          </div>
-        ))}
+      <div className="flex flex-col md:flex-row gap-6 my-6">
+        <div className="grid gap-4 flex-1">
+          {[
+            { title: "Step 1: Consultation and Assessment", desc: "You come in, we examine your teeth, gums, and jawbone. We may take X-rays or other imaging to understand your bone structure clearly. We talk through your situation, answer your questions, and give you a transparent cost estimate with no hidden fees." },
+            { title: "Step 2: Treatment Planning", desc: "Using the information from your assessment, we create a precise treatment plan. This includes the number of implants needed, whether a bone graft is required, and the timeline for the full procedure." },
+            { title: "Step 3: Implant Placement", desc: "Under local anesthesia, we carefully place the titanium implant post into your jawbone. The procedure is much more comfortable than most people expect. You will feel pressure but not pain. The appointment typically takes one to two hours depending on how many implants are being placed." },
+            { title: "Step 4: Healing Period", desc: "Over the next two to six months, your jawbone naturally grows around and bonds with the implant. During this time, we provide a temporary solution so you are not walking around with a visible gap." },
+            { title: "Step 5: Abutment Placement", desc: "Once the implant has fully fused with the bone, we attach a small connector piece called an abutment. This is what the final crown will sit on." },
+            { title: "Step 6: Crown Fitting", desc: "Your custom crown is placed onto the abutment. We make sure the fit, color, and bite are perfect before you leave. At this point, the process is complete and your new tooth is fully functional." },
+          ].map((item) => (
+            <div key={item.title} className="bg-card border border-border rounded-xl p-5">
+              <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
+              <p className="text-muted-foreground mt-1 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <figure className="w-full max-w-[200px] md:max-w-[240px] lg:max-w-[280px] shrink-0 overflow-hidden border border-border self-start mx-auto md:mx-0">
+          <img
+            src={processImg}
+            alt="Tooth implant process steps diagram showing implant placement procedure at Motiur's Dental Debidwar Comilla"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <figcaption className="text-xs text-muted-foreground text-center py-2 px-2">Step-by-step tooth implant process</figcaption>
+        </figure>
       </div>
 
       {/* Benefits */}
