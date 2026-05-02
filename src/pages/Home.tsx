@@ -96,8 +96,8 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Mr Motiur Trusted Dentist in Comilla Debidwar"
-        description="Experienced dentist Mr Motiur offers trusted and comfortable dental care in Comilla Debidwar for over 25 years"
+        title="Mr Motiur - Expert in preventive Dentistry"
+        description="Mr Motiur is an expert in preventive dentistry, offering trusted and comfortable dental care in Comilla Debidwar for over 25 years"
         path="/"
         schema={localBusinessSchema}
       />
@@ -169,13 +169,13 @@ const Home = () => {
         <div className="container-page grid lg:grid-cols-2 gap-10 items-center">
           <div className="flex justify-center">
             <div className="rounded-2xl overflow-hidden max-w-md w-full shadow-card">
-              <img src={drMotiurAbout} alt="Mr Motiur - Trusted Dental Expert" className="w-full h-full object-cover" />
+              <img src={drMotiurAbout} alt="Mr Motiur - Expert in preventive Dentistry" className="w-full h-full object-cover" />
             </div>
           </div>
 
           <div>
             <h1 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '23px', fontWeight: 700 }} className="text-primary leading-tight">
-              Mr Motiur - Trusted Dental Expert in Comilla Debidwar
+              Mr Motiur - Expert in preventive Dentistry
             </h1>
 
             <p className="mt-3 text-foreground/75 text-sm leading-relaxed">
