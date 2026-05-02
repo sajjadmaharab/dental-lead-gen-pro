@@ -169,7 +169,7 @@ const Home = () => {
         <div className="container-page grid lg:grid-cols-2 gap-10 items-center">
           <div className="flex justify-center">
             <div className="rounded-2xl overflow-hidden max-w-md w-full shadow-card">
-              <img src={drMotiurAbout} alt="Dr Motiur - Trusted Dental Expert" className="w-full h-full object-cover" />
+              <img src={drMotiurAbout} alt="Mr Motiur - Trusted Dental Expert" className="w-full h-full object-cover" />
             </div>
           </div>
 
