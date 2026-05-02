@@ -175,7 +175,7 @@ const Home = () => {
 
           <div>
             <h1 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '23px', fontWeight: 700 }} className="text-primary leading-tight">
-              Mr Motiur - Trusted Dental Expert in Comilla Debidwar
+              Mr Motiur - Expert in preventive Dentistry
             </h1>
 
             <p className="mt-3 text-foreground/75 text-sm leading-relaxed">
