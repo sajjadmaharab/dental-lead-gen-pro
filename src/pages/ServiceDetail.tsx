@@ -12,6 +12,8 @@ import RootCanalArticle from "@/components/articles/RootCanalArticle";
 import WisdomTeethArticle from "@/components/articles/WisdomTeethArticle";
 import MinorOralSurgeryArticle from "@/components/articles/MinorOralSurgeryArticle";
 import BracesArticle from "@/components/articles/BracesArticle";
+import FracturedTeethArticle from "@/components/articles/FracturedTeethArticle";
+import DentalBridgeCapArticle from "@/components/articles/DentalBridgeCapArticle";
 
 const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "cosmetic-filling": {
@@ -45,6 +47,14 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "braces-orthodontic": {
     title: "Braces Treatment in Debidwar Comilla | Orthodontic Braces | Motiur's Dental",
     description: "Looking for affordable braces treatment in Debidwar, Comilla? Motiur's Dental offers metal braces, ceramic braces, lingual braces, and clear aligners at the lowest prices in Comilla district. Call 01816010194 today.",
+  },
+  "fractured-teeth-treatment": {
+    title: "Chipped Tooth and Fractured Teeth Treatment in Debidwar Comilla | Motiur's Dental",
+    description: "Chipped, cracked, or fractured tooth in Debidwar, Comilla? Motiur's Dental offers emergency dental treatment including bonding, crowns, root canal, and tooth reimplantation at the most affordable prices in Comilla district. Call 01816010194.",
+  },
+  "dental-bridges-caps": {
+    title: "Dental Bridge and Cap in Debidwar Comilla | Crown and Bridge Treatment | Motiur's Dental",
+    description: "Looking for affordable dental cap or dental bridge in Debidwar, Comilla? Motiur's Dental offers zirconia, porcelain, and metal crowns and all bridge types at the lowest prices in Comilla district. Call 01816010194.",
   },
 };
 
@@ -140,6 +150,30 @@ const CUSTOM_SCHEMA: Record<string, object> = {
       { "@type": "Question", name: "What is the difference between braces and clear aligners?", acceptedAnswer: { "@type": "Answer", text: "Both achieve the same result. Fixed braces apply continuous force through brackets and wires. Clear aligners are removable trays changed regularly. Braces are more suitable for complex cases while aligners are more discreet." } },
     ],
   },
+  "fractured-teeth-treatment": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Can I fix a chipped tooth at home?", acceptedAnswer: { "@type": "Answer", text: "No. Home remedies including superglue or DIY kits do not restore the structural integrity of a damaged tooth. They can trap bacteria and cause further damage. See a dentist as soon as possible." } },
+      { "@type": "Question", name: "Is a chipped tooth always painful?", acceptedAnswer: { "@type": "Answer", text: "Not necessarily. A small chip affecting only the enamel may cause no pain at all. However, the damage can still worsen over time. Always have a chipped tooth evaluated by a dentist." } },
+      { "@type": "Question", name: "What happens if I leave a cracked tooth untreated?", acceptedAnswer: { "@type": "Answer", text: "The crack can deepen and extend toward the root. Bacteria enter and infect the pulp, causing pain, abscess, and eventually tooth loss." } },
+      { "@type": "Question", name: "Can a completely knocked-out tooth be saved?", acceptedAnswer: { "@type": "Answer", text: "Yes, in many cases, if the tooth is handled correctly and the patient reaches a dentist within 30 to 60 minutes. Do not touch the root, keep it moist in milk or saliva, and get to Motiur's Dental immediately." } },
+      { "@type": "Question", name: "How much does it cost to fix a broken tooth in Comilla?", acceptedAnswer: { "@type": "Answer", text: "Costs vary depending on the treatment needed. At Motiur's Dental, our prices are among the most affordable in the Comilla district. Call 01816010194 for a personalized consultation and cost estimate." } },
+      { "@type": "Question", name: "What is cracked tooth syndrome?", acceptedAnswer: { "@type": "Answer", text: "Cracked tooth syndrome refers to a tooth with a crack that causes pain during chewing but may not be visible on an X-ray. A dental crown is usually the recommended treatment." } },
+    ],
+  },
+  "dental-bridges-caps": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What is the difference between a dental cap and a dental crown?", acceptedAnswer: { "@type": "Answer", text: "There is no difference at all. Dental cap and dental crown are two names for exactly the same restoration." } },
+      { "@type": "Question", name: "How long does a dental cap last?", acceptedAnswer: { "@type": "Answer", text: "Metal crowns can last 20 years or more. Zirconia crowns typically last 15 years or longer. Porcelain crowns generally last 10 to 15 years." } },
+      { "@type": "Question", name: "How long does a dental bridge last?", acceptedAnswer: { "@type": "Answer", text: "With proper care, most dental bridges last between 10 and 15 years. Some last considerably longer." } },
+      { "@type": "Question", name: "Is a dental bridge better than a dental implant?", acceptedAnswer: { "@type": "Answer", text: "Both are effective. A bridge is faster and has a lower upfront cost. An implant is more comprehensive, preserves the jawbone, and does not require altering neighboring teeth. The right choice depends on your situation." } },
+      { "@type": "Question", name: "What is the cost of a dental crown in Comilla?", acceptedAnswer: { "@type": "Answer", text: "Costs vary by material and complexity. At Motiur's Dental in Debidwar, we offer some of the most affordable crown and bridge pricing in the Comilla district. Call 01816010194 for a personalized estimate." } },
+      { "@type": "Question", name: "Can I get a dental bridge in Debidwar without going to Comilla city?", acceptedAnswer: { "@type": "Answer", text: "Yes, absolutely. Motiur's Dental in Debidwar offers full dental cap and bridge services including all crown materials, all bridge types, and implant-supported bridge options." } },
+    ],
+  },
 };
 
 const ARTICLE_MAP: Record<string, React.ComponentType> = {
@@ -151,6 +185,8 @@ const ARTICLE_MAP: Record<string, React.ComponentType> = {
   "wisdom-teeth-treatment": WisdomTeethArticle,
   "minor-oral-surgery": MinorOralSurgeryArticle,
   "braces-orthodontic": BracesArticle,
+  "fractured-teeth-treatment": FracturedTeethArticle,
+  "dental-bridges-caps": DentalBridgeCapArticle,
 };
 
 const ServiceDetail = () => {
