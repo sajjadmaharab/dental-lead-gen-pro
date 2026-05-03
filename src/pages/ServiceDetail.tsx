@@ -28,6 +28,14 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
     title: "Scaling Polishing and Teeth Whitening in Debidwar Comilla | Motiur's Dental",
     description: "Professional teeth scaling, polishing, and whitening in Debidwar, Comilla at the most affordable prices in the area. Motiur's Dental removes tartar, freshens breath, and brightens your smile. Call 01816010194.",
   },
+  "root-canal-treatment": {
+    title: "Root Canal Treatment in Debidwar Comilla | Affordable Endodontic Treatment | Motiur's Dental",
+    description: "Suffering from tooth pain or infection in Debidwar, Comilla? Motiur's Dental offers professional root canal treatment at the most affordable prices in Comilla district. Save your natural tooth. Call 01816010194.",
+  },
+  "wisdom-teeth-treatment": {
+    title: "Wisdom Teeth Treatment in Debidwar Comilla | Wisdom Tooth Removal | Motiur's Dental",
+    description: "Suffering from wisdom tooth pain or infection in Debidwar, Comilla? Motiur's Dental offers professional wisdom tooth removal and treatment at the most affordable prices in Comilla district. Call 01816010194 today.",
+  },
 };
 
 const CUSTOM_SCHEMA: Record<string, object> = {
