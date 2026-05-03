@@ -1,5 +1,17 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import ImageCarousel from "@/components/ImageCarousel";
+
+import scalingBA from "@/assets/scaling-before-after.jpg";
+import plaqueTartar from "@/assets/plaque-vs-tartar.webp";
+import scalingAb1 from "@/assets/scaling-ab-1.webp";
+import scalingAb2 from "@/assets/scaling-ab-2.webp";
+import scalingAb3 from "@/assets/scaling-ab-3.jpg";
+import scalingAb4 from "@/assets/scaling-ab-4.webp";
+import scalingAb5 from "@/assets/scaling-ab-5.jpg";
+import whiteningSmile from "@/assets/whitening-smile.jpg";
+import whiteningAb1 from "@/assets/whitening-ab-1.jpg";
+import whiteningAb2 from "@/assets/whitening-ab-2.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -7,14 +19,22 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
+const scalingBeforeAfterImages = [
+  { src: scalingAb1, alt: "Teeth scaling before and after treatment showing tartar removal at Motiur's Dental Debidwar", caption: "Case 1: Full mouth scaling" },
+  { src: scalingAb2, alt: "Professional dental cleaning before and after result at Motiur's Dental Comilla", caption: "Case 2: Lower teeth tartar removal" },
+  { src: scalingAb3, alt: "Teeth cleaning before and after showing stain and tartar removal Debidwar", caption: "Case 3: Stain and tartar removal" },
+  { src: scalingAb4, alt: "Scaling and polishing before and after result showing brighter teeth Comilla", caption: "Case 4: Heavy stain removal" },
+  { src: scalingAb5, alt: "Dental scaling result before and after treatment at Motiur's Dental Debidwar Comilla", caption: "Case 5: Scaling and polishing result" },
+];
+
+const whiteningBeforeAfterImages = [
+  { src: whiteningAb1, alt: "Teeth whitening before and after result showing brighter smile at Motiur's Dental Debidwar", caption: "Whitening Case 1" },
+  { src: whiteningAb2, alt: "Professional teeth whitening before and after treatment result Comilla", caption: "Whitening Case 2" },
+];
+
 const ScalingWhiteningArticle = () => {
   return (
     <article className="max-w-none">
-
-      {/* Placeholder hero – will be replaced with real image later */}
-      {/* <div className="w-full overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
-        <img src={heroImg} alt="..." className="w-full h-full object-cover" loading="eager" />
-      </div> */}
 
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Scaling, Polishing, and Teeth Whitening in Debidwar, Comilla
@@ -53,6 +73,15 @@ const ScalingWhiteningArticle = () => {
         Together, scaling and polishing are one of the most important preventive treatments in dentistry. Dentists worldwide recommend getting it done every six months.
       </p>
 
+      <img
+        src={scalingBA}
+        alt="Dental scaling before and after showing tartar removal from teeth at Motiur's Dental Debidwar Comilla"
+        className="w-full my-6"
+        loading="lazy"
+        width={800}
+        height={400}
+      />
+
       {/* Tartar */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What is Tartar and Why is it a Problem?</h2>
       <p className="mt-3 text-foreground/85 leading-relaxed">
@@ -64,6 +93,15 @@ const ScalingWhiteningArticle = () => {
       <p className="mt-3 text-foreground/85 leading-relaxed">
         This is why professional scaling is not just a cosmetic treatment. It is a genuine health intervention that prevents gum disease and protects the long-term stability of your teeth.
       </p>
+
+      <img
+        src={plaqueTartar}
+        alt="Plaque vs tartar comparison diagram showing how dental plaque hardens into calculus causing gum disease"
+        className="w-full my-6"
+        loading="lazy"
+        width={800}
+        height={450}
+      />
 
       {/* Signs */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Signs That You Need Scaling and Polishing</h2>
@@ -87,6 +125,10 @@ const ScalingWhiteningArticle = () => {
         <li>We finish with a thorough rinse and a check of your bite and gum condition.</li>
       </ol>
       <p className="mt-3 text-foreground/85">The entire appointment typically takes between 30 and 60 minutes depending on how much tartar is present.</p>
+
+      <div className="my-8">
+        <ImageCarousel images={scalingBeforeAfterImages} />
+      </div>
 
       {/* Benefits */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Benefits of Professional Scaling and Polishing</h2>
@@ -139,6 +181,15 @@ const ScalingWhiteningArticle = () => {
         Polishing during a regular cleaning can address surface stains. But for deeper discoloration that has penetrated the enamel, a dedicated whitening treatment is needed.
       </p>
 
+      <img
+        src={whiteningSmile}
+        alt="Woman smiling with bright white teeth after professional teeth whitening treatment"
+        className="w-full my-6"
+        loading="lazy"
+        width={800}
+        height={500}
+      />
+
       {/* Types of Whitening */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Types of Teeth Whitening Available at Motiur's Dental</h2>
       <div className="grid gap-4 my-6">
@@ -153,6 +204,10 @@ const ScalingWhiteningArticle = () => {
         ))}
       </div>
       <p className="text-foreground/85">We discuss both options with every patient and recommend the one that fits your schedule, budget, and desired outcome.</p>
+
+      <div className="my-8">
+        <ImageCarousel images={whiteningBeforeAfterImages} />
+      </div>
 
       {/* Why Scale Before Whitening */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Why Get Scaling and Polishing Before Teeth Whitening?</h2>
