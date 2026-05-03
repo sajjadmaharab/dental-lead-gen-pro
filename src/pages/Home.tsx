@@ -151,7 +151,7 @@ const Home = () => {
           <div className="flex justify-center gap-0.5 mt-1.5 text-amber-400">
             {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
           </div>
-          <div className="text-sm text-primary/70 mt-1">Based on 281 reviews</div>
+          <div className="text-sm text-primary/70 mt-1">Based on 34 reviews</div>
           <div className="flex justify-center mt-1">
             <span className="text-base font-bold">
               <span className="text-[#4285F4]">G</span><span className="text-[#EA4335]">o</span><span className="text-[#FBBC05]">o</span><span className="text-[#4285F4]">g</span><span className="text-[#34A853]">l</span><span className="text-[#EA4335]">e</span>
