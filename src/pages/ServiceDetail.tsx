@@ -117,6 +117,29 @@ const CUSTOM_SCHEMA: Record<string, object> = {
       { "@type": "Question", name: "What is the cost of wisdom tooth removal in Comilla?", acceptedAnswer: { "@type": "Answer", text: "Costs depend on the complexity of the case. At Motiur's Dental, we offer the most affordable wisdom tooth removal prices in the Debidwar and Comilla area. Call 01816010194 for a personalized estimate." } },
     ],
   },
+  "minor-oral-surgery": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What is an example of a minor oral surgery?", acceptedAnswer: { "@type": "Answer", text: "Common examples include wisdom tooth extraction, removing damaged or infected teeth, taking a tissue sample for diagnosis (biopsy), draining an abscess, and correcting a restrictive frenulum (frenectomy)." } },
+      { "@type": "Question", name: "Is minor oral surgery painful?", acceptedAnswer: { "@type": "Answer", text: "Local anesthesia is typically used during minor oral surgery to minimize discomfort. You may experience some soreness after the procedure, but this can be managed with medication." } },
+      { "@type": "Question", name: "What are the most common oral surgeries?", acceptedAnswer: { "@type": "Answer", text: "Tooth extractions, including wisdom teeth, are among the most common minor oral surgeries. Other frequently performed procedures include biopsies, abscess drainage, and frenectomies." } },
+      { "@type": "Question", name: "Why is minor oral surgery sometimes followed by a recovery period?", acceptedAnswer: { "@type": "Answer", text: "Even though minor oral surgery is less complex than major procedures, it still involves manipulating tissues in the mouth. Following post-operative instructions promotes proper healing and minimizes the risk of complications." } },
+      { "@type": "Question", name: "What if I am anxious about minor oral surgery?", acceptedAnswer: { "@type": "Answer", text: "At Motiur's Dental, we offer various options for managing anxiety, including sedation dentistry, to ensure a relaxed and comfortable experience." } },
+    ],
+  },
+  "braces-orthodontic": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What is the best age to get braces?", acceptedAnswer: { "@type": "Answer", text: "Treatment is most commonly started between the ages of 10 and 14, but braces are effective for patients of all ages. Adults get braces successfully all the time." } },
+      { "@type": "Question", name: "Are braces painful?", acceptedAnswer: { "@type": "Answer", text: "After getting braces placed and after each adjustment, you may feel some pressure and soreness for two to four days. This is normal and manageable with over-the-counter pain medication." } },
+      { "@type": "Question", name: "How long do braces stay on?", acceptedAnswer: { "@type": "Answer", text: "Most patients wear braces for 12 to 36 months. The average is around 18 to 24 months depending on case complexity." } },
+      { "@type": "Question", name: "Can adults get braces?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. There is no age limit for braces. We treat many adult patients and offer discreet options like ceramic braces, lingual braces, and clear aligners." } },
+      { "@type": "Question", name: "What is the cost of braces in Comilla?", acceptedAnswer: { "@type": "Answer", text: "At Motiur's Dental in Debidwar, metal braces start from BDT 30,000 and ceramic braces start from BDT 60,000 for the full treatment course. Call 01816010194 for a personalized estimate." } },
+      { "@type": "Question", name: "What is the difference between braces and clear aligners?", acceptedAnswer: { "@type": "Answer", text: "Both achieve the same result. Fixed braces apply continuous force through brackets and wires. Clear aligners are removable trays changed regularly. Braces are more suitable for complex cases while aligners are more discreet." } },
+    ],
+  },
 };
 
 const ARTICLE_MAP: Record<string, React.ComponentType> = {
@@ -126,6 +149,8 @@ const ARTICLE_MAP: Record<string, React.ComponentType> = {
   "scaling-polishing-whitening": ScalingWhiteningArticle,
   "root-canal-treatment": RootCanalArticle,
   "wisdom-teeth-treatment": WisdomTeethArticle,
+  "minor-oral-surgery": MinorOralSurgeryArticle,
+  "braces-orthodontic": BracesArticle,
 };
 
 const ServiceDetail = () => {
