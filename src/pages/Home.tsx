@@ -274,7 +274,7 @@ const Home = () => {
         <div className="container-page grid md:grid-cols-2 gap-8 items-center">
           <div>
             <div className="text-xs font-bold tracking-[0.2em] text-primary/70">TREAT YOURSELF</div>
-            <h2 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-display font-black leading-[1.02] text-primary">LET US TAKE CARE OF YOU</h2>
+            <h2 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-display font-black leading-[1.02] text-sky-400">LET US TAKE CARE OF YOU</h2>
             <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-block mt-7">
               <Button size="lg" className="bg-primary hover:bg-primary-dark text-white rounded-md gap-2 h-12 px-7">
                 <Phone className="h-5 w-5" /> Book Your Appointment
