@@ -12,6 +12,8 @@ import RootCanalArticle from "@/components/articles/RootCanalArticle";
 import WisdomTeethArticle from "@/components/articles/WisdomTeethArticle";
 import MinorOralSurgeryArticle from "@/components/articles/MinorOralSurgeryArticle";
 import BracesArticle from "@/components/articles/BracesArticle";
+import FracturedTeethArticle from "@/components/articles/FracturedTeethArticle";
+import DentalBridgeCapArticle from "@/components/articles/DentalBridgeCapArticle";
 
 const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "cosmetic-filling": {
