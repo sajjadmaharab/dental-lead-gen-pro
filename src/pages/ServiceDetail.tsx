@@ -10,6 +10,8 @@ import ToothGapArticle from "@/components/articles/ToothGapArticle";
 import ScalingWhiteningArticle from "@/components/articles/ScalingWhiteningArticle";
 import RootCanalArticle from "@/components/articles/RootCanalArticle";
 import WisdomTeethArticle from "@/components/articles/WisdomTeethArticle";
+import MinorOralSurgeryArticle from "@/components/articles/MinorOralSurgeryArticle";
+import BracesArticle from "@/components/articles/BracesArticle";
 
 const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "cosmetic-filling": {
