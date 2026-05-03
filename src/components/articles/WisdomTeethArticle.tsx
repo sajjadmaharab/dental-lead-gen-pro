@@ -41,7 +41,7 @@ const WisdomTeethArticle = () => {
         Wisdom teeth are your third molars, the very last teeth to develop and erupt in the mouth. Most people have four of them, one in each corner of the mouth, though some people develop fewer and some develop none at all.
       </p>
       <p className="mt-3 text-foreground/85 leading-relaxed">
-        In Bangladesh, wisdom teeth are commonly known as <strong>আক্কেল দাঁত (akkel dant)</strong>. They typically begin to push through the gums between the ages of 17 and 25, though this varies from person to person.
+        In Bangladesh, wisdom teeth are commonly known as <strong>আক্কেল দাঁত (akkel daat)</strong>. They typically begin to push through the gums between the ages of 17 and 25, though this varies from person to person.
       </p>
       <p className="mt-3 text-foreground/85 leading-relaxed">
         The reason wisdom teeth cause so many problems is largely evolutionary. Human jaws have become smaller over thousands of years, but we still grow the same number of teeth our distant ancestors had. In many people, there is simply not enough space at the back of the jaw for wisdom teeth to come through properly. When that happens, the tooth becomes trapped, which leads to a range of complications.
