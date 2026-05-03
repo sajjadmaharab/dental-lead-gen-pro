@@ -48,6 +48,14 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
     title: "Braces Treatment in Debidwar Comilla | Orthodontic Braces | Motiur's Dental",
     description: "Looking for affordable braces treatment in Debidwar, Comilla? Motiur's Dental offers metal braces, ceramic braces, lingual braces, and clear aligners at the lowest prices in Comilla district. Call 01816010194 today.",
   },
+  "fractured-teeth-treatment": {
+    title: "Chipped Tooth and Fractured Teeth Treatment in Debidwar Comilla | Motiur's Dental",
+    description: "Chipped, cracked, or fractured tooth in Debidwar, Comilla? Motiur's Dental offers emergency dental treatment including bonding, crowns, root canal, and tooth reimplantation at the most affordable prices in Comilla district. Call 01816010194.",
+  },
+  "dental-bridges-caps": {
+    title: "Dental Bridge and Cap in Debidwar Comilla | Crown and Bridge Treatment | Motiur's Dental",
+    description: "Looking for affordable dental cap or dental bridge in Debidwar, Comilla? Motiur's Dental offers zirconia, porcelain, and metal crowns and all bridge types at the lowest prices in Comilla district. Call 01816010194.",
+  },
 };
 
 const CUSTOM_SCHEMA: Record<string, object> = {
