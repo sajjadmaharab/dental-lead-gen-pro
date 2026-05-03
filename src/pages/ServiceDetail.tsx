@@ -14,6 +14,8 @@ import MinorOralSurgeryArticle from "@/components/articles/MinorOralSurgeryArtic
 import BracesArticle from "@/components/articles/BracesArticle";
 import FracturedTeethArticle from "@/components/articles/FracturedTeethArticle";
 import DentalBridgeCapArticle from "@/components/articles/DentalBridgeCapArticle";
+import ToothExtractionArticle from "@/components/articles/ToothExtractionArticle";
+import TeethReplacementArticle from "@/components/articles/TeethReplacementArticle";
 
 const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "cosmetic-filling": {
@@ -55,6 +57,14 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "dental-bridges-caps": {
     title: "Dental Bridge and Cap in Debidwar Comilla | Crown and Bridge Treatment | Motiur's Dental",
     description: "Looking for affordable dental cap or dental bridge in Debidwar, Comilla? Motiur's Dental offers zirconia, porcelain, and metal crowns and all bridge types at the lowest prices in Comilla district. Call 01816010194.",
+  },
+  "tooth-extraction": {
+    title: "Tooth Extraction in Debidwar Comilla | Simple and Surgical Extraction | Motiur's Dental",
+    description: "Need a tooth extraction in Debidwar, Comilla? Motiur's Dental offers safe and affordable simple and surgical tooth extractions at the lowest prices in Comilla district. Call 01816010194 to book today.",
+  },
+  "teeth-replacement": {
+    title: "Teeth Replacement in Debidwar, Comilla | Motiur's Dental | Lowest Cost in Comilla",
+    description: "Affordable teeth replacement in Debidwar, Comilla. Motiur's Dental offers dental implants, bridges, and dentures at the lowest cost in Comilla. Call 01816010194 for a free consultation.",
   },
 };
 
@@ -174,6 +184,29 @@ const CUSTOM_SCHEMA: Record<string, object> = {
       { "@type": "Question", name: "Can I get a dental bridge in Debidwar without going to Comilla city?", acceptedAnswer: { "@type": "Answer", text: "Yes, absolutely. Motiur's Dental in Debidwar offers full dental cap and bridge services including all crown materials, all bridge types, and implant-supported bridge options." } },
     ],
   },
+  "tooth-extraction": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Is tooth extraction painful?", acceptedAnswer: { "@type": "Answer", text: "No. The procedure is performed under local anesthesia so you will not feel pain during the extraction. You will feel pressure and movement but not sharp pain." } },
+      { "@type": "Question", name: "How long does a tooth extraction take?", acceptedAnswer: { "@type": "Answer", text: "A simple extraction typically takes 10 to 30 minutes. A surgical extraction may take 30 to 60 minutes depending on complexity." } },
+      { "@type": "Question", name: "How long is recovery after tooth extraction?", acceptedAnswer: { "@type": "Answer", text: "Most patients feel significantly better within 48 to 72 hours. The gum tissue heals within one to two weeks." } },
+      { "@type": "Question", name: "Do I need to replace the extracted tooth?", acceptedAnswer: { "@type": "Answer", text: "In most cases, yes. Leaving a gap causes neighboring teeth to shift, bone loss in the jaw, and bite problems over time." } },
+      { "@type": "Question", name: "What is the difference between simple and surgical extraction?", acceptedAnswer: { "@type": "Answer", text: "A simple extraction is used for fully erupted teeth. A surgical extraction is required for impacted teeth, broken teeth below the gum line, or teeth with complex root structures." } },
+      { "@type": "Question", name: "What is the cost of tooth extraction in Comilla?", acceptedAnswer: { "@type": "Answer", text: "Costs depend on whether the extraction is simple or surgical. At Motiur's Dental, we offer the most affordable extraction pricing in the Debidwar and Comilla area. Call 01816010194 for a specific estimate." } },
+    ],
+  },
+  "teeth-replacement": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "How long does it take to heal after getting a replacement tooth?", acceptedAnswer: { "@type": "Answer", text: "Dental implants take three to six months to fully bond with the jawbone. Bridges and dentures do not involve surgery, so most patients feel comfortable within a few days." } },
+      { "@type": "Question", name: "How long will my replacement teeth last?", acceptedAnswer: { "@type": "Answer", text: "Dental implants can last a lifetime with proper care. Bridges typically last seven to fifteen years. Dentures generally need replacement after five to ten years." } },
+      { "@type": "Question", name: "Is the procedure going to be painful?", acceptedAnswer: { "@type": "Answer", text: "At Motiur's Dental, we use effective local anaesthesia so you feel as little discomfort as possible. Some mild soreness afterward is normal." } },
+      { "@type": "Question", name: "Why is it important to replace a missing tooth?", acceptedAnswer: { "@type": "Answer", text: "Leaving a gap causes surrounding teeth to shift, jawbone deterioration, bite problems, and can change the shape of your face over time." } },
+      { "@type": "Question", name: "How much does teeth replacement cost at Motiur's Dental?", acceptedAnswer: { "@type": "Answer", text: "Motiur's Dental offers the most affordable teeth replacement costs in the Comilla district. Call 01816010194 for a free consultation and honest quote." } },
+    ],
+  },
 };
 
 const ARTICLE_MAP: Record<string, React.ComponentType> = {
@@ -187,6 +220,8 @@ const ARTICLE_MAP: Record<string, React.ComponentType> = {
   "braces-orthodontic": BracesArticle,
   "fractured-teeth-treatment": FracturedTeethArticle,
   "dental-bridges-caps": DentalBridgeCapArticle,
+  "tooth-extraction": ToothExtractionArticle,
+  "teeth-replacement": TeethReplacementArticle,
 };
 
 const ServiceDetail = () => {
