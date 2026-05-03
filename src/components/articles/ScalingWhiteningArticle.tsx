@@ -2,6 +2,7 @@ import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
 import ImageCarousel from "@/components/ImageCarousel";
 
+import scalingHero from "@/assets/scaling-hero.jpg";
 import scalingBA from "@/assets/scaling-before-after.jpg";
 import plaqueTartar from "@/assets/plaque-vs-tartar.webp";
 import scalingAb1 from "@/assets/scaling-ab-1.webp";
@@ -35,6 +36,10 @@ const whiteningBeforeAfterImages = [
 const ScalingWhiteningArticle = () => {
   return (
     <article className="max-w-none">
+
+      <div className="w-full overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
+        <img src={scalingHero} alt="Teeth with plaque and tartar buildup requiring professional scaling and cleaning at Motiur's Dental Debidwar Comilla" className="w-full h-full object-cover" loading="eager" width={800} height={400} />
+      </div>
 
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Scaling, Polishing, and Teeth Whitening in Debidwar, Comilla
