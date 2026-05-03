@@ -38,6 +38,14 @@ const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
     title: "Wisdom Teeth Treatment in Debidwar Comilla | Wisdom Tooth Removal | Motiur's Dental",
     description: "Suffering from wisdom tooth pain or infection in Debidwar, Comilla? Motiur's Dental offers professional wisdom tooth removal and treatment at the most affordable prices in Comilla district. Call 01816010194 today.",
   },
+  "minor-oral-surgery": {
+    title: "Minor Oral Surgery in Debidwar Comilla | Expert Oral Surgery | Motiur's Dental",
+    description: "Need minor oral surgery in Debidwar, Comilla? Motiur's Dental offers wisdom tooth extraction, abscess drainage, biopsies, frenectomy, bone grafting and more at affordable prices. Call 01816010194.",
+  },
+  "braces-orthodontic": {
+    title: "Braces Treatment in Debidwar Comilla | Orthodontic Braces | Motiur's Dental",
+    description: "Looking for affordable braces treatment in Debidwar, Comilla? Motiur's Dental offers metal braces, ceramic braces, lingual braces, and clear aligners at the lowest prices in Comilla district. Call 01816010194 today.",
+  },
 };
 
 const CUSTOM_SCHEMA: Record<string, object> = {
