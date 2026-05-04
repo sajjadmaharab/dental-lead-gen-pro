@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Phone, MessageCircle, Star, Check, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,14 @@ import iconRootCanal from "@/assets/services/root-canal.png";
 import iconCapBridge from "@/assets/services/cap-bridge.png";
 import iconSpacing from "@/assets/services/spacing-treatment.png";
 import iconReplacement from "@/assets/services/teeth-replacement.png";
+
+/* Top service before/after slides */
+const SERVICE_BA_SLIDES = [
+  { service: "Cosmetic Filling", before: CASES[3].before, after: CASES[3].after, slug: "cosmetic-filling" },
+  { service: "Teeth Whitening", before: CASES[2].before, after: CASES[2].after, slug: "scaling-polishing-whitening" },
+  { service: "Gap Teeth Closing", before: CASES[1].before, after: CASES[1].after, slug: "tooth-gap-treatment" },
+  { service: "Broken Tooth Restoration", before: CASES[0].before, after: CASES[0].after, slug: "cosmetic-filling" },
+];
 
 const HOME_SERVICES = [
   {
