@@ -1,6 +1,6 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { useState, useEffect } from "react";
 import heroImg from "@/assets/rootcanal-hero.jpg";
 import pulpDiagramImg from "@/assets/rootcanal-pulp-diagram.jpg";
 import signsImg from "@/assets/rootcanal-signs.jpg";
@@ -17,8 +17,54 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
     {children}
   </li>
 );
+const caseStudies = [
+  { src: work1, alt: "Root canal case study 1 X-ray at Motiur's Dental Debidwar Comilla", label: "Case Study 1" },
+  { src: work2, alt: "Root canal case study 2 X-ray at Motiur's Dental Debidwar", label: "Case Study 2" },
+  { src: work3, alt: "Root canal case study 3 X-ray at Motiur's Dental Comilla", label: "Case Study 3" },
+  { src: work4, alt: "Root canal case study 4 X-ray at Motiur's Dental", label: "Case Study 4" },
+  { src: work5, alt: "Root canal case study 5 X-ray at Motiur's Dental Debidwar", label: "Case Study 5" },
+  { src: work6, alt: "Root canal case study 6 X-ray at Motiur's Dental Comilla", label: "Case Study 6" },
+];
 
+const CaseStudyCarousel = () => {
+  const [current, setCurrent] = useState(0);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % caseStudies.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="my-10" aria-label="Root canal treatment case studies at Motiur's Dental Debidwar Comilla">
+      <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">Our Root Canal Treatment Results</h2>
+      <div className="relative w-full max-w-md mx-auto">
+        <div className="rounded-xl overflow-hidden border border-border aspect-square bg-muted">
+          <img
+            src={caseStudies[current].src}
+            alt={caseStudies[current].alt}
+            className="w-full h-full object-cover transition-opacity duration-500"
+            loading="lazy"
+          />
+        </div>
+        <p className="text-center text-sm font-display font-semibold text-foreground mt-3">
+          {caseStudies[current].label}
+        </p>
+        <div className="flex justify-center gap-2 mt-2">
+          {caseStudies.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? "bg-primary" : "bg-muted-foreground/30"}`}
+              aria-label={`Go to case study ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const RootCanalArticle = () => {
   return (
@@ -43,33 +89,8 @@ const RootCanalArticle = () => {
         And if cost has been stopping you from seeking treatment, here is something worth knowing. At Motiur's Dental, our root canal treatment prices are among the most affordable in the Comilla district, with no compromise on quality, materials, or technique.
       </p>
 
-      {/* Case Studies - Before/After Sliders */}
-      <section className="my-10" aria-label="Root canal treatment case studies at Motiur's Dental Debidwar Comilla">
-        <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">Our Root Canal Treatment Results</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <BeforeAfterSlider
-            beforeSrc={work1}
-            afterSrc={work2}
-            beforeAlt="Root canal case 1 before treatment X-ray at Motiur's Dental Debidwar"
-            afterAlt="Root canal case 1 after treatment X-ray at Motiur's Dental Debidwar"
-            label="Case Study 1: Molar Root Canal"
-          />
-          <BeforeAfterSlider
-            beforeSrc={work3}
-            afterSrc={work4}
-            beforeAlt="Root canal case 2 before treatment X-ray at Motiur's Dental Comilla"
-            afterAlt="Root canal case 2 after treatment X-ray at Motiur's Dental Comilla"
-            label="Case Study 2: Anterior Root Canal"
-          />
-          <BeforeAfterSlider
-            beforeSrc={work5}
-            afterSrc={work6}
-            beforeAlt="Root canal case 3 before treatment X-ray at Motiur's Dental"
-            afterAlt="Root canal case 3 after treatment X-ray at Motiur's Dental"
-            label="Case Study 3: Premolar Root Canal"
-          />
-        </div>
-      </section>
+      {/* Case Studies - Auto-sliding carousel */}
+      <CaseStudyCarousel />
 
       <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
         <div className="flex items-center gap-2 text-primary font-semibold">
