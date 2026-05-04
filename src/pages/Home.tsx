@@ -6,7 +6,6 @@ import { SEO } from "@/components/SEO";
 import { Wave } from "@/components/Wave";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
 
-import { CASES } from "@/data/cases";
 import { HandwritingCTA } from "@/components/ui/handwriting-cta";
 import { GoogleReviewCarousel } from "@/components/GoogleReviewCarousel";
 import type { GoogleReview } from "@/components/GoogleReviewCard";
@@ -21,12 +20,17 @@ import iconCapBridge from "@/assets/services/cap-bridge.png";
 import iconSpacing from "@/assets/services/spacing-treatment.png";
 import iconReplacement from "@/assets/services/teeth-replacement.png";
 
-/* Top service before/after slides */
+/* Real before/after images from service pages */
+import cosmeticFillingAB from "@/assets/cosmetic-filling-before-after.webp";
+import scalingAb1 from "@/assets/scaling-ab-1.webp";
+import toothGapAb1 from "@/assets/tooth-gap-ab-1.png";
+import bridgeCapAB1 from "@/assets/bridge-cap-before-after-1.png";
+
 const SERVICE_BA_SLIDES = [
-  { service: "Cosmetic Filling", before: CASES[3].before, after: CASES[3].after, slug: "cosmetic-filling" },
-  { service: "Teeth Whitening", before: CASES[2].before, after: CASES[2].after, slug: "scaling-polishing-whitening" },
-  { service: "Gap Teeth Closing", before: CASES[1].before, after: CASES[1].after, slug: "tooth-gap-treatment" },
-  { service: "Broken Tooth Restoration", before: CASES[0].before, after: CASES[0].after, slug: "cosmetic-filling" },
+  { service: "Cosmetic Filling", image: cosmeticFillingAB, slug: "cosmetic-filling" },
+  { service: "Scaling & Polishing", image: scalingAb1, slug: "scaling-polishing-whitening" },
+  { service: "Tooth Gap Treatment", image: toothGapAb1, slug: "tooth-gap-treatment" },
+  { service: "Dental Bridge & Cap", image: bridgeCapAB1, slug: "dental-bridges-caps" },
 ];
 
 const HOME_SERVICES = [
@@ -139,21 +143,12 @@ const Home = () => {
           <div className="relative max-w-xl mx-auto w-full">
             <div className="relative rounded-2xl overflow-hidden shadow-medium bg-card aspect-[4/3]">
               <img
-                key={`after-${slideIdx}`}
-                src={slide.after}
-                alt={`${slide.service} after treatment`}
-                className="absolute inset-0 w-1/2 left-0 h-full object-cover animate-fade-in"
+                key={`slide-${slideIdx}`}
+                src={slide.image}
+                alt={`${slide.service} before and after`}
+                className="absolute inset-0 w-full h-full object-cover animate-fade-in"
                 style={{ animation: "slideZoom 4s ease-in-out infinite" }}
               />
-              <img
-                key={`before-${slideIdx}`}
-                src={slide.before}
-                alt={`${slide.service} before treatment`}
-                className="absolute inset-0 w-1/2 left-1/2 h-full object-cover animate-fade-in"
-                style={{ animation: "slideZoom 4s ease-in-out infinite" }}
-              />
-              <div className="absolute top-3 left-3 bg-white/90 text-primary px-3 py-1 rounded-full text-xs font-bold">After</div>
-              <div className="absolute top-3 right-3 bg-white/90 text-primary px-3 py-1 rounded-full text-xs font-bold">Before</div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
                 <h3 className="font-display font-bold text-white text-lg">{slide.service}</h3>
                 <Link to={`/services/${slide.slug}`}>
