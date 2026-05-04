@@ -8,6 +8,13 @@ import bracesOrthoProblems from "@/assets/braces-ortho-problems.png";
 import bracesMetal from "@/assets/braces-metal.jpg";
 import bracesCeramic from "@/assets/braces-ceramic.jpg";
 import bracesLingual from "@/assets/braces-lingual.jpg";
+import bracesClearAligners from "@/assets/braces-clear-aligners.jpg";
+import bracesHero from "@/assets/braces-hero.jpg";
+import bracesChildren from "@/assets/braces-children.jpg";
+import bracesTeenagers from "@/assets/braces-teenagers.jpg";
+import bracesAdults from "@/assets/braces-adults.jpg";
+import bracesTreatmentProcess from "@/assets/braces-treatment-process.webp";
+import bracesOralHygiene from "@/assets/braces-oral-hygiene-tips.webp";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -22,6 +29,16 @@ const BracesArticle = () => {
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Braces Treatment in Debidwar, Comilla: Straighten Your Teeth with Confidence
       </h1>
+
+      {/* Hero Image */}
+      <div className="my-6 rounded-xl overflow-hidden border border-border">
+        <img
+          src={bracesHero}
+          alt="Braces treatment at Motiur's Dental in Debidwar Comilla - colorful orthodontic braces close-up"
+          className="w-full h-48 sm:h-64 md:h-80 object-cover"
+          loading="eager"
+        />
+      </div>
 
       <p className="text-lg leading-relaxed text-foreground/90">
         Crooked teeth, crowded teeth, gaps, overbites, underbites, and misaligned jaws are all conditions that affect a large number of people across Bangladesh, and they are all treatable. At <strong>Motiur's Dental in Debidwar, Comilla</strong>, we offer a full range of braces and orthodontic treatment options for children, teenagers, and adults who want straighter teeth, a better bite, and a more confident smile.
@@ -196,14 +213,21 @@ const BracesArticle = () => {
           </div>
         </div>
 
-        {/* Clear Aligners - no image */}
+        {/* Clear Aligners - image LEFT */}
         <div className="bg-card border border-border rounded-xl p-5">
-          <h3 className="font-display font-bold text-lg text-foreground">Clear Aligners (Invisalign)</h3>
-          <p className="text-muted-foreground mt-2 text-sm leading-relaxed">A series of custom-made, removable plastic trays that gradually move the teeth in small, controlled increments. Nearly invisible when worn and removable for eating, drinking, brushing, and flossing. Must be worn 20 to 22 hours per day.</p>
-          <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <span className="bg-primary/10 text-primary px-2 py-1 rounded-lg font-medium">Best for: Mild to moderate cases, adults prioritizing discretion, good self-discipline</span>
-            <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Cost: BDT 100,000 to BDT 200,000</span>
-            <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Duration: Varies by case</span>
+          <div className="flex flex-row-reverse gap-4 items-center">
+            <div className="flex-1">
+              <h3 className="font-display font-bold text-lg text-foreground">Clear Aligners (Invisalign)</h3>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">A series of custom-made, removable plastic trays that gradually move the teeth in small, controlled increments. Nearly invisible when worn and removable for eating, drinking, brushing, and flossing. Must be worn 20 to 22 hours per day.</p>
+              <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                <span className="bg-primary/10 text-primary px-2 py-1 rounded-lg font-medium">Best for: Mild to moderate cases, adults prioritizing discretion, good self-discipline</span>
+                <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Cost: BDT 100,000 to BDT 200,000</span>
+                <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Duration: Varies by case</span>
+              </div>
+            </div>
+            <div className="w-28 sm:w-32 md:w-36 h-28 sm:h-32 md:h-36 shrink-0 rounded-xl overflow-hidden border border-border">
+              <img src={bracesClearAligners} alt="Clear aligners Invisalign at Motiur's Dental Debidwar Comilla" className="w-full h-full object-cover" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
@@ -211,38 +235,77 @@ const BracesArticle = () => {
       {/* Braces for Different Age Groups */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Braces for Different Age Groups</h2>
 
+      {/* Braces for Children - image centered in text */}
       <h3 className="text-xl font-display font-bold mt-8 text-foreground">Braces for Children</h3>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Early orthodontic evaluation is one of the most valuable things a parent can do for their child's long-term dental health. We recommend bringing children in for their first orthodontic assessment around the age of 7. At this age, most adult teeth have begun erupting and we can assess how the teeth and jaws are developing. Early evaluation does not always mean early treatment. In many cases, we monitor the child's development and begin treatment at the most appropriate time. However, early intervention can guide jaw growth, create space for incoming teeth, and prevent more complex problems from developing.
-      </p>
+      <div className="mt-3 text-foreground/85 leading-relaxed">
+        <p>
+          Early orthodontic evaluation is one of the most valuable things a parent can do for their child's long-term dental health. We recommend bringing children in for their first orthodontic assessment around the age of 7.
+        </p>
+        <div className="float-right ml-4 mb-3 mt-1 w-32 sm:w-40 md:w-48 rounded-xl overflow-hidden border border-border shadow-soft">
+          <img src={bracesChildren} alt="Child with braces at Motiur's Dental Debidwar - early orthodontic treatment" className="w-full h-auto object-cover" loading="lazy" />
+        </div>
+        <p className="mt-3">
+          At this age, most adult teeth have begun erupting and we can assess how the teeth and jaws are developing. Early evaluation does not always mean early treatment. In many cases, we monitor the child's development and begin treatment at the most appropriate time. However, early intervention can guide jaw growth, create space for incoming teeth, and prevent more complex problems from developing.
+        </p>
+      </div>
 
+      {/* Braces for Teenagers - image centered in text */}
       <h3 className="text-xl font-display font-bold mt-8 text-foreground">Braces for Teenagers</h3>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Adolescence is the most common time for braces treatment because most of the adult teeth have erupted by this stage and the jaw is still growing, which means teeth move more readily. Teenagers at Motiur's Dental can choose from metal braces, ceramic braces, or clear aligners depending on their specific needs and preferences. We understand that teenagers have social concerns about their appearance. We take the time to explain all options clearly and help each patient choose what works best for their lifestyle.
-      </p>
+      <div className="mt-3 text-foreground/85 leading-relaxed">
+        <p>
+          Adolescence is the most common time for braces treatment because most of the adult teeth have erupted by this stage and the jaw is still growing, which means teeth move more readily.
+        </p>
+        <div className="float-left mr-4 mb-3 mt-1 w-32 sm:w-40 md:w-48 rounded-xl overflow-hidden border border-border shadow-soft">
+          <img src={bracesTeenagers} alt="Teenager smiling with braces at Motiur's Dental Debidwar Comilla" className="w-full h-auto object-cover" loading="lazy" />
+        </div>
+        <p className="mt-3">
+          Teenagers at Motiur's Dental can choose from metal braces, ceramic braces, or clear aligners depending on their specific needs and preferences. We understand that teenagers have social concerns about their appearance. We take the time to explain all options clearly and help each patient choose what works best for their lifestyle.
+        </p>
+      </div>
 
+      {/* Braces for Adults - image centered in text */}
       <h3 className="text-xl font-display font-bold mt-8 text-foreground">Braces for Adults</h3>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        There is no age limit for orthodontic treatment. Healthy teeth can be moved at any age, and an increasing number of adults are choosing to get braces to correct problems they have lived with for years or to address shifting that has occurred over time. Adults at Motiur's Dental often prefer the less visible options such as ceramic braces, lingual braces, or clear aligners. Adult treatment may sometimes take slightly longer than treatment in adolescence because mature bone is denser, but the results are just as successful and long-lasting.
-      </p>
+      <div className="mt-3 text-foreground/85 leading-relaxed">
+        <p>
+          There is no age limit for orthodontic treatment. Healthy teeth can be moved at any age, and an increasing number of adults are choosing to get braces to correct problems they have lived with for years or to address shifting that has occurred over time.
+        </p>
+        <div className="float-right ml-4 mb-3 mt-1 w-32 sm:w-40 md:w-48 rounded-xl overflow-hidden border border-border shadow-soft">
+          <img src={bracesAdults} alt="Adult flossing with braces at Motiur's Dental Debidwar - adult orthodontic care" className="w-full h-auto object-cover" loading="lazy" />
+        </div>
+        <p className="mt-3">
+          Adults at Motiur's Dental often prefer the less visible options such as ceramic braces, lingual braces, or clear aligners. Adult treatment may sometimes take slightly longer than treatment in adolescence because mature bone is denser, but the results are just as successful and long-lasting.
+        </p>
+      </div>
+
+      <div className="clear-both" />
 
       {/* Treatment Process */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">The Braces Treatment Process at Motiur's Dental: Step by Step</h2>
-      <div className="grid gap-4 my-6">
-        {[
-          { step: "Step 1", title: "Initial Consultation and Evaluation", desc: "A comprehensive orthodontic examination. We assess the positions of your teeth, the relationship between your upper and lower jaws, and the health of your teeth and gums. We take dental X-rays, photographs, and in some cases dental impressions or digital scans." },
-          { step: "Step 2", title: "Treatment Planning Discussion", desc: "We go through your treatment plan in detail, explaining which type of braces is most suitable for your case, how long treatment is expected to take, what the process will involve at each stage, and what the full cost will be." },
-          { step: "Step 3", title: "Placing the Braces", desc: "For fixed braces, the bonding appointment typically takes one to two hours. Brackets are carefully placed on each tooth and the archwire is threaded through and secured. For clear aligners, we take precise digital impressions. The placement process is comfortable and painless." },
-          { step: "Step 4", title: "Regular Adjustment Appointments", desc: "Throughout treatment, you visit every four to eight weeks. During these visits, we assess how the teeth are moving, make adjustments to the wire or provide the next set of aligners. These appointments typically last around 20 to 30 minutes." },
-          { step: "Step 5", title: "Braces Removal", desc: "When your teeth have reached their target positions, the braces are removed. For fixed braces, the brackets are carefully detached and any remaining adhesive is polished away." },
-          { step: "Step 6", title: "Retainers", desc: "After braces are removed, teeth have a natural tendency to drift back toward their original positions. Wearing a retainer as directed prevents this and maintains the results permanently. Retainers are typically worn full time for the first few months, then only at night." },
-        ].map((item) => (
-          <div key={item.step} className="bg-card border border-border rounded-xl p-5">
-            <span className="text-xs font-bold text-primary uppercase tracking-wider">{item.step}</span>
-            <h3 className="font-display font-bold text-lg text-foreground mt-1">{item.title}</h3>
-            <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
+      <div className="flex flex-col md:flex-row gap-5 mt-4">
+        <div className="flex-1 grid gap-4">
+          {[
+            { step: "Step 1", title: "Initial Consultation and Evaluation", desc: "A comprehensive orthodontic examination. We assess the positions of your teeth, the relationship between your upper and lower jaws, and the health of your teeth and gums. We take dental X-rays, photographs, and in some cases dental impressions or digital scans." },
+            { step: "Step 2", title: "Treatment Planning Discussion", desc: "We go through your treatment plan in detail, explaining which type of braces is most suitable for your case, how long treatment is expected to take, what the process will involve at each stage, and what the full cost will be." },
+            { step: "Step 3", title: "Placing the Braces", desc: "For fixed braces, the bonding appointment typically takes one to two hours. Brackets are carefully placed on each tooth and the archwire is threaded through and secured. For clear aligners, we take precise digital impressions. The placement process is comfortable and painless." },
+            { step: "Step 4", title: "Regular Adjustment Appointments", desc: "Throughout treatment, you visit every four to eight weeks. During these visits, we assess how the teeth are moving, make adjustments to the wire or provide the next set of aligners. These appointments typically last around 20 to 30 minutes." },
+            { step: "Step 5", title: "Braces Removal", desc: "When your teeth have reached their target positions, the braces are removed. For fixed braces, the brackets are carefully detached and any remaining adhesive is polished away." },
+            { step: "Step 6", title: "Retainers", desc: "After braces are removed, teeth have a natural tendency to drift back toward their original positions. Wearing a retainer as directed prevents this and maintains the results permanently. Retainers are typically worn full time for the first few months, then only at night." },
+          ].map((item) => (
+            <div key={item.step} className="bg-card border border-border rounded-xl p-5">
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">{item.step}</span>
+              <h3 className="font-display font-bold text-lg text-foreground mt-1">{item.title}</h3>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="w-full md:w-72 shrink-0 rounded-xl overflow-hidden border border-border md:sticky md:top-24 self-start">
+          <img
+            src={bracesTreatmentProcess}
+            alt="Orthodontic braces treatment process step by step infographic at Motiur's Dental Debidwar"
+            className="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       {/* Duration */}
@@ -256,15 +319,27 @@ const BracesArticle = () => {
 
       {/* Caring for Teeth */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Caring for Your Teeth During Braces Treatment</h2>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Oral hygiene requires more attention during braces treatment, particularly with fixed braces where brackets and wires create additional surfaces where plaque can accumulate.
-      </p>
-      <ul className="space-y-4 my-6 list-none p-0">
-        <Bullet>Brush your teeth after every meal if possible, and at minimum twice a day. Use a soft-bristled toothbrush and angle the bristles toward the gum line as well as along the brackets.</Bullet>
-        <Bullet>Interdental brushes are very helpful for cleaning around brackets. Floss daily using a floss threader to get the floss underneath the archwire.</Bullet>
-        <Bullet>For fixed braces, avoid hard foods such as raw carrots, hard biscuits, and hard candy that can break brackets. Avoid sticky foods like toffee, chewing gum, and very chewy sweets.</Bullet>
-        <Bullet>For clear aligner patients, remove your aligners before eating or drinking anything other than water. Rinse your aligners every time you take them out and clean them thoroughly at least once a day.</Bullet>
-      </ul>
+      <div className="flex flex-col md:flex-row gap-5 mt-4">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Oral hygiene requires more attention during braces treatment, particularly with fixed braces where brackets and wires create additional surfaces where plaque can accumulate.
+          </p>
+          <ul className="space-y-4 my-6 list-none p-0">
+            <Bullet>Brush your teeth after every meal if possible, and at minimum twice a day. Use a soft-bristled toothbrush and angle the bristles toward the gum line as well as along the brackets.</Bullet>
+            <Bullet>Interdental brushes are very helpful for cleaning around brackets. Floss daily using a floss threader to get the floss underneath the archwire.</Bullet>
+            <Bullet>For fixed braces, avoid hard foods such as raw carrots, hard biscuits, and hard candy that can break brackets. Avoid sticky foods like toffee, chewing gum, and very chewy sweets.</Bullet>
+            <Bullet>For clear aligner patients, remove your aligners before eating or drinking anything other than water. Rinse your aligners every time you take them out and clean them thoroughly at least once a day.</Bullet>
+          </ul>
+        </div>
+        <div className="w-full md:w-72 shrink-0 rounded-xl overflow-hidden border border-border md:sticky md:top-24 self-start">
+          <img
+            src={bracesOralHygiene}
+            alt="Tips for oral hygiene with braces - brushing flossing mouthwash guide at Motiur's Dental Debidwar"
+            className="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+      </div>
 
       {/* Cost */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground" id="braces-cost-comilla">Braces Treatment Cost in Debidwar, Comilla</h2>
