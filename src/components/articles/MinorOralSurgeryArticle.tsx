@@ -10,6 +10,13 @@ import abscessImg from "@/assets/minor-surgery-abscess.jpg";
 import cystImg from "@/assets/minor-surgery-cyst.jpg";
 import frenectomyImg from "@/assets/minor-surgery-frenectomy.jpg";
 import bonegraftImg from "@/assets/minor-surgery-bonegraft.jpg";
+import jawFractureImg from "@/assets/minor-surgery-jaw-fracture.jpg";
+import alveoloplastyImg from "@/assets/minor-surgery-alveoloplasty.jpg";
+import facialLacerationImg from "@/assets/minor-surgery-facial-laceration.jpg";
+import splintingImg from "@/assets/minor-surgery-splinting.jpg";
+import apicoectomyImg from "@/assets/minor-surgery-apicoectomy.jpg";
+import gumGraftingImg from "@/assets/minor-surgery-gum-grafting.jpg";
+import operculectomyImg from "@/assets/minor-surgery-operculectomy.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -24,8 +31,14 @@ const serviceImages: Record<string, { src: string; position: "left" | "right" }>
   "Abscess Drainage": { src: abscessImg, position: "left" },
   "Cyst and Tumor Removal": { src: cystImg, position: "right" },
   "Frenectomy": { src: frenectomyImg, position: "left" },
-  "Alveoloplasty / Alveolectomy": { src: bonegraftImg, position: "right" },
+  "Alveoloplasty / Alveolectomy": { src: alveoloplastyImg, position: "right" },
   "Bone Grafting": { src: bonegraftImg, position: "right" },
+  "Jaw Fracture Repair": { src: jawFractureImg, position: "left" },
+  "Facial Laceration Repair": { src: facialLacerationImg, position: "right" },
+  "Splinting": { src: splintingImg, position: "left" },
+  "Apicoectomy": { src: apicoectomyImg, position: "right" },
+  "Gum Grafting": { src: gumGraftingImg, position: "left" },
+  "Operculectomy": { src: operculectomyImg, position: "right" },
 };
 
 const MinorOralSurgeryArticle = () => {
