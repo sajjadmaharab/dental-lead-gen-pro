@@ -75,9 +75,18 @@ const HOME_SERVICES = [
 ];
 
 const Home = () => {
-  const [caseIdx, setCaseIdx] = useState(0);
-  const featuredCases = CASES;
-  const c = featuredCases[caseIdx];
+  const [slideIdx, setSlideIdx] = useState(0);
+  const slide = SERVICE_BA_SLIDES[slideIdx];
+
+  /* Auto-slide every 4 seconds */
+  const nextSlide = useCallback(() => {
+    setSlideIdx((i) => (i + 1) % SERVICE_BA_SLIDES.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 4000);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
 
   const reviews: GoogleReview[] = [
     { name: "Md Aryan Hossan", date: "25 March 2026", text: "Alhamdulillah bare onek valo treatment paisi ekhane. Friendly doctors and very clean environment.", rating: 5 },
