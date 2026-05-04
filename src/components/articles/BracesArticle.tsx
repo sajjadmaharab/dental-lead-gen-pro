@@ -1,9 +1,17 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import ImageCarousel from "@/components/ImageCarousel";
 import bracesBefore1 from "@/assets/braces-before-1.jpg";
 import bracesBefore2 from "@/assets/braces-before-2.jpg";
 import bracesAfter1 from "@/assets/braces-after-1.jpg";
 import bracesAfter2 from "@/assets/braces-after-2.jpg";
+
+const bracesBeforeAfterImages = [
+  { src: bracesBefore1, alt: "Teeth before braces treatment at Motiur's Dental Debidwar - crooked teeth case", caption: "Before: crooked teeth" },
+  { src: bracesAfter1, alt: "Teeth after braces treatment showing alignment progress at Motiur's Dental", caption: "After: aligned teeth" },
+  { src: bracesBefore2, alt: "Misaligned teeth before orthodontic treatment at Motiur's Dental Comilla", caption: "Before: misaligned teeth" },
+  { src: bracesAfter2, alt: "Orthodontic braces correcting bite alignment at Motiur's Dental Debidwar", caption: "After: corrected bite" },
+];
 import bracesOrthoProblems from "@/assets/braces-ortho-problems.png";
 import bracesMetal from "@/assets/braces-metal.jpg";
 import bracesCeramic from "@/assets/braces-ceramic.jpg";
