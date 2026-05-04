@@ -14,6 +14,7 @@ import work6 from "@/assets/rootcanal-work6.jpg";
 import porcelainCrownImg from "@/assets/rootcanal-porcelain-crown.jpg";
 import zirconiaCrownImg from "@/assets/rootcanal-zirconia-crown.jpg";
 import metalCrownImg from "@/assets/rootcanal-metal-crown.jpg";
+import aftercareTipsImg from "@/assets/rootcanal-aftercare-tips.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -296,23 +297,28 @@ const RootCanalArticle = () => {
 
       {/* Aftercare */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Aftercare: What to Do After Root Canal Treatment</h2>
-      <ul className="space-y-4 my-6 list-none p-0">
-        <Bullet>
-          For the first day or two, you may experience some tenderness around the treated tooth. Over-the-counter pain relievers are usually sufficient to manage this discomfort.
-        </Bullet>
-        <Bullet>
-          Avoid chewing on the treated side until your permanent crown has been placed. The temporary filling is not strong enough to withstand heavy biting forces.
-        </Bullet>
-        <Bullet>
-          Continue brushing and flossing normally throughout your recovery, but be gentle around the treated area.
-        </Bullet>
-        <Bullet>
-          Avoid very hard, crunchy, or sticky foods until the crown has been placed and you have had time to adjust to it.
-        </Bullet>
-        <Bullet>
-          If you notice sudden swelling, severe pain that is getting worse, or the temporary filling comes out, contact Motiur's Dental immediately at <a href={telLink} className="text-primary hover:underline font-semibold">{CLINIC.phone}</a>.
-        </Bullet>
-      </ul>
+      <div className="mt-4 flex flex-col md:flex-row gap-6 items-start">
+        <ul className="space-y-4 my-2 list-none p-0 flex-1">
+          <Bullet>
+            For the first day or two, you may experience some tenderness around the treated tooth. Over-the-counter pain relievers are usually sufficient to manage this discomfort.
+          </Bullet>
+          <Bullet>
+            Avoid chewing on the treated side until your permanent crown has been placed. The temporary filling is not strong enough to withstand heavy biting forces.
+          </Bullet>
+          <Bullet>
+            Continue brushing and flossing normally throughout your recovery, but be gentle around the treated area.
+          </Bullet>
+          <Bullet>
+            Avoid very hard, crunchy, or sticky foods until the crown has been placed and you have had time to adjust to it.
+          </Bullet>
+          <Bullet>
+            If you notice sudden swelling, severe pain that is getting worse, or the temporary filling comes out, contact Motiur's Dental immediately at <a href={telLink} className="text-primary hover:underline font-semibold">{CLINIC.phone}</a>.
+          </Bullet>
+        </ul>
+        <div className="w-full md:w-72 shrink-0 rounded-xl overflow-hidden border border-border md:sticky md:top-24">
+          <img src={aftercareTipsImg} alt="6 tips for faster root canal recovery infographic" className="w-full h-auto object-contain" loading="lazy" />
+        </div>
+      </div>
 
       {/* FAQ */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Frequently Asked Questions</h2>
