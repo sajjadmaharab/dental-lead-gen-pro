@@ -63,18 +63,18 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white mb-4 text-base tracking-wider">VISIT US</h3>
-          <ul className="space-y-2.5 text-sm text-white/75">
-            <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-cta shrink-0" /><a href={CLINIC.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">{CLINIC.address}</a></li>
-            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-cta shrink-0" /><a href={telLink} className="hover:text-white">{CLINIC.phone}</a></li>
+          <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">VISIT US</h3>
+          <ul className="space-y-2.5 text-sm text-foreground/75">
+            <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-cta shrink-0" /><a href={CLINIC.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">{CLINIC.address}</a></li>
+            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-cta shrink-0" /><a href={telLink} className="hover:text-foreground">{CLINIC.phone}</a></li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white mb-4 text-base tracking-wider">WORKING HOURS</h3>
-          <ul className="space-y-2.5 text-sm text-white/75">
-            <li className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-cta shrink-0" /><div>Saturday – Thursday<br /><span className="text-white/60">10:00 AM – 7:00 PM</span></div></li>
-            <li className="text-white/60 pl-6">Friday — Closed</li>
+          <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">WORKING HOURS</h3>
+          <ul className="space-y-2.5 text-sm text-foreground/75">
+            <li className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-cta shrink-0" /><div>Saturday – Thursday<br /><span className="text-foreground/60">10:00 AM – 7:00 PM</span></div></li>
+            <li className="text-foreground/60 pl-6">Friday — Closed</li>
           </ul>
         </div>
 
