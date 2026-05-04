@@ -1,5 +1,18 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import ImageCarousel from "@/components/ImageCarousel";
+import fracturedHero from "@/assets/fractured-teeth-hero.jpg";
+import fracturedBA1 from "@/assets/fractured-before-after-1.png";
+import fracturedBA2 from "@/assets/fractured-before-after-2.jpg";
+import fracturedBA3 from "@/assets/fractured-before-after-3.jpg";
+import fracturedBA4 from "@/assets/fractured-before-after-4.jpg";
+
+const beforeAfterImages = [
+  { src: fracturedBA1, alt: "Chipped tooth before and after treatment at Motiur's Dental Debidwar Comilla", caption: "Chipped tooth: before and after" },
+  { src: fracturedBA2, alt: "Fractured front tooth before and after dental bonding Debidwar", caption: "Front tooth fracture: before and after" },
+  { src: fracturedBA3, alt: "Broken tooth restoration before and after Comilla Bangladesh", caption: "Broken tooth: before and after" },
+  { src: fracturedBA4, alt: "Traumatic dental injury before and after treatment Motiur's Dental", caption: "Dental injury: before and after" },
+];
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -14,6 +27,10 @@ const FracturedTeethArticle = () => {
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Chipped Tooth and Fractured Teeth Treatment in Debidwar, Comilla
       </h1>
+
+      <div className="rounded-2xl overflow-hidden border border-border mb-8">
+        <img src={fracturedHero} alt="Chipped and fractured teeth treatment in Debidwar Comilla by Motiur's Dental" className="w-full h-auto object-cover" />
+      </div>
 
       <p className="text-lg leading-relaxed text-foreground/90">
         A chipped, cracked, or fractured tooth can happen to anyone at any moment. One bite on something unexpectedly hard, a fall, a sports impact, or an accident, and suddenly part of your tooth is gone or you can feel something is wrong inside it. At <strong>Motiur's Dental in Debidwar, Comilla</strong>, we treat chipped and fractured teeth regularly and we see patients in varying degrees of urgency, from minor cosmetic chips to serious fractures involving the nerve.
@@ -47,6 +64,8 @@ const FracturedTeethArticle = () => {
       <p className="mt-3 text-foreground/85 leading-relaxed">
         The important thing to understand about dental trauma is that the visible damage on the outside of the tooth does not always tell the full story. A tooth can appear only mildly chipped on the surface while having a crack extending deep into the root. This is why professional examination and X-rays are essential after any dental injury, even one that initially seems minor.
       </p>
+
+      <ImageCarousel images={beforeAfterImages} mobileMaxH="200px" desktopCols={2} />
 
       {/* Types */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Types of Traumatic Dental Injuries We Treat at Motiur's Dental</h2>
