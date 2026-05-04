@@ -1,5 +1,18 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import ImageCarousel from "@/components/ImageCarousel";
+import fracturedHero from "@/assets/fractured-teeth-hero.jpg";
+import fracturedBA1 from "@/assets/fractured-before-after-1.png";
+import fracturedBA2 from "@/assets/fractured-before-after-2.jpg";
+import fracturedBA3 from "@/assets/fractured-before-after-3.jpg";
+import fracturedBA4 from "@/assets/fractured-before-after-4.jpg";
+
+const beforeAfterImages = [
+  { src: fracturedBA1, alt: "Chipped tooth before and after treatment at Motiur's Dental Debidwar Comilla", caption: "Chipped tooth: before and after" },
+  { src: fracturedBA2, alt: "Fractured front tooth before and after dental bonding Debidwar", caption: "Front tooth fracture: before and after" },
+  { src: fracturedBA3, alt: "Broken tooth restoration before and after Comilla Bangladesh", caption: "Broken tooth: before and after" },
+  { src: fracturedBA4, alt: "Traumatic dental injury before and after treatment Motiur's Dental", caption: "Dental injury: before and after" },
+];
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
