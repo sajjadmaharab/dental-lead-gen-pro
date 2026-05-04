@@ -143,21 +143,12 @@ const Home = () => {
           <div className="relative max-w-xl mx-auto w-full">
             <div className="relative rounded-2xl overflow-hidden shadow-medium bg-card aspect-[4/3]">
               <img
-                key={`after-${slideIdx}`}
-                src={slide.after}
-                alt={`${slide.service} after treatment`}
-                className="absolute inset-0 w-1/2 left-0 h-full object-cover animate-fade-in"
+                key={`slide-${slideIdx}`}
+                src={slide.image}
+                alt={`${slide.service} before and after`}
+                className="absolute inset-0 w-full h-full object-cover animate-fade-in"
                 style={{ animation: "slideZoom 4s ease-in-out infinite" }}
               />
-              <img
-                key={`before-${slideIdx}`}
-                src={slide.before}
-                alt={`${slide.service} before treatment`}
-                className="absolute inset-0 w-1/2 left-1/2 h-full object-cover animate-fade-in"
-                style={{ animation: "slideZoom 4s ease-in-out infinite" }}
-              />
-              <div className="absolute top-3 left-3 bg-white/90 text-primary px-3 py-1 rounded-full text-xs font-bold">After</div>
-              <div className="absolute top-3 right-3 bg-white/90 text-primary px-3 py-1 rounded-full text-xs font-bold">Before</div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
                 <h3 className="font-display font-bold text-white text-lg">{slide.service}</h3>
                 <Link to={`/services/${slide.slug}`}>
