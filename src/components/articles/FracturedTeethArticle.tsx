@@ -65,6 +65,8 @@ const FracturedTeethArticle = () => {
         The important thing to understand about dental trauma is that the visible damage on the outside of the tooth does not always tell the full story. A tooth can appear only mildly chipped on the surface while having a crack extending deep into the root. This is why professional examination and X-rays are essential after any dental injury, even one that initially seems minor.
       </p>
 
+      <ImageCarousel images={beforeAfterImages} mobileMaxH="200px" desktopCols={2} />
+
       {/* Types */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Types of Traumatic Dental Injuries We Treat at Motiur's Dental</h2>
       <div className="grid gap-4 my-6">
