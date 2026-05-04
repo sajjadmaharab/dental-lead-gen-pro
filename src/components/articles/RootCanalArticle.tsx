@@ -1,5 +1,6 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import heroImg from "@/assets/rootcanal-hero.jpg";
 import pulpDiagramImg from "@/assets/rootcanal-pulp-diagram.jpg";
 import signsImg from "@/assets/rootcanal-signs.jpg";
