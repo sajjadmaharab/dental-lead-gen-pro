@@ -31,8 +31,14 @@ const serviceImages: Record<string, { src: string; position: "left" | "right" }>
   "Abscess Drainage": { src: abscessImg, position: "left" },
   "Cyst and Tumor Removal": { src: cystImg, position: "right" },
   "Frenectomy": { src: frenectomyImg, position: "left" },
-  "Alveoloplasty / Alveolectomy": { src: bonegraftImg, position: "right" },
+  "Alveoloplasty / Alveolectomy": { src: alveoloplastyImg, position: "right" },
   "Bone Grafting": { src: bonegraftImg, position: "right" },
+  "Jaw Fracture Repair": { src: jawFractureImg, position: "left" },
+  "Facial Laceration Repair": { src: facialLacerationImg, position: "right" },
+  "Splinting": { src: splintingImg, position: "left" },
+  "Apicoectomy": { src: apicoectomyImg, position: "right" },
+  "Gum Grafting": { src: gumGraftingImg, position: "left" },
+  "Operculectomy": { src: operculectomyImg, position: "right" },
 };
 
 const MinorOralSurgeryArticle = () => {
