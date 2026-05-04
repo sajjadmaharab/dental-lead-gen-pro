@@ -1,5 +1,15 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import heroImg from "@/assets/rootcanal-hero.jpg";
+import pulpDiagramImg from "@/assets/rootcanal-pulp-diagram.jpg";
+import signsImg from "@/assets/rootcanal-signs.jpg";
+import stepsImg from "@/assets/rootcanal-steps.jpg";
+import work1 from "@/assets/rootcanal-work1.jpg";
+import work2 from "@/assets/rootcanal-work2.jpg";
+import work3 from "@/assets/rootcanal-work3.jpg";
+import work4 from "@/assets/rootcanal-work4.jpg";
+import work5 from "@/assets/rootcanal-work5.jpg";
+import work6 from "@/assets/rootcanal-work6.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -7,14 +17,16 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
+const workImages = [work1, work2, work3, work4, work5, work6];
+
 const RootCanalArticle = () => {
   return (
     <article className="max-w-none">
 
-      {/* Placeholder for hero image */}
-      {/* <div className="w-full rounded-2xl overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
+      {/* Hero Image */}
+      <div className="w-full rounded-2xl overflow-hidden mb-6 max-h-[280px] md:max-h-[340px]">
         <img src={heroImg} alt="Root canal treatment at Motiur's Dental in Debidwar Comilla" className="w-full h-full object-cover" loading="eager" />
-      </div> */}
+      </div>
 
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Root Canal Treatment: Save Your Tooth
@@ -30,6 +42,18 @@ const RootCanalArticle = () => {
         And if cost has been stopping you from seeking treatment, here is something worth knowing. At Motiur's Dental, our root canal treatment prices are among the most affordable in the Comilla district, with no compromise on quality, materials, or technique.
       </p>
 
+      {/* Work Gallery - AB style grid */}
+      <div className="my-8">
+        <h3 className="font-display font-bold text-xl text-foreground mb-4">Our Root Canal Work at Motiur's Dental</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {workImages.map((img, i) => (
+            <div key={i} className="rounded-xl overflow-hidden border border-border aspect-square">
+              <img src={img} alt={`Root canal treatment case ${i + 1} at Motiur's Dental`} className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
         <div className="flex items-center gap-2 text-primary font-semibold">
           <Phone className="h-5 w-5" />
@@ -43,17 +67,22 @@ const RootCanalArticle = () => {
 
       {/* What is Root Canal Treatment? */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What is Root Canal Treatment?</h2>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Root canal treatment, also known as <strong>endodontic treatment</strong>, is a dental procedure that targets the inside of the tooth. Specifically, it addresses infection or inflammation in the pulp, which is the soft tissue at the core of every tooth.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        The pulp contains nerves, blood vessels, and connective tissue. It runs from the top of the tooth, called the crown, all the way down through the roots. In a healthy tooth, the pulp is protected by the hard outer layers of enamel and dentine. But when decay, a crack, or trauma allows bacteria to reach the pulp, it becomes infected.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        The goal of root canal treatment is to remove that infected pulp, clean and disinfect the space thoroughly, seal it to prevent reinfection, and then restore the tooth so it functions normally. The tooth itself is preserved. You keep your natural tooth, your natural bite, and your natural smile.
-      </p>
-
-      {/* Placeholder for image */}
+      <div className="mt-4 flex flex-col md:flex-row gap-6 items-start">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Root canal treatment, also known as <strong>endodontic treatment</strong>, is a dental procedure that targets the inside of the tooth. Specifically, it addresses infection or inflammation in the pulp, which is the soft tissue at the core of every tooth.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            The pulp contains nerves, blood vessels, and connective tissue. It runs from the top of the tooth, called the crown, all the way down through the roots. In a healthy tooth, the pulp is protected by the hard outer layers of enamel and dentine. But when decay, a crack, or trauma allows bacteria to reach the pulp, it becomes infected.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            The goal of root canal treatment is to remove that infected pulp, clean and disinfect the space thoroughly, seal it to prevent reinfection, and then restore the tooth so it functions normally. The tooth itself is preserved. You keep your natural tooth, your natural bite, and your natural smile.
+          </p>
+        </div>
+        <div className="w-full md:w-56 shrink-0 rounded-xl overflow-hidden border border-border">
+          <img src={pulpDiagramImg} alt="Infected and inflamed pulp tissue diagram showing root canal anatomy" className="w-full h-auto object-contain" loading="lazy" />
+        </div>
+      </div>
 
       {/* When is Root Canal Treatment Necessary? */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">When is Root Canal Treatment Necessary?</h2>
@@ -80,32 +109,39 @@ const RootCanalArticle = () => {
 
       {/* Signs You May Need a Root Canal */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Signs You May Need a Root Canal</h2>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Many patients at Motiur's Dental come to us after noticing one or more of the following symptoms. If any of these sound familiar, you should book an appointment as soon as possible.
-      </p>
-      <ul className="space-y-4 my-6 list-none p-0">
-        <Bullet>
-          <strong>Persistent or worsening tooth pain:</strong> The pain may be throbbing, sharp, or a deep dull ache. Unlike ordinary toothaches that come and go, the pain from an infected pulp tends to linger and often gets worse over time, especially when you bite down or apply pressure to the tooth.
-        </Bullet>
-        <Bullet>
-          <strong>Sensitivity that does not go away:</strong> If your tooth reacts strongly to hot or cold and the sensitivity continues for several seconds or minutes after removing the source, this is a warning sign. Prolonged sensitivity points to nerve involvement.
-        </Bullet>
-        <Bullet>
-          <strong>Swollen or tender gums near the tooth:</strong> The infection irritates the surrounding gum tissue. You may notice swelling, redness, or tenderness in the gum directly next to the affected tooth.
-        </Bullet>
-        <Bullet>
-          <strong>A pimple-like bump on the gum:</strong> This is called a fistula or dental abscess. It often drains pus and is a sign that the infection has become serious and needs immediate attention.
-        </Bullet>
-        <Bullet>
-          <strong>Darkening or discoloration of the tooth:</strong> When the blood supply to the pulp is cut off, the tooth may darken or take on a grey or brownish tint from the inside out.
-        </Bullet>
-        <Bullet>
-          <strong>A loose tooth in an adult:</strong> If a tooth feels unstable without trauma, infection weakening the surrounding bone may be the cause.
-        </Bullet>
-        <Bullet>
-          <strong>Pain that wakes you up at night:</strong> Dental infections tend to cause more pain when lying down because blood pressure to the head increases.
-        </Bullet>
-      </ul>
+      <div className="mt-4 flex flex-col md:flex-row gap-6 items-start">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Many patients at Motiur's Dental come to us after noticing one or more of the following symptoms. If any of these sound familiar, you should book an appointment as soon as possible.
+          </p>
+          <ul className="space-y-4 my-6 list-none p-0">
+            <Bullet>
+              <strong>Persistent or worsening tooth pain:</strong> The pain may be throbbing, sharp, or a deep dull ache. Unlike ordinary toothaches that come and go, the pain from an infected pulp tends to linger and often gets worse over time, especially when you bite down or apply pressure to the tooth.
+            </Bullet>
+            <Bullet>
+              <strong>Sensitivity that does not go away:</strong> If your tooth reacts strongly to hot or cold and the sensitivity continues for several seconds or minutes after removing the source, this is a warning sign. Prolonged sensitivity points to nerve involvement.
+            </Bullet>
+            <Bullet>
+              <strong>Swollen or tender gums near the tooth:</strong> The infection irritates the surrounding gum tissue. You may notice swelling, redness, or tenderness in the gum directly next to the affected tooth.
+            </Bullet>
+            <Bullet>
+              <strong>A pimple-like bump on the gum:</strong> This is called a fistula or dental abscess. It often drains pus and is a sign that the infection has become serious and needs immediate attention.
+            </Bullet>
+            <Bullet>
+              <strong>Darkening or discoloration of the tooth:</strong> When the blood supply to the pulp is cut off, the tooth may darken or take on a grey or brownish tint from the inside out.
+            </Bullet>
+            <Bullet>
+              <strong>A loose tooth in an adult:</strong> If a tooth feels unstable without trauma, infection weakening the surrounding bone may be the cause.
+            </Bullet>
+            <Bullet>
+              <strong>Pain that wakes you up at night:</strong> Dental infections tend to cause more pain when lying down because blood pressure to the head increases.
+            </Bullet>
+          </ul>
+        </div>
+        <div className="w-full md:w-72 shrink-0 rounded-xl overflow-hidden border border-border">
+          <img src={signsImg} alt="8 signs that you need a root canal treatment" className="w-full h-auto object-contain" loading="lazy" />
+        </div>
+      </div>
       <p className="mt-3 text-foreground/85 leading-relaxed">
         Do not wait if you have any of these symptoms. The longer an infection is left untreated, the more complicated and expensive the treatment becomes. At Motiur's Dental, we can assess your tooth quickly and let you know exactly what is going on.
       </p>
@@ -136,23 +172,28 @@ const RootCanalArticle = () => {
         We want our patients to know exactly what happens during the procedure so there are no surprises.
       </p>
 
-      <div className="grid gap-4 my-6">
-        {[
-          { title: "Step 1: Examination and Diagnosis", desc: "We carry out a thorough examination including dental X-rays to see the shape of the root canals and identify any signs of infection in the surrounding bone. We may also perform sensitivity tests to assess the condition of the pulp accurately." },
-          { title: "Step 2: Local Anesthesia", desc: "We numb the area around the affected tooth completely using local anesthesia. Once the anesthesia takes effect, you will not feel pain during the procedure." },
-          { title: "Step 3: Isolating the Tooth", desc: "A thin sheet of rubber called a dental dam is placed around the tooth. This keeps the treatment area clean, dry, and free from saliva throughout the procedure." },
-          { title: "Step 4: Creating the Access Opening", desc: "A small opening is carefully made through the crown of the tooth to reach the pulp chamber and the root canals below." },
-          { title: "Step 5: Removing the Infected Pulp", desc: "Using very fine specialized instruments, the dentist removes the infected or inflamed pulp from the pulp chamber and from each root canal. The canals are shaped carefully to allow thorough cleaning and proper sealing." },
-          { title: "Step 6: Cleaning and Disinfecting", desc: "The canals are thoroughly irrigated with disinfecting solutions to eliminate any remaining bacteria. The canal walls are also smoothed and shaped to ensure the filling material will seal them properly." },
-          { title: "Step 7: Filling the Canals", desc: "The cleaned canals are filled with a biocompatible rubber-like material called gutta-percha. A sealing cement is used along with the gutta-percha to ensure a tight and complete seal." },
-          { title: "Step 8: Temporary Filling", desc: "A temporary filling is placed over the access opening to protect the tooth while it heals. You will return for a separate appointment to have the permanent restoration placed." },
-          { title: "Step 9: Crown Placement", desc: "In most cases, a tooth that has had root canal treatment needs a dental crown to protect it. The crown covers the entire tooth, restoring its strength, shape, and appearance." },
-        ].map((step) => (
-          <div key={step.title} className="bg-card border border-border rounded-xl p-5">
-            <h3 className="font-display font-bold text-lg text-foreground">{step.title}</h3>
-            <p className="text-muted-foreground mt-1 text-sm">{step.desc}</p>
-          </div>
-        ))}
+      <div className="mt-6 flex flex-col md:flex-row gap-6 items-start">
+        <div className="flex-1 grid gap-4">
+          {[
+            { title: "Step 1: Examination and Diagnosis", desc: "We carry out a thorough examination including dental X-rays to see the shape of the root canals and identify any signs of infection in the surrounding bone. We may also perform sensitivity tests to assess the condition of the pulp accurately." },
+            { title: "Step 2: Local Anesthesia", desc: "We numb the area around the affected tooth completely using local anesthesia. Once the anesthesia takes effect, you will not feel pain during the procedure." },
+            { title: "Step 3: Isolating the Tooth", desc: "A thin sheet of rubber called a dental dam is placed around the tooth. This keeps the treatment area clean, dry, and free from saliva throughout the procedure." },
+            { title: "Step 4: Creating the Access Opening", desc: "A small opening is carefully made through the crown of the tooth to reach the pulp chamber and the root canals below." },
+            { title: "Step 5: Removing the Infected Pulp", desc: "Using very fine specialized instruments, the dentist removes the infected or inflamed pulp from the pulp chamber and from each root canal. The canals are shaped carefully to allow thorough cleaning and proper sealing." },
+            { title: "Step 6: Cleaning and Disinfecting", desc: "The canals are thoroughly irrigated with disinfecting solutions to eliminate any remaining bacteria. The canal walls are also smoothed and shaped to ensure the filling material will seal them properly." },
+            { title: "Step 7: Filling the Canals", desc: "The cleaned canals are filled with a biocompatible rubber-like material called gutta-percha. A sealing cement is used along with the gutta-percha to ensure a tight and complete seal." },
+            { title: "Step 8: Temporary Filling", desc: "A temporary filling is placed over the access opening to protect the tooth while it heals. You will return for a separate appointment to have the permanent restoration placed." },
+            { title: "Step 9: Crown Placement", desc: "In most cases, a tooth that has had root canal treatment needs a dental crown to protect it. The crown covers the entire tooth, restoring its strength, shape, and appearance." },
+          ].map((step) => (
+            <div key={step.title} className="bg-card border border-border rounded-xl p-5">
+              <h3 className="font-display font-bold text-lg text-foreground">{step.title}</h3>
+              <p className="text-muted-foreground mt-1 text-sm">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="w-full md:w-64 shrink-0 rounded-xl overflow-hidden border border-border md:sticky md:top-24">
+          <img src={stepsImg} alt="Step by step root canal treatment procedure diagram" className="w-full h-auto object-contain" loading="lazy" />
+        </div>
       </div>
 
       {/* Why a Crown is Important */}
