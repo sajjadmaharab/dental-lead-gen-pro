@@ -1,5 +1,11 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import heroImg from "@/assets/extraction-hero.jpg";
+import severeDecayImg from "@/assets/extraction-severe-decay.jpg";
+import overcrowdingImg from "@/assets/extraction-overcrowding.jpg";
+import simpleImg from "@/assets/extraction-simple.jpg";
+import surgicalImg from "@/assets/extraction-surgical.jpg";
+import drySocketImg from "@/assets/extraction-dry-socket.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -7,11 +13,24 @@ const Bullet = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
+const CircleImage = ({ src, alt, className = "" }: { src: string; alt: string; className?: string }) => (
+  <div className={`flex-shrink-0 ${className}`}>
+    <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg mx-auto">
+      <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
+    </div>
+  </div>
+);
+
 const ToothExtractionArticle = () => {
   return (
     <article className="max-w-none">
 
-      {/* Placeholder for hero image */}
+      {/* Hero - circular profile style */}
+      <div className="flex justify-center mb-8">
+        <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+          <img src={heroImg} alt="Tooth extraction procedure at Motiur's Dental in Debidwar, Comilla" className="w-full h-full object-cover" />
+        </div>
+      </div>
 
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Tooth Extraction: Safe and Affordable
@@ -56,16 +75,22 @@ const ToothExtractionArticle = () => {
         There are several situations where tooth extraction becomes the most appropriate treatment. Here is a detailed breakdown of each one.
       </p>
 
+      {/* Severe Tooth Decay - image on right */}
       <h3 className="text-xl font-display font-semibold mt-8 text-foreground">Severe Tooth Decay</h3>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Tooth decay, commonly known as a cavity, begins as a small area of damage in the outer enamel of the tooth. If caught early, a simple filling resolves the problem completely. However, when decay is left untreated it progresses steadily through the enamel, into the dentine layer beneath, and eventually reaches the pulp at the center of the tooth.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Once bacteria reach the pulp, an infection develops inside the tooth. At this stage, root canal treatment can often still save the tooth by removing the infected pulp and sealing the canal. But in cases where the decay has destroyed too much of the tooth structure to support a crown after root canal treatment, or where the infection has spread extensively into the surrounding bone, extraction becomes necessary.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        This is one of the most important reasons why regular dental checkups matter so much. Cavities caught in their early stages are treated with a simple, inexpensive filling. Cavities left until they infect the pulp require either root canal treatment and a crown, or extraction followed by tooth replacement. The cost difference is significant, and the discomfort difference is even more so.
-      </p>
+      <div className="flex flex-col md:flex-row gap-5 items-start mt-3">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Tooth decay, commonly known as a cavity, begins as a small area of damage in the outer enamel of the tooth. If caught early, a simple filling resolves the problem completely. However, when decay is left untreated it progresses steadily through the enamel, into the dentine layer beneath, and eventually reaches the pulp at the center of the tooth.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Once bacteria reach the pulp, an infection develops inside the tooth. At this stage, root canal treatment can often still save the tooth by removing the infected pulp and sealing the canal. But in cases where the decay has destroyed too much of the tooth structure to support a crown after root canal treatment, or where the infection has spread extensively into the surrounding bone, extraction becomes necessary.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            This is one of the most important reasons why regular dental checkups matter so much. Cavities caught in their early stages are treated with a simple, inexpensive filling. Cavities left until they infect the pulp require either root canal treatment and a crown, or extraction followed by tooth replacement. The cost difference is significant, and the discomfort difference is even more so.
+          </p>
+        </div>
+        <CircleImage src={severeDecayImg} alt="Severe tooth decay requiring extraction at Motiur's Dental Debidwar" />
+      </div>
 
       <h3 className="text-xl font-display font-semibold mt-8 text-foreground">Advanced Gum Disease</h3>
       <p className="mt-3 text-foreground/85 leading-relaxed">
@@ -78,13 +103,19 @@ const ToothExtractionArticle = () => {
         Leaving a severely periodontally compromised tooth in the mouth allows the infection to continue destroying bone, which can affect the neighboring teeth as well. In these situations, extraction actually protects the surrounding teeth.
       </p>
 
+      {/* Overcrowded Teeth - image on right */}
       <h3 className="text-xl font-display font-semibold mt-8 text-foreground">Overcrowded Teeth</h3>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Sometimes the jaw does not have enough space to accommodate all the teeth properly. This overcrowding causes teeth to overlap, rotate, and erupt in abnormal positions. Overcrowded teeth are harder to clean effectively, which increases the risk of cavities and gum disease, and they create bite problems that can affect jaw function.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        When a patient is starting orthodontic treatment with braces, the orthodontist may recommend extracting one or more teeth to create the space needed for the remaining teeth to be moved into proper alignment. This is a planned and deliberate part of the treatment, not an emergency. The extractions create room for the braces to do their job properly, resulting in a well-aligned and healthy smile at the end of treatment.
-      </p>
+      <div className="flex flex-col md:flex-row gap-5 items-start mt-3">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Sometimes the jaw does not have enough space to accommodate all the teeth properly. This overcrowding causes teeth to overlap, rotate, and erupt in abnormal positions. Overcrowded teeth are harder to clean effectively, which increases the risk of cavities and gum disease, and they create bite problems that can affect jaw function.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            When a patient is starting orthodontic treatment with braces, the orthodontist may recommend extracting one or more teeth to create the space needed for the remaining teeth to be moved into proper alignment. This is a planned and deliberate part of the treatment, not an emergency. The extractions create room for the braces to do their job properly, resulting in a well-aligned and healthy smile at the end of treatment.
+          </p>
+        </div>
+        <CircleImage src={overcrowdingImg} alt="Overcrowded teeth before extraction for orthodontic treatment Debidwar" />
+      </div>
 
       <h3 className="text-xl font-display font-semibold mt-8 text-foreground">Impacted Teeth</h3>
       <p className="mt-3 text-foreground/85 leading-relaxed">
@@ -121,27 +152,39 @@ const ToothExtractionArticle = () => {
       {/* Types of Tooth Extraction */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Types of Tooth Extraction at Motiur's Dental</h2>
 
+      {/* Simple Extraction - image on right */}
       <h3 className="text-xl font-display font-semibold mt-8 text-foreground">Simple Extraction</h3>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        A simple extraction is performed on a tooth that has fully erupted above the gum line and has a relatively straightforward root structure. After the area is completely numbed with local anesthesia, the dentist uses specialized instruments to loosen the tooth within its socket and then removes it smoothly.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Simple extractions are quick procedures, often completed in 10 to 20 minutes for a single tooth. Most patients report that the procedure was far more comfortable than they anticipated. The pressure of the instruments is felt but not pain.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Simple extraction is appropriate for teeth that are badly decayed, teeth that are very loose due to advanced gum disease, and some teeth being removed as part of orthodontic planning.
-      </p>
+      <div className="flex flex-col md:flex-row gap-5 items-start mt-3">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            A simple extraction is performed on a tooth that has fully erupted above the gum line and has a relatively straightforward root structure. After the area is completely numbed with local anesthesia, the dentist uses specialized instruments to loosen the tooth within its socket and then removes it smoothly.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Simple extractions are quick procedures, often completed in 10 to 20 minutes for a single tooth. Most patients report that the procedure was far more comfortable than they anticipated. The pressure of the instruments is felt but not pain.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Simple extraction is appropriate for teeth that are badly decayed, teeth that are very loose due to advanced gum disease, and some teeth being removed as part of orthodontic planning.
+          </p>
+        </div>
+        <CircleImage src={simpleImg} alt="Simple tooth extraction procedure at Motiur's Dental Debidwar Comilla" />
+      </div>
 
+      {/* Surgical Extraction - image on left */}
       <h3 className="text-xl font-display font-semibold mt-8 text-foreground">Surgical Extraction</h3>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        A surgical extraction is required when a tooth is not fully erupted above the gum line, when it has a complex or curved root structure that prevents straightforward removal, when it has broken off at or below the gum line, or when it is impacted within the bone.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Surgical extraction involves making a small incision in the gum tissue to access the tooth properly. In some cases, a small amount of bone around the tooth needs to be removed to allow access. The tooth may also need to be divided into sections for easier removal, particularly with impacted wisdom teeth that are deeply positioned in the jaw.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Stitches are placed after a surgical extraction to close the gum tissue and promote proper healing. The procedure is performed entirely under local anesthesia so it is not painful, though the recovery period is slightly longer than for a simple extraction due to the involvement of gum tissue and sometimes bone.
-      </p>
+      <div className="flex flex-col md:flex-row gap-5 items-start mt-3">
+        <CircleImage src={surgicalImg} alt="Surgical tooth extraction at Motiur's Dental Debidwar Comilla" className="order-first" />
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            A surgical extraction is required when a tooth is not fully erupted above the gum line, when it has a complex or curved root structure that prevents straightforward removal, when it has broken off at or below the gum line, or when it is impacted within the bone.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Surgical extraction involves making a small incision in the gum tissue to access the tooth properly. In some cases, a small amount of bone around the tooth needs to be removed to allow access. The tooth may also need to be divided into sections for easier removal, particularly with impacted wisdom teeth that are deeply positioned in the jaw.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Stitches are placed after a surgical extraction to close the gum tissue and promote proper healing. The procedure is performed entirely under local anesthesia so it is not painful, though the recovery period is slightly longer than for a simple extraction due to the involvement of gum tissue and sometimes bone.
+          </p>
+        </div>
+      </div>
 
       {/* Step by Step Procedure */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">The Tooth Extraction Procedure at Motiur's Dental Step by Step</h2>
@@ -202,20 +245,27 @@ const ToothExtractionArticle = () => {
         </Bullet>
       </ul>
 
-      {/* Dry Socket */}
+      {/* Dry Socket - image beside text */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What is Dry Socket and How to Avoid It?</h2>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Dry socket, also called alveolar osteitis, is the most common complication after tooth extraction. It occurs when the blood clot in the extraction socket is dislodged or dissolves before the area has healed, leaving the bone underneath exposed.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Dry socket causes significant pain that typically begins two to four days after the extraction and is notably worse than the normal post-extraction soreness. The pain often radiates toward the ear and jaw. If you experience worsening pain after the third day rather than improving pain, contact Motiur's Dental immediately at <a href={telLink} className="text-primary hover:underline font-medium">{CLINIC.phone}</a>.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Dry socket is treated easily at the clinic. We clean the socket gently and place a medicated dressing that relieves the pain almost immediately. The dressing is changed every few days until the area heals.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        To avoid dry socket, follow all aftercare instructions carefully, do not smoke, do not use a straw, and do not spit forcefully in the days following extraction.
-      </p>
+      <div className="flex flex-col md:flex-row gap-6 items-start mt-3">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Dry socket, also called alveolar osteitis, is the most common complication after tooth extraction. It occurs when the blood clot in the extraction socket is dislodged or dissolves before the area has healed, leaving the bone underneath exposed.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Dry socket causes significant pain that typically begins two to four days after the extraction and is notably worse than the normal post-extraction soreness. The pain often radiates toward the ear and jaw. If you experience worsening pain after the third day rather than improving pain, contact Motiur's Dental immediately at <a href={telLink} className="text-primary hover:underline font-medium">{CLINIC.phone}</a>.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Dry socket is treated easily at the clinic. We clean the socket gently and place a medicated dressing that relieves the pain almost immediately. The dressing is changed every few days until the area heals.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            To avoid dry socket, follow all aftercare instructions carefully, do not smoke, do not use a straw, and do not spit forcefully in the days following extraction.
+          </p>
+        </div>
+        <div className="flex-shrink-0 w-full md:w-64">
+          <img src={drySocketImg} alt="Dry socket alveolar osteitis illustration showing blood clot and exposed bone after tooth extraction" className="w-full h-auto rounded-2xl border border-border shadow-md" loading="lazy" />
+        </div>
+      </div>
 
       {/* Replacing the Missing Tooth */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What to Do After Extraction: Replacing the Missing Tooth</h2>
