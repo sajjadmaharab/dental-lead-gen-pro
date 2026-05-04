@@ -1,11 +1,20 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import ImageCarousel from "@/components/ImageCarousel";
+import bridgeCapAB1 from "@/assets/bridge-cap-before-after-1.png";
+import bridgeCapAB2 from "@/assets/bridge-cap-before-after-2.png";
+import bridgeVsImplant from "@/assets/bridge-vs-implant.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
     {children}
   </li>
 );
+
+const beforeAfterImages = [
+  { src: bridgeCapAB1, alt: "Dental bridge and cap before and after treatment at Motiur's Dental Debidwar Comilla", caption: "Dental bridge: before and after" },
+  { src: bridgeCapAB2, alt: "Dental cap crown before and after result Motiur's Dental Debidwar Comilla Bangladesh", caption: "Dental cap: before and after" },
+];
 
 const DentalBridgeCapArticle = () => {
   return (
@@ -21,6 +30,9 @@ const DentalBridgeCapArticle = () => {
       <p className="mt-4 text-foreground/85 leading-relaxed">
         Whether you have a single cracked tooth that needs a crown, a gap left by a missing tooth that needs a bridge, or multiple teeth that need restoring, we provide the right solution at prices that are significantly more affordable than other dental clinics in the Comilla district.
       </p>
+
+      {/* Before / After carousel */}
+      <ImageCarousel images={beforeAfterImages} mobileMaxH="220px" desktopCols={2} />
 
       <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
         <div className="flex items-center gap-2 text-primary font-semibold">
@@ -75,6 +87,32 @@ const DentalBridgeCapArticle = () => {
         A dental bridge is a fixed dental restoration used to replace one or more missing teeth. It literally bridges the gap where teeth are missing, using the natural teeth on either side as anchors. A traditional bridge consists of two dental crowns on the abutment teeth with one or more artificial teeth (pontics) suspended between them. The entire structure is cemented permanently into place.
       </p>
 
+      {/* Dental Bridges at Motiur's Dental — video beside text */}
+      <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Dental Bridges at Motiur's Dental</h2>
+      <div className="flex flex-col md:flex-row gap-6 my-6">
+        <div className="md:w-1/2 text-foreground/85 leading-relaxed">
+          <p>
+            At Motiur's Dental in Debidwar, Comilla, we have successfully restored hundreds of smiles with custom dental bridges. Every bridge is precision-crafted to match the shade and shape of your natural teeth, ensuring a seamless result that looks and feels completely real.
+          </p>
+          <p className="mt-3">
+            Our experienced team uses the latest dental technology to deliver accurate impressions and high-quality restorations. Whether you need a single-tooth bridge or a multi-unit bridge, we provide durable, comfortable solutions at the most affordable prices in the Comilla district.
+          </p>
+        </div>
+        <div className="md:w-1/2">
+          <video
+            className="w-full rounded-xl border border-border"
+            controls
+            preload="metadata"
+            playsInline
+            aria-label="Dental bridge case study video at Motiur's Dental Debidwar Comilla"
+          >
+            <source src="/videos/dental-bridge-case-study.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p className="text-xs text-muted-foreground text-center mt-2">Dental bridge case study at Motiur's Dental, Debidwar</p>
+        </div>
+      </div>
+
       {/* Why Missing Teeth Must Be Replaced */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Why Missing Teeth Must Be Replaced</h2>
       <ul className="space-y-4 my-6 list-none p-0">
@@ -112,6 +150,17 @@ const DentalBridgeCapArticle = () => {
         At Motiur's Dental, we assess your specific situation and give you an honest recommendation based on your oral health, bone condition, budget, and timeline.
       </p>
 
+      {/* Bridge vs Implant image */}
+      <div className="my-6">
+        <img
+          src={bridgeVsImplant}
+          alt="Dental bridge vs dental implant comparison showing bridge and implant side by side Debidwar Comilla"
+          className="w-full rounded-xl border border-border"
+          loading="lazy"
+        />
+        <p className="text-xs text-muted-foreground text-center mt-2">Dental bridge vs dental implant: understanding your options</p>
+      </div>
+
       {/* Cap Procedure */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">The Dental Cap Procedure Step by Step</h2>
       <ol className="space-y-2 my-6 list-decimal list-inside text-foreground/85 marker:text-primary marker:font-bold">
@@ -123,15 +172,30 @@ const DentalBridgeCapArticle = () => {
       </ol>
       <p className="mt-3 text-foreground/85">The entire process typically takes two to three weeks.</p>
 
-      {/* Bridge Procedure */}
+      {/* Bridge Procedure with video */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">The Dental Bridge Procedure Step by Step</h2>
-      <ol className="space-y-2 my-6 list-decimal list-inside text-foreground/85 marker:text-primary marker:font-bold">
-        <li><strong>Consultation and assessment:</strong> We examine your mouth, take X-rays, and assess whether a bridge is suitable. We discuss types, materials, and provide a cost estimate.</li>
-        <li><strong>Preparation of abutment teeth:</strong> The teeth on either side of the gap are prepared with local anesthesia. A thin layer of enamel is removed.</li>
-        <li><strong>Impressions:</strong> A full impression goes to the laboratory where the entire bridge unit is custom fabricated.</li>
-        <li><strong>Temporary bridge:</strong> A temporary bridge protects the prepared teeth while the permanent bridge is made.</li>
-        <li><strong>Permanent bridge placement:</strong> The permanent bridge is checked for fit, color, and bite alignment, then cemented permanently.</li>
-      </ol>
+      <div className="flex flex-col md:flex-row gap-6 my-6">
+        <ol className="space-y-2 md:w-1/2 list-decimal list-inside text-foreground/85 marker:text-primary marker:font-bold">
+          <li><strong>Consultation and assessment:</strong> We examine your mouth, take X-rays, and assess whether a bridge is suitable. We discuss types, materials, and provide a cost estimate.</li>
+          <li><strong>Preparation of abutment teeth:</strong> The teeth on either side of the gap are prepared with local anesthesia. A thin layer of enamel is removed.</li>
+          <li><strong>Impressions:</strong> A full impression goes to the laboratory where the entire bridge unit is custom fabricated.</li>
+          <li><strong>Temporary bridge:</strong> A temporary bridge protects the prepared teeth while the permanent bridge is made.</li>
+          <li><strong>Permanent bridge placement:</strong> The permanent bridge is checked for fit, color, and bite alignment, then cemented permanently.</li>
+        </ol>
+        <div className="md:w-1/2">
+          <video
+            className="w-full rounded-xl border border-border"
+            controls
+            preload="metadata"
+            playsInline
+            aria-label="Dental cap case study procedure video Motiur's Dental Debidwar Comilla"
+          >
+            <source src="/videos/dental-cap-case-study.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p className="text-xs text-muted-foreground text-center mt-2">Dental cap procedure case study at Motiur's Dental</p>
+        </div>
+      </div>
 
       {/* Care */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">How to Care for Your Dental Cap or Bridge</h2>
@@ -143,11 +207,26 @@ const DentalBridgeCapArticle = () => {
         <Bullet>Attend regular checkups at Motiur's Dental so we can monitor the condition of your restoration.</Bullet>
       </ul>
 
-      {/* Cost */}
+      {/* Cost with video */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Dental Cap and Bridge Cost in Debidwar, Comilla</h2>
       <p className="mt-3 text-foreground/85">
         The cost varies depending on the material chosen, number of teeth involved, and complexity of the case. At Motiur's Dental in Debidwar, we offer dental caps and bridges at prices that are among the most affordable in the Comilla district. Patients from Debidwar, Muradnagar, Chandina, Brahmanpara, Burichung, Homna, and Comilla city regularly choose us for the same quality at a significantly lower cost.
       </p>
+
+      <div className="my-6 max-w-md mx-auto">
+        <video
+          className="w-full rounded-xl border border-border"
+          controls
+          preload="metadata"
+          playsInline
+          aria-label="Dental cap and bridge cost information video Motiur's Dental Debidwar Comilla"
+        >
+          <source src="/videos/dental-cap-bridge-cost.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p className="text-xs text-muted-foreground text-center mt-2">Dental cap and bridge cost at Motiur's Dental, Debidwar</p>
+      </div>
+
       <div className="bg-primary/10 rounded-xl p-5 my-6 text-center">
         <p className="font-display font-bold text-lg text-foreground mb-2">Get Your Cost Estimate</p>
         <a href={telLink} className="text-primary font-bold text-xl hover:underline">
