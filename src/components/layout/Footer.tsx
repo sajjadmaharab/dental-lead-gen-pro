@@ -50,7 +50,7 @@ const ServicesDropup = () => {
 
 export const Footer = () => {
   return (
-    <footer className="relative mt-0 bg-[#0b3550] text-white/85">
+    <footer className="relative mt-0 bg-sky-gradient text-foreground">
       <div className="container-page py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
           <div className="flex items-center gap-3 mb-4">
