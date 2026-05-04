@@ -43,33 +43,8 @@ const RootCanalArticle = () => {
         And if cost has been stopping you from seeking treatment, here is something worth knowing. At Motiur's Dental, our root canal treatment prices are among the most affordable in the Comilla district, with no compromise on quality, materials, or technique.
       </p>
 
-      {/* Case Studies - Before/After Sliders */}
-      <section className="my-10" aria-label="Root canal treatment case studies at Motiur's Dental Debidwar Comilla">
-        <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">Our Root Canal Treatment Results</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <BeforeAfterSlider
-            beforeSrc={work1}
-            afterSrc={work2}
-            beforeAlt="Root canal case 1 before treatment X-ray at Motiur's Dental Debidwar"
-            afterAlt="Root canal case 1 after treatment X-ray at Motiur's Dental Debidwar"
-            label="Case Study 1: Molar Root Canal"
-          />
-          <BeforeAfterSlider
-            beforeSrc={work3}
-            afterSrc={work4}
-            beforeAlt="Root canal case 2 before treatment X-ray at Motiur's Dental Comilla"
-            afterAlt="Root canal case 2 after treatment X-ray at Motiur's Dental Comilla"
-            label="Case Study 2: Anterior Root Canal"
-          />
-          <BeforeAfterSlider
-            beforeSrc={work5}
-            afterSrc={work6}
-            beforeAlt="Root canal case 3 before treatment X-ray at Motiur's Dental"
-            afterAlt="Root canal case 3 after treatment X-ray at Motiur's Dental"
-            label="Case Study 3: Premolar Root Canal"
-          />
-        </div>
-      </section>
+      {/* Case Studies - Auto-sliding carousel */}
+      <CaseStudyCarousel />
 
       <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
         <div className="flex items-center gap-2 text-primary font-semibold">
