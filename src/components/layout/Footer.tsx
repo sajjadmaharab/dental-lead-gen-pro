@@ -25,7 +25,7 @@ const ServicesDropup = () => {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="text-white/75 hover:text-white transition-smooth text-left inline-flex items-center gap-1"
+        className="text-foreground/75 hover:text-foreground transition-smooth text-left inline-flex items-center gap-1"
       >
         Services
         <ChevronUp className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} />
@@ -50,7 +50,7 @@ const ServicesDropup = () => {
 
 export const Footer = () => {
   return (
-    <footer className="relative mt-0 bg-[#0b3550] text-white/85">
+    <footer className="relative mt-0 bg-sky-gradient text-foreground">
       <div className="container-page py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
           <div className="flex items-center gap-3 mb-4">
@@ -63,23 +63,23 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white mb-4 text-base tracking-wider">VISIT US</h3>
-          <ul className="space-y-2.5 text-sm text-white/75">
-            <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-cta shrink-0" /><a href={CLINIC.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">{CLINIC.address}</a></li>
-            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-cta shrink-0" /><a href={telLink} className="hover:text-white">{CLINIC.phone}</a></li>
+          <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">VISIT US</h3>
+          <ul className="space-y-2.5 text-sm text-foreground/75">
+            <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-cta shrink-0" /><a href={CLINIC.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">{CLINIC.address}</a></li>
+            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-cta shrink-0" /><a href={telLink} className="hover:text-foreground">{CLINIC.phone}</a></li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white mb-4 text-base tracking-wider">WORKING HOURS</h3>
-          <ul className="space-y-2.5 text-sm text-white/75">
-            <li className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-cta shrink-0" /><div>Saturday – Thursday<br /><span className="text-white/60">10:00 AM – 7:00 PM</span></div></li>
-            <li className="text-white/60 pl-6">Friday — Closed</li>
+          <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">WORKING HOURS</h3>
+          <ul className="space-y-2.5 text-sm text-foreground/75">
+            <li className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-cta shrink-0" /><div>Saturday – Thursday<br /><span className="text-foreground/60">10:00 AM – 7:00 PM</span></div></li>
+            <li className="text-foreground/60 pl-6">Friday — Closed</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white mb-4 text-base tracking-wider">QUICK LINKS</h3>
+          <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">QUICK LINKS</h3>
           <ul className="space-y-2 text-sm">
             {[
               ["Home", "/"],
@@ -93,7 +93,7 @@ export const Footer = () => {
                 {p === "__services__" ? (
                   <ServicesDropup />
                 ) : (
-                  <Link to={p} className="text-white/75 hover:text-white transition-smooth">{n}</Link>
+                  <Link to={p} className="text-foreground/75 hover:text-foreground transition-smooth">{n}</Link>
                 )}
               </li>
             ))}
@@ -101,19 +101,19 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white mb-4 text-base tracking-wider">GET IN TOUCH</h3>
-          <p className="text-sm text-white/70">Have a question? Send us a message on WhatsApp and we'll respond quickly.</p>
+          <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">GET IN TOUCH</h3>
+          <p className="text-sm text-foreground/70">Have a question? Send us a message on WhatsApp and we'll respond quickly.</p>
           <a href={waLink()} target="_blank" rel="noopener noreferrer" className="block mt-3">
             <Button variant="cta" className="w-full rounded-full">WhatsApp Us</Button>
           </a>
           <form className="mt-4 flex gap-2" onSubmit={(e) => e.preventDefault()}>
-            <Input type="email" placeholder="Your Email" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+            <Input type="email" placeholder="Your Email" className="bg-white/60 border-foreground/20 text-foreground placeholder:text-foreground/50" />
             <Button type="submit" variant="cta" className="rounded-md">Subscribe</Button>
           </form>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="container-page py-5 text-xs text-white/55 text-center">
+      <div className="border-t border-foreground/10">
+        <div className="container-page py-5 text-xs text-foreground/55 text-center">
           © {new Date().getFullYear()} Motiur's Dental. All rights reserved. Best Dental Clinic in Debidwar, Comilla.
         </div>
       </div>
