@@ -28,6 +28,10 @@ const FracturedTeethArticle = () => {
         Chipped Tooth and Fractured Teeth Treatment in Debidwar, Comilla
       </h1>
 
+      <div className="rounded-2xl overflow-hidden border border-border mb-8">
+        <img src={fracturedHero} alt="Chipped and fractured teeth treatment in Debidwar Comilla by Motiur's Dental" className="w-full h-auto object-cover" />
+      </div>
+
       <p className="text-lg leading-relaxed text-foreground/90">
         A chipped, cracked, or fractured tooth can happen to anyone at any moment. One bite on something unexpectedly hard, a fall, a sports impact, or an accident, and suddenly part of your tooth is gone or you can feel something is wrong inside it. At <strong>Motiur's Dental in Debidwar, Comilla</strong>, we treat chipped and fractured teeth regularly and we see patients in varying degrees of urgency, from minor cosmetic chips to serious fractures involving the nerve.
       </p>
