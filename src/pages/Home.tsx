@@ -6,7 +6,6 @@ import { SEO } from "@/components/SEO";
 import { Wave } from "@/components/Wave";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
 
-import { CASES } from "@/data/cases";
 import { HandwritingCTA } from "@/components/ui/handwriting-cta";
 import { GoogleReviewCarousel } from "@/components/GoogleReviewCarousel";
 import type { GoogleReview } from "@/components/GoogleReviewCard";
@@ -21,12 +20,17 @@ import iconCapBridge from "@/assets/services/cap-bridge.png";
 import iconSpacing from "@/assets/services/spacing-treatment.png";
 import iconReplacement from "@/assets/services/teeth-replacement.png";
 
-/* Top service before/after slides */
+/* Real before/after images from service pages */
+import cosmeticFillingAB from "@/assets/cosmetic-filling-before-after.webp";
+import scalingAb1 from "@/assets/scaling-ab-1.webp";
+import toothGapAb1 from "@/assets/tooth-gap-ab-1.png";
+import bridgeCapAB1 from "@/assets/bridge-cap-before-after-1.png";
+
 const SERVICE_BA_SLIDES = [
-  { service: "Cosmetic Filling", before: CASES[3].before, after: CASES[3].after, slug: "cosmetic-filling" },
-  { service: "Teeth Whitening", before: CASES[2].before, after: CASES[2].after, slug: "scaling-polishing-whitening" },
-  { service: "Gap Teeth Closing", before: CASES[1].before, after: CASES[1].after, slug: "tooth-gap-treatment" },
-  { service: "Broken Tooth Restoration", before: CASES[0].before, after: CASES[0].after, slug: "cosmetic-filling" },
+  { service: "Cosmetic Filling", image: cosmeticFillingAB, slug: "cosmetic-filling" },
+  { service: "Scaling & Polishing", image: scalingAb1, slug: "scaling-polishing-whitening" },
+  { service: "Tooth Gap Treatment", image: toothGapAb1, slug: "tooth-gap-treatment" },
+  { service: "Dental Bridge & Cap", image: bridgeCapAB1, slug: "dental-bridges-caps" },
 ];
 
 const HOME_SERVICES = [
