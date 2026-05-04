@@ -58,27 +58,10 @@ const BracesArticle = () => {
         You do not need to travel to Comilla city or Dhaka for proper orthodontic care. Motiur's Dental in Debidwar is fully equipped to handle your braces treatment from start to finish.
       </p>
 
-      {/* Before & After Grid */}
+      {/* Before & After Carousel */}
       <div className="my-8">
         <h3 className="text-xl font-display font-bold text-foreground mb-4">Real Patient Results: Before and After Braces</h3>
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          <div className="rounded-xl overflow-hidden border border-border relative">
-            <img src={bracesBefore1} alt="Teeth before braces treatment at Motiur's Dental Debidwar - crooked teeth case" className="w-full h-40 sm:h-52 md:h-64 object-cover" loading="eager" />
-            <span className="absolute top-2 left-2 bg-destructive/90 text-destructive-foreground text-xs font-bold px-2 py-1 rounded-lg">Before</span>
-          </div>
-          <div className="rounded-xl overflow-hidden border border-border relative">
-            <img src={bracesBefore2} alt="Misaligned teeth before orthodontic treatment at Motiur's Dental Comilla" className="w-full h-40 sm:h-52 md:h-64 object-cover" loading="eager" />
-            <span className="absolute top-2 left-2 bg-destructive/90 text-destructive-foreground text-xs font-bold px-2 py-1 rounded-lg">Before</span>
-          </div>
-          <div className="rounded-xl overflow-hidden border border-border relative">
-            <img src={bracesAfter1} alt="Teeth during braces treatment showing alignment progress at Motiur's Dental" className="w-full h-40 sm:h-52 md:h-64 object-cover" loading="eager" />
-            <span className="absolute top-2 left-2 bg-primary/90 text-primary-foreground text-xs font-bold px-2 py-1 rounded-lg">After</span>
-          </div>
-          <div className="rounded-xl overflow-hidden border border-border relative">
-            <img src={bracesAfter2} alt="Orthodontic braces correcting bite alignment at Motiur's Dental Debidwar" className="w-full h-40 sm:h-52 md:h-64 object-cover" loading="eager" />
-            <span className="absolute top-2 left-2 bg-primary/90 text-primary-foreground text-xs font-bold px-2 py-1 rounded-lg">After</span>
-          </div>
-        </div>
+        <ImageCarousel images={bracesBeforeAfterImages} mobileMaxH="200px" desktopCols={2} />
       </div>
 
       <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
