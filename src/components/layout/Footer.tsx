@@ -79,7 +79,7 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white mb-4 text-base tracking-wider">QUICK LINKS</h3>
+          <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">QUICK LINKS</h3>
           <ul className="space-y-2 text-sm">
             {[
               ["Home", "/"],
