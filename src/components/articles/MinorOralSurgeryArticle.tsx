@@ -1,11 +1,32 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
 
+import heroImg from "@/assets/minor-surgery-hero.jpg";
+import benefitsImg from "@/assets/minor-surgery-benefits.jpg";
+import wisdomImg from "@/assets/minor-surgery-wisdom.jpg";
+import extractionImg from "@/assets/minor-surgery-extraction.jpg";
+import biopsyImg from "@/assets/minor-surgery-biopsy.jpg";
+import abscessImg from "@/assets/minor-surgery-abscess.jpg";
+import cystImg from "@/assets/minor-surgery-cyst.jpg";
+import frenectomyImg from "@/assets/minor-surgery-frenectomy.jpg";
+import bonegraftImg from "@/assets/minor-surgery-bonegraft.jpg";
+
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
     {children}
   </li>
 );
+
+const serviceImages: Record<string, { src: string; position: "left" | "right" }> = {
+  "Wisdom Tooth Extraction": { src: wisdomImg, position: "right" },
+  "Tooth Extractions": { src: extractionImg, position: "left" },
+  "Biopsies": { src: biopsyImg, position: "right" },
+  "Abscess Drainage": { src: abscessImg, position: "left" },
+  "Cyst and Tumor Removal": { src: cystImg, position: "right" },
+  "Frenectomy": { src: frenectomyImg, position: "left" },
+  "Alveoloplasty / Alveolectomy": { src: bonegraftImg, position: "right" },
+  "Bone Grafting": { src: bonegraftImg, position: "right" },
+};
 
 const MinorOralSurgeryArticle = () => {
   return (
@@ -14,6 +35,13 @@ const MinorOralSurgeryArticle = () => {
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Minor Oral Surgery Services at Motiur's Dental, Comilla
       </h1>
+
+      {/* Hero Image */}
+      <img
+        src={heroImg}
+        alt="Minor oral surgery procedure at Motiur's Dental"
+        className="w-full rounded-2xl object-cover max-h-[400px] mb-8"
+      />
 
       <p className="text-lg leading-relaxed text-foreground/90">
         Looking for expert minor oral surgery in Comilla? At <strong>Motiur's Dental</strong>, we offer an ample range of procedures performed by our highly skilled and experienced dental team. We understand that even minor oral health problems can cause significant discomfort and anxiety. That is why we prioritize your comfort and well-being throughout the entire process.
@@ -97,12 +125,26 @@ const MinorOralSurgeryArticle = () => {
             title: "Operculectomy",
             desc: "Removing excess gum tissue covering an erupting tooth. An operculectomy is a minor surgical procedure to remove excess gum tissue that is covering an erupting tooth. This may be necessary if the erupting tooth is trapped and unable to emerge fully."
           },
-        ].map((item) => (
-          <div key={item.title} className="bg-card border border-border rounded-xl p-5">
-            <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
-            <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
+        ].map((item) => {
+          const imgData = serviceImages[item.title];
+          return (
+            <div key={item.title} className="bg-card border border-border rounded-xl p-5">
+              <div className={`flex flex-col ${imgData ? (imgData.position === "right" ? "sm:flex-row" : "sm:flex-row-reverse") : ""} gap-4`}>
+                <div className="flex-1">
+                  <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
+                  <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+                {imgData && (
+                  <img
+                    src={imgData.src}
+                    alt={item.title}
+                    className="w-32 h-32 object-cover rounded-lg shrink-0"
+                  />
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Benefits */}
@@ -114,6 +156,13 @@ const MinorOralSurgeryArticle = () => {
         <Bullet><strong>Personalized Care.</strong> We understand every patient is unique, and we tailor our treatment plans to your specific needs and concerns.</Bullet>
         <Bullet><strong>Pain Management.</strong> We offer various options to ensure your comfort throughout the procedure and during recovery.</Bullet>
       </ul>
+
+      {/* Benefits Image */}
+      <img
+        src={benefitsImg}
+        alt="Minor oral surgery benefits at Motiur's Dental"
+        className="w-full rounded-2xl object-cover max-h-[350px] my-6"
+      />
 
       <p className="text-foreground/85 leading-relaxed mt-6">
         At Motiur's Dental, we prioritize your comfort, safety, and satisfaction above all else. With our comprehensive range of minor oral surgery services, performed with precision and care, you can trust us to deliver the exceptional results you deserve.
