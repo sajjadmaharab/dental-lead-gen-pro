@@ -254,12 +254,12 @@ const RootCanalArticle = () => {
           { title: "Zirconia Crowns", img: zirconiaCrownImg, alt: "Zirconia dental crowns - metal-free and biocompatible at Motiur's Dental", desc: "One of the strongest materials used in dentistry today. Completely metal-free, highly biocompatible, and offer an excellent natural appearance.", imgSide: "right" as const },
           { title: "Metal Crowns", img: metalCrownImg, alt: "Metal dental crowns - durable option for back teeth at Motiur's Dental", desc: "The most durable option for back teeth that experience heavy chewing forces. Less commonly used today due to their visible metallic appearance, but an excellent functional choice for molars.", imgSide: "left" as const },
         ].map((item) => (
-          <div key={item.title} className={`flex flex-col ${item.imgSide === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-4 bg-card border border-border rounded-xl overflow-hidden items-center`}>
-            <div className="p-5 flex-1 flex flex-col justify-center">
-              <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
-              <p className="text-muted-foreground mt-1 text-sm leading-relaxed">{item.desc}</p>
+          <div key={item.title} className={`flex flex-row ${item.imgSide === 'right' ? '' : 'flex-row-reverse'} gap-3 bg-card border border-border rounded-xl overflow-hidden items-center`}>
+            <div className="p-4 flex-1 flex flex-col justify-center min-w-0">
+              <h3 className="font-display font-bold text-base text-foreground">{item.title}</h3>
+              <p className="text-muted-foreground mt-1 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
             </div>
-            <div className="w-full md:w-40 h-40 md:h-36 flex-shrink-0">
+            <div className="w-28 sm:w-32 md:w-36 h-28 sm:h-32 md:h-36 flex-shrink-0">
               <img src={item.img} alt={item.alt} className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
