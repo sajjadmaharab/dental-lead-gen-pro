@@ -101,19 +101,19 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white mb-4 text-base tracking-wider">GET IN TOUCH</h3>
-          <p className="text-sm text-white/70">Have a question? Send us a message on WhatsApp and we'll respond quickly.</p>
+          <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">GET IN TOUCH</h3>
+          <p className="text-sm text-foreground/70">Have a question? Send us a message on WhatsApp and we'll respond quickly.</p>
           <a href={waLink()} target="_blank" rel="noopener noreferrer" className="block mt-3">
             <Button variant="cta" className="w-full rounded-full">WhatsApp Us</Button>
           </a>
           <form className="mt-4 flex gap-2" onSubmit={(e) => e.preventDefault()}>
-            <Input type="email" placeholder="Your Email" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+            <Input type="email" placeholder="Your Email" className="bg-white/60 border-foreground/20 text-foreground placeholder:text-foreground/50" />
             <Button type="submit" variant="cta" className="rounded-md">Subscribe</Button>
           </form>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="container-page py-5 text-xs text-white/55 text-center">
+      <div className="border-t border-foreground/10">
+        <div className="container-page py-5 text-xs text-foreground/55 text-center">
           © {new Date().getFullYear()} Motiur's Dental. All rights reserved. Best Dental Clinic in Debidwar, Comilla.
         </div>
       </div>
