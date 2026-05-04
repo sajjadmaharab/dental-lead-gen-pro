@@ -250,16 +250,16 @@ const RootCanalArticle = () => {
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Types of Crowns Available at Motiur's Dental After Root Canal</h2>
       <div className="space-y-6 my-6">
         {[
-          { title: "Porcelain Crowns", img: porcelainCrownImg, alt: "Porcelain dental crowns showing natural tooth-like appearance at Motiur's Dental", desc: "The most popular choice for front teeth and visible areas. They are crafted to match the color and translucency of natural teeth and look completely natural.", side: "right" },
-          { title: "Zirconia Crowns", img: zirconiaCrownImg, alt: "Zirconia dental crowns - metal-free and biocompatible at Motiur's Dental", desc: "One of the strongest materials used in dentistry today. Completely metal-free, highly biocompatible, and offer an excellent natural appearance.", side: "left" },
-          { title: "Metal Crowns", img: metalCrownImg, alt: "Metal dental crowns - durable option for back teeth at Motiur's Dental", desc: "The most durable option for back teeth that experience heavy chewing forces. Less commonly used today due to their visible metallic appearance, but an excellent functional choice for molars.", side: "right" },
+          { title: "Porcelain Crowns", img: porcelainCrownImg, alt: "Porcelain dental crowns showing natural tooth-like appearance at Motiur's Dental", desc: "The most popular choice for front teeth and visible areas. They are crafted to match the color and translucency of natural teeth and look completely natural.", imgSide: "left" as const },
+          { title: "Zirconia Crowns", img: zirconiaCrownImg, alt: "Zirconia dental crowns - metal-free and biocompatible at Motiur's Dental", desc: "One of the strongest materials used in dentistry today. Completely metal-free, highly biocompatible, and offer an excellent natural appearance.", imgSide: "right" as const },
+          { title: "Metal Crowns", img: metalCrownImg, alt: "Metal dental crowns - durable option for back teeth at Motiur's Dental", desc: "The most durable option for back teeth that experience heavy chewing forces. Less commonly used today due to their visible metallic appearance, but an excellent functional choice for molars.", imgSide: "left" as const },
         ].map((item) => (
-          <div key={item.title} className={`flex flex-col ${item.side === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-4 items-center`}>
-            <div className="flex-1">
+          <div key={item.title} className={`flex flex-col ${item.imgSide === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-4 bg-card border border-border rounded-xl overflow-hidden items-center`}>
+            <div className="p-5 flex-1 flex flex-col justify-center">
               <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
               <p className="text-muted-foreground mt-1 text-sm leading-relaxed">{item.desc}</p>
             </div>
-            <div className="w-40 h-32 md:w-44 md:h-36 flex-shrink-0 rounded-xl overflow-hidden border border-border">
+            <div className="w-full md:w-40 h-40 md:h-36 flex-shrink-0">
               <img src={item.img} alt={item.alt} className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
