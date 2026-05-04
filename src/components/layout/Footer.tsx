@@ -93,7 +93,7 @@ export const Footer = () => {
                 {p === "__services__" ? (
                   <ServicesDropup />
                 ) : (
-                  <Link to={p} className="text-white/75 hover:text-white transition-smooth">{n}</Link>
+                  <Link to={p} className="text-foreground/75 hover:text-foreground transition-smooth">{n}</Link>
                 )}
               </li>
             ))}
