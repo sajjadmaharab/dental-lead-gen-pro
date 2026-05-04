@@ -1,5 +1,13 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import wisdomHero from "@/assets/wisdom-hero.jpg";
+import wisdomRemovalSteps from "@/assets/wisdom-removal-steps.png";
+import wisdomTeethDiagram from "@/assets/wisdom-teeth-diagram.jpg";
+import wisdomToothImpacted from "@/assets/wisdom-tooth-impacted.jpg";
+import wisdomInfectionSymptoms from "@/assets/wisdom-infection-symptoms.png";
+import wisdomRecoveryTimeline from "@/assets/wisdom-recovery-timeline.png";
+import operculectomyTechnique from "@/assets/operculectomy-technique.webp";
+import wisdomXray from "@/assets/wisdom-xray.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -11,7 +19,10 @@ const WisdomTeethArticle = () => {
   return (
     <article className="max-w-none">
 
-      {/* Placeholder for hero image */}
+      {/* Hero image */}
+      <div className="rounded-2xl overflow-hidden mb-8">
+        <img src={wisdomHero} alt="Impacted wisdom tooth causing pain and swelling in the gum" className="w-full h-auto object-cover max-h-[400px]" loading="eager" />
+      </div>
 
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-6 leading-tight">
         Wisdom Teeth Treatment: Wisdom Tooth Removal
@@ -37,15 +48,22 @@ const WisdomTeethArticle = () => {
 
       {/* What Are Wisdom Teeth? */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What Are Wisdom Teeth?</h2>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Wisdom teeth are your third molars, the very last teeth to develop and erupt in the mouth. Most people have four of them, one in each corner of the mouth, though some people develop fewer and some develop none at all.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        In Bangladesh, wisdom teeth are commonly known as <strong>আক্কেল দাঁত (akkel daat)</strong>. They typically begin to push through the gums between the ages of 17 and 25, though this varies from person to person.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        The reason wisdom teeth cause so many problems is largely evolutionary. Human jaws have become smaller over thousands of years, but we still grow the same number of teeth our distant ancestors had. In many people, there is simply not enough space at the back of the jaw for wisdom teeth to come through properly. When that happens, the tooth becomes trapped, which leads to a range of complications.
-      </p>
+      <div className="flex flex-col md:flex-row gap-6 mt-3">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Wisdom teeth are your third molars, the very last teeth to develop and erupt in the mouth. Most people have four of them, one in each corner of the mouth, though some people develop fewer and some develop none at all.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            In Bangladesh, wisdom teeth are commonly known as <strong>আক্কেল দাঁত (akkel daat)</strong>. They typically begin to push through the gums between the ages of 17 and 25, though this varies from person to person.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            The reason wisdom teeth cause so many problems is largely evolutionary. Human jaws have become smaller over thousands of years, but we still grow the same number of teeth our distant ancestors had. In many people, there is simply not enough space at the back of the jaw for wisdom teeth to come through properly. When that happens, the tooth becomes trapped, which leads to a range of complications.
+          </p>
+        </div>
+        <div className="md:w-[280px] shrink-0">
+          <img src={wisdomTeethDiagram} alt="Diagram showing an impacted wisdom tooth pressing against the molar with inflamed gum tissue" className="w-full h-auto rounded-xl border border-border" loading="lazy" />
+        </div>
+      </div>
 
       {/* Why Wisdom Teeth Cause Problems */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Why Wisdom Teeth Cause Problems</h2>
@@ -66,32 +84,37 @@ const WisdomTeethArticle = () => {
 
       {/* Signs and Symptoms */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Signs and Symptoms That Your Wisdom Teeth Need Attention</h2>
-      <ul className="space-y-4 my-6 list-none p-0">
-        <Bullet>
-          <strong>Pain at the back of the jaw:</strong> The pain can range from a dull, constant ache to sharp, throbbing pain that makes eating and sleeping difficult. It can radiate toward the ear, cheek, and temple.
-        </Bullet>
-        <Bullet>
-          <strong>Swelling of the gum around the back teeth:</strong> The gum tissue around a partially or fully erupting wisdom tooth often becomes swollen, red, and tender. This swelling can sometimes extend to the cheek and the side of the face.
-        </Bullet>
-        <Bullet>
-          <strong>Difficulty opening your mouth:</strong> This is called trismus and it indicates significant swelling or infection that needs prompt treatment.
-        </Bullet>
-        <Bullet>
-          <strong>Bad breath that does not go away:</strong> The pocket of gum tissue around a partially erupted wisdom tooth traps food and bacteria continuously, leading to persistent bad breath and an unpleasant taste.
-        </Bullet>
-        <Bullet>
-          <strong>Pain or difficulty chewing:</strong> Wisdom teeth that are pushing against neighboring teeth or causing crowding can make it uncomfortable to bite down properly.
-        </Bullet>
-        <Bullet>
-          <strong>Headaches and jaw aches:</strong> The pressure that impacted wisdom teeth put on surrounding structures can cause referred pain manifesting as headaches, earaches, and jaw soreness.
-        </Bullet>
-        <Bullet>
-          <strong>Swelling of the face or cheek:</strong> Noticeable swelling on one side of the face is a serious symptom that suggests an active infection. This requires urgent dental attention.
-        </Bullet>
-        <Bullet>
-          <strong>Fever alongside tooth pain:</strong> A fever combined with wisdom tooth pain and swelling is a clear sign of infection that has progressed. Contact Motiur's Dental immediately at <a href={telLink} className="text-primary hover:underline font-semibold">{CLINIC.phone}</a>.
-        </Bullet>
-      </ul>
+      <div className="flex flex-col md:flex-row gap-6 mt-3">
+        <ul className="space-y-4 my-3 list-none p-0 flex-1">
+          <Bullet>
+            <strong>Pain at the back of the jaw:</strong> The pain can range from a dull, constant ache to sharp, throbbing pain that makes eating and sleeping difficult. It can radiate toward the ear, cheek, and temple.
+          </Bullet>
+          <Bullet>
+            <strong>Swelling of the gum around the back teeth:</strong> The gum tissue around a partially or fully erupting wisdom tooth often becomes swollen, red, and tender. This swelling can sometimes extend to the cheek and the side of the face.
+          </Bullet>
+          <Bullet>
+            <strong>Difficulty opening your mouth:</strong> This is called trismus and it indicates significant swelling or infection that needs prompt treatment.
+          </Bullet>
+          <Bullet>
+            <strong>Bad breath that does not go away:</strong> The pocket of gum tissue around a partially erupted wisdom tooth traps food and bacteria continuously, leading to persistent bad breath and an unpleasant taste.
+          </Bullet>
+          <Bullet>
+            <strong>Pain or difficulty chewing:</strong> Wisdom teeth that are pushing against neighboring teeth or causing crowding can make it uncomfortable to bite down properly.
+          </Bullet>
+          <Bullet>
+            <strong>Headaches and jaw aches:</strong> The pressure that impacted wisdom teeth put on surrounding structures can cause referred pain manifesting as headaches, earaches, and jaw soreness.
+          </Bullet>
+          <Bullet>
+            <strong>Swelling of the face or cheek:</strong> Noticeable swelling on one side of the face is a serious symptom that suggests an active infection. This requires urgent dental attention.
+          </Bullet>
+          <Bullet>
+            <strong>Fever alongside tooth pain:</strong> A fever combined with wisdom tooth pain and swelling is a clear sign of infection that has progressed. Contact Motiur's Dental immediately at <a href={telLink} className="text-primary hover:underline font-semibold">{CLINIC.phone}</a>.
+          </Bullet>
+        </ul>
+        <div className="md:w-[260px] shrink-0 self-start">
+          <img src={wisdomInfectionSymptoms} alt="Wisdom tooth infection symptoms including sensitivity, intense pain, swollen gums, face pain, and pus on gums" className="w-full h-auto rounded-xl border border-border" loading="lazy" />
+        </div>
+      </div>
 
       {/* What is an Impacted Wisdom Tooth? */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What is an Impacted Wisdom Tooth?</h2>
@@ -110,21 +133,29 @@ const WisdomTeethArticle = () => {
 
       {/* When is Removal Necessary? */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">When is Wisdom Tooth Removal Necessary?</h2>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Not every wisdom tooth needs to be removed. If your wisdom teeth have erupted fully, are not causing pain, and can be cleaned properly, monitoring them with regular checkups may be all that is needed.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        However, removal is strongly recommended in the following situations:
-      </p>
-      <ul className="space-y-4 my-6 list-none p-0">
-        <Bullet>When the wisdom tooth is impacted and causing pain, swelling, or infection.</Bullet>
-        <Bullet>When the wisdom tooth is partially erupted and creating a gum pocket that traps food and bacteria repeatedly.</Bullet>
-        <Bullet>When the wisdom tooth is pressing against the neighboring molar and causing damage to its root.</Bullet>
-        <Bullet>When the wisdom tooth is causing crowding of the other teeth.</Bullet>
-        <Bullet>When there is a recurring infection that keeps coming back even after antibiotic treatment.</Bullet>
-        <Bullet>When cysts or other pathology are developing around the impacted tooth.</Bullet>
-        <Bullet>When the wisdom tooth is decayed and cannot be properly restored due to its position.</Bullet>
-      </ul>
+      <div className="flex flex-col md:flex-row gap-6 mt-3">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Not every wisdom tooth needs to be removed. If your wisdom teeth have erupted fully, are not causing pain, and can be cleaned properly, monitoring them with regular checkups may be all that is needed.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            However, removal is strongly recommended in the following situations:
+          </p>
+          <ul className="space-y-4 my-6 list-none p-0">
+            <Bullet>When the wisdom tooth is impacted and causing pain, swelling, or infection.</Bullet>
+            <Bullet>When the wisdom tooth is partially erupted and creating a gum pocket that traps food and bacteria repeatedly.</Bullet>
+            <Bullet>When the wisdom tooth is pressing against the neighboring molar and causing damage to its root.</Bullet>
+            <Bullet>When the wisdom tooth is causing crowding of the other teeth.</Bullet>
+            <Bullet>When there is a recurring infection that keeps coming back even after antibiotic treatment.</Bullet>
+            <Bullet>When cysts or other pathology are developing around the impacted tooth.</Bullet>
+            <Bullet>When the wisdom tooth is decayed and cannot be properly restored due to its position.</Bullet>
+          </ul>
+        </div>
+        <div className="md:w-[180px] shrink-0 self-start mt-3">
+          <img src={wisdomToothImpacted} alt="Partially erupted wisdom tooth with visible decay and gum inflammation" className="w-full h-auto rounded-xl border border-border" loading="lazy" />
+          <p className="text-xs text-muted-foreground mt-2 text-center">A partially erupted wisdom tooth requiring removal</p>
+        </div>
+      </div>
 
       {/* Procedure */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Wisdom Tooth Removal Procedure at Motiur's Dental</h2>
@@ -142,29 +173,39 @@ const WisdomTeethArticle = () => {
           </div>
         ))}
       </div>
+      <div className="rounded-xl overflow-hidden my-6 border border-border">
+        <img src={wisdomRemovalSteps} alt="Step-by-step illustration of wisdom teeth removal procedure including sedation, imaging, tissue removal, bone removal, tooth sectioning, extraction, stitches, and recovery" className="w-full h-auto" loading="lazy" />
+      </div>
 
       {/* Recovery */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Recovery After Wisdom Tooth Removal</h2>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Most patients recover well within a few days to a week, depending on the complexity of the procedure.
-      </p>
-      <ul className="space-y-4 my-6 list-none p-0">
-        <Bullet>
-          <strong>Pain and swelling:</strong> Swelling typically peaks around 48 to 72 hours after the extraction and then gradually subsides. Apply an ice pack wrapped in a cloth to the outside of your cheek for 20 minutes on and 20 minutes off during the first 24 hours. We prescribe appropriate pain medication.
-        </Bullet>
-        <Bullet>
-          <strong>Bleeding:</strong> Minor bleeding in the first few hours is normal. Bite gently on the gauze pad we provide. Avoid spitting forcefully, rinsing vigorously, or using a straw in the first 24 hours.
-        </Bullet>
-        <Bullet>
-          <strong>Oral hygiene:</strong> Do not brush the extraction site directly for the first day. After 24 hours, gently rinse with warm salt water several times a day.
-        </Bullet>
-        <Bullet>
-          <strong>Diet:</strong> Stick to soft foods for the first several days. Good options include yogurt, mashed potatoes, soft rice, dal, soup, and scrambled eggs. Avoid hard, crunchy, or chewy foods.
-        </Bullet>
-        <Bullet>
-          <strong>Dry socket:</strong> In a small number of cases, the blood clot can become dislodged before healing is complete. If you experience worsening pain a few days after the extraction, contact us immediately at <a href={telLink} className="text-primary hover:underline font-semibold">{CLINIC.phone}</a>.
-        </Bullet>
-      </ul>
+      <div className="flex flex-col md:flex-row gap-6 mt-3">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Most patients recover well within a few days to a week, depending on the complexity of the procedure.
+          </p>
+          <ul className="space-y-4 my-6 list-none p-0">
+            <Bullet>
+              <strong>Pain and swelling:</strong> Swelling typically peaks around 48 to 72 hours after the extraction and then gradually subsides. Apply an ice pack wrapped in a cloth to the outside of your cheek for 20 minutes on and 20 minutes off during the first 24 hours. We prescribe appropriate pain medication.
+            </Bullet>
+            <Bullet>
+              <strong>Bleeding:</strong> Minor bleeding in the first few hours is normal. Bite gently on the gauze pad we provide. Avoid spitting forcefully, rinsing vigorously, or using a straw in the first 24 hours.
+            </Bullet>
+            <Bullet>
+              <strong>Oral hygiene:</strong> Do not brush the extraction site directly for the first day. After 24 hours, gently rinse with warm salt water several times a day.
+            </Bullet>
+            <Bullet>
+              <strong>Diet:</strong> Stick to soft foods for the first several days. Good options include yogurt, mashed potatoes, soft rice, dal, soup, and scrambled eggs. Avoid hard, crunchy, or chewy foods.
+            </Bullet>
+            <Bullet>
+              <strong>Dry socket:</strong> In a small number of cases, the blood clot can become dislodged before healing is complete. If you experience worsening pain a few days after the extraction, contact us immediately at <a href={telLink} className="text-primary hover:underline font-semibold">{CLINIC.phone}</a>.
+            </Bullet>
+          </ul>
+        </div>
+        <div className="md:w-[220px] shrink-0 self-start">
+          <img src={wisdomRecoveryTimeline} alt="Wisdom tooth extraction recovery timeline showing Day 1 blood clot formation, Days 2-3 peak swelling, Days 4-5 soft work, Week 1 soft tissue healing, Months 2-4 socket closure" className="w-full h-auto rounded-xl border border-border" loading="lazy" />
+        </div>
+      </div>
 
       {/* Wisdom Tooth Infection */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Wisdom Tooth Infection: What You Need to Know</h2>
@@ -184,16 +225,25 @@ const WisdomTeethArticle = () => {
       {/* Alternatives */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Alternatives to Wisdom Tooth Removal</h2>
       <div className="grid gap-4 my-6">
-        {[
-          { title: "Monitoring", desc: "If your wisdom teeth are erupting normally, are not causing pain, and can be cleaned properly, we may simply monitor them with regular X-rays." },
-          { title: "Antibiotics and Pain Management", desc: "For active infections, antibiotics are prescribed to clear the infection before any further treatment. Over-the-counter pain relievers like ibuprofen can help manage mild discomfort." },
-          { title: "Operculectomy", desc: "In very specific cases where only a small flap of gum tissue is covering the wisdom tooth, a minor procedure can be performed to remove that flap, allowing the tooth to come through properly." },
-        ].map((item) => (
-          <div key={item.title} className="bg-card border border-border rounded-xl p-5">
-            <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
-            <p className="text-muted-foreground mt-1 text-sm">{item.desc}</p>
+        <div className="bg-card border border-border rounded-xl p-5">
+          <h3 className="font-display font-bold text-lg text-foreground">Monitoring</h3>
+          <p className="text-muted-foreground mt-1 text-sm">If your wisdom teeth are erupting normally, are not causing pain, and can be cleaned properly, we may simply monitor them with regular X-rays.</p>
+        </div>
+        <div className="bg-card border border-border rounded-xl p-5">
+          <h3 className="font-display font-bold text-lg text-foreground">Antibiotics and Pain Management</h3>
+          <p className="text-muted-foreground mt-1 text-sm">For active infections, antibiotics are prescribed to clear the infection before any further treatment. Over-the-counter pain relievers like ibuprofen can help manage mild discomfort.</p>
+        </div>
+        <div className="bg-card border border-border rounded-xl p-5">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1">
+              <h3 className="font-display font-bold text-lg text-foreground">Operculectomy</h3>
+              <p className="text-muted-foreground mt-1 text-sm">In very specific cases where only a small flap of gum tissue is covering the wisdom tooth, a minor procedure can be performed to remove that flap, allowing the tooth to come through properly.</p>
+            </div>
+            <div className="sm:w-[200px] shrink-0">
+              <img src={operculectomyTechnique} alt="Operculectomy technique illustration showing the operculum covering the wisdom tooth and its removal using a radio-surgical loop" className="w-full h-auto rounded-lg" loading="lazy" />
+            </div>
           </div>
-        ))}
+        </div>
       </div>
 
       {/* Pain Relief at Home */}
@@ -219,11 +269,15 @@ const WisdomTeethArticle = () => {
         The cost of wisdom tooth removal in Bangladesh depends on several factors. A simple extraction of a fully erupted wisdom tooth costs less than a surgical extraction of a deeply impacted one. The number of wisdom teeth being removed at once also affects the total cost.
       </p>
       <p className="mt-3 text-foreground/85 leading-relaxed">
-        At Motiur's Dental in Debidwar, we offer wisdom tooth removal at prices that are significantly lower than dental clinics in Comilla city. Patients from Debidwar, Muradnagar, Chandina, Brahmanpara, Burichang, and Homna regularly come to us specifically because they know they will get professional-quality treatment at a fair and transparent price.
+        At Motiur's Dental in Debidwar, we offer wisdom tooth removal at prices that are significantly lower than dental clinics in Comilla city. Patients from Debidwar, Muradnagar, Chandina, Brahmanpara, Burichung, and Homna regularly come to us specifically because they know they will get professional-quality treatment at a fair and transparent price.
       </p>
       <p className="mt-3 text-foreground/85 leading-relaxed">
         We give every patient a clear, honest cost estimate during the consultation before any treatment begins. No hidden charges, no surprise fees.
       </p>
+
+      <div className="rounded-xl overflow-hidden my-6 border border-border">
+        <img src={wisdomXray} alt="Dental X-ray showing an impacted wisdom tooth at Motiur's Dental clinic" className="w-full h-auto max-h-[350px] object-cover" loading="lazy" />
+      </div>
 
       <div className="bg-primary/10 rounded-xl p-5 my-6 text-center">
         <p className="font-display font-bold text-lg text-foreground mb-2">Get Your Cost Estimate</p>
