@@ -132,7 +132,7 @@ const ScalingWhiteningArticle = () => {
       <p className="mt-3 text-foreground/85">The entire appointment typically takes between 30 and 60 minutes depending on how much tartar is present.</p>
 
       <div className="my-8">
-        <ImageCarousel images={scalingBeforeAfterImages} />
+        <ImageCarousel images={scalingBeforeAfterImages} mobileMaxH="200px" desktopCols={3} />
       </div>
 
       {/* Benefits */}
@@ -211,7 +211,7 @@ const ScalingWhiteningArticle = () => {
       <p className="text-foreground/85">We discuss both options with every patient and recommend the one that fits your schedule, budget, and desired outcome.</p>
 
       <div className="my-8">
-        <ImageCarousel images={whiteningBeforeAfterImages} />
+        <ImageCarousel images={whiteningBeforeAfterImages} mobileMaxH="200px" desktopCols={2} />
       </div>
 
       {/* Why Scale Before Whitening */}
