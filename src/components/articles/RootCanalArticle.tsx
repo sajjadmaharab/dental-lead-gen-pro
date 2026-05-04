@@ -11,6 +11,9 @@ import work3 from "@/assets/rootcanal-work3.jpg";
 import work4 from "@/assets/rootcanal-work4.jpg";
 import work5 from "@/assets/rootcanal-work5.jpg";
 import work6 from "@/assets/rootcanal-work6.jpg";
+import porcelainCrownImg from "@/assets/rootcanal-porcelain-crown.jpg";
+import zirconiaCrownImg from "@/assets/rootcanal-zirconia-crown.jpg";
+import metalCrownImg from "@/assets/rootcanal-metal-crown.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -245,15 +248,20 @@ const RootCanalArticle = () => {
 
       {/* Types of Crowns */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Types of Crowns Available at Motiur's Dental After Root Canal</h2>
-      <div className="grid gap-4 my-6">
+      <div className="space-y-6 my-6">
         {[
-          { title: "Porcelain Crowns", desc: "The most popular choice for front teeth and visible areas. They are crafted to match the color and translucency of natural teeth and look completely natural." },
-          { title: "Zirconia Crowns", desc: "One of the strongest materials used in dentistry today. Completely metal-free, highly biocompatible, and offer an excellent natural appearance." },
-          { title: "Metal Crowns", desc: "The most durable option for back teeth that experience heavy chewing forces. Less commonly used today due to their visible metallic appearance, but an excellent functional choice for molars." },
-        ].map((item) => (
-          <div key={item.title} className="bg-card border border-border rounded-xl p-5">
-            <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
-            <p className="text-muted-foreground mt-1 text-sm">{item.desc}</p>
+          { title: "Porcelain Crowns", img: porcelainCrownImg, alt: "Porcelain dental crowns showing natural tooth-like appearance at Motiur's Dental", desc: "The most popular choice for front teeth and visible areas. They are crafted to match the color and translucency of natural teeth and look completely natural." },
+          { title: "Zirconia Crowns", img: zirconiaCrownImg, alt: "Zirconia dental crowns - metal-free and biocompatible at Motiur's Dental", desc: "One of the strongest materials used in dentistry today. Completely metal-free, highly biocompatible, and offer an excellent natural appearance." },
+          { title: "Metal Crowns", img: metalCrownImg, alt: "Metal dental crowns - durable option for back teeth at Motiur's Dental", desc: "The most durable option for back teeth that experience heavy chewing forces. Less commonly used today due to their visible metallic appearance, but an excellent functional choice for molars." },
+        ].map((item, idx) => (
+          <div key={item.title} className={`flex flex-col md:flex-row ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''} gap-4 bg-card border border-border rounded-xl overflow-hidden`}>
+            <div className="md:w-2/5 flex-shrink-0">
+              <img src={item.img} alt={item.alt} className="w-full h-48 md:h-full object-cover" loading="lazy" />
+            </div>
+            <div className="p-5 flex flex-col justify-center">
+              <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
+              <p className="text-muted-foreground mt-1 text-sm">{item.desc}</p>
+            </div>
           </div>
         ))}
       </div>
