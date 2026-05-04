@@ -25,7 +25,7 @@ const ServicesDropup = () => {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="text-white/75 hover:text-white transition-smooth text-left inline-flex items-center gap-1"
+        className="text-foreground/75 hover:text-foreground transition-smooth text-left inline-flex items-center gap-1"
       >
         Services
         <ChevronUp className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} />
