@@ -1,5 +1,13 @@
 import { Phone, MapPin } from "lucide-react";
 import { CLINIC, telLink } from "@/lib/clinic";
+import bracesBefore1 from "@/assets/braces-before-1.jpg";
+import bracesBefore2 from "@/assets/braces-before-2.jpg";
+import bracesAfter1 from "@/assets/braces-after-1.jpg";
+import bracesAfter2 from "@/assets/braces-after-2.jpg";
+import bracesOrthoProblems from "@/assets/braces-ortho-problems.png";
+import bracesMetal from "@/assets/braces-metal.jpg";
+import bracesCeramic from "@/assets/braces-ceramic.jpg";
+import bracesLingual from "@/assets/braces-lingual.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
@@ -25,6 +33,29 @@ const BracesArticle = () => {
         You do not need to travel to Comilla city or Dhaka for proper orthodontic care. Motiur's Dental in Debidwar is fully equipped to handle your braces treatment from start to finish.
       </p>
 
+      {/* Before & After Grid */}
+      <div className="my-8">
+        <h3 className="text-xl font-display font-bold text-foreground mb-4">Real Patient Results: Before and After Braces</h3>
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="rounded-xl overflow-hidden border border-border relative">
+            <img src={bracesBefore1} alt="Teeth before braces treatment at Motiur's Dental Debidwar - crooked teeth case" className="w-full h-40 sm:h-52 md:h-64 object-cover" loading="eager" />
+            <span className="absolute top-2 left-2 bg-destructive/90 text-destructive-foreground text-xs font-bold px-2 py-1 rounded-lg">Before</span>
+          </div>
+          <div className="rounded-xl overflow-hidden border border-border relative">
+            <img src={bracesBefore2} alt="Misaligned teeth before orthodontic treatment at Motiur's Dental Comilla" className="w-full h-40 sm:h-52 md:h-64 object-cover" loading="eager" />
+            <span className="absolute top-2 left-2 bg-destructive/90 text-destructive-foreground text-xs font-bold px-2 py-1 rounded-lg">Before</span>
+          </div>
+          <div className="rounded-xl overflow-hidden border border-border relative">
+            <img src={bracesAfter1} alt="Teeth during braces treatment showing alignment progress at Motiur's Dental" className="w-full h-40 sm:h-52 md:h-64 object-cover" loading="eager" />
+            <span className="absolute top-2 left-2 bg-primary/90 text-primary-foreground text-xs font-bold px-2 py-1 rounded-lg">After</span>
+          </div>
+          <div className="rounded-xl overflow-hidden border border-border relative">
+            <img src={bracesAfter2} alt="Orthodontic braces correcting bite alignment at Motiur's Dental Debidwar" className="w-full h-40 sm:h-52 md:h-64 object-cover" loading="eager" />
+            <span className="absolute top-2 left-2 bg-primary/90 text-primary-foreground text-xs font-bold px-2 py-1 rounded-lg">After</span>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
         <div className="flex items-center gap-2 text-primary font-semibold">
           <Phone className="h-5 w-5" />
@@ -38,18 +69,35 @@ const BracesArticle = () => {
 
       {/* What Are Dental Braces */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">What Are Dental Braces and How Do They Work?</h2>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Dental braces, also known as orthodontic braces or teeth braces, are devices used to gradually move teeth into their correct positions over time. They work by applying continuous, controlled pressure to the teeth in specific directions. As this pressure is maintained over weeks and months, the teeth slowly shift and the bone surrounding the tooth roots remodels to support the new position.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Traditional braces consist of brackets that are bonded directly to the front surfaces of the teeth, connected by an archwire that runs through each bracket. The wire exerts pressure that guides the teeth in the desired direction. Elastic ties or self-ligating clips hold the wire to the brackets.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        Modern orthodontic treatment has evolved significantly. Today, patients have several options beyond traditional metal braces, including ceramic braces that blend with the teeth, lingual braces that are placed on the inside of the teeth and invisible from the front, and clear aligners that are removable and nearly undetectable.
-      </p>
-      <p className="mt-3 text-foreground/85 leading-relaxed">
-        All of these options achieve the same fundamental goal: moving your teeth into proper alignment to improve both how your smile looks and how your bite functions.
-      </p>
+      <div className="flex flex-col md:flex-row gap-5 mt-4">
+        <div className="flex-1">
+          <p className="text-foreground/85 leading-relaxed">
+            Dental braces, also known as orthodontic braces or teeth braces, are devices used to gradually move teeth into their correct positions over time. They work by applying continuous, controlled pressure to the teeth in specific directions. As this pressure is maintained over weeks and months, the teeth slowly shift and the bone surrounding the tooth roots remodels to support the new position.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Traditional braces consist of brackets that are bonded directly to the front surfaces of the teeth, connected by an archwire that runs through each bracket. The wire exerts pressure that guides the teeth in the desired direction. Elastic ties or self-ligating clips hold the wire to the brackets.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            Modern orthodontic treatment has evolved significantly. Today, patients have several options beyond traditional metal braces, including ceramic braces that blend with the teeth, lingual braces that are placed on the inside of the teeth and invisible from the front, and clear aligners that are removable and nearly undetectable.
+          </p>
+          <p className="mt-3 text-foreground/85 leading-relaxed">
+            All of these options achieve the same fundamental goal: moving your teeth into proper alignment to improve both how your smile looks and how your bite functions.
+          </p>
+        </div>
+        <div className="w-full md:w-72 shrink-0 rounded-xl overflow-hidden border border-border">
+          <video
+            src="/videos/braces-treatment.mp4"
+            controls
+            preload="metadata"
+            playsInline
+            className="w-full h-auto"
+            aria-label="Braces treatment video at Motiur's Dental Debidwar Comilla"
+          >
+            Your browser does not support the video tag.
+          </video>
+          <p className="text-xs text-muted-foreground text-center py-2 px-2">Braces treatment at Motiur's Dental</p>
+        </div>
+      </div>
 
       {/* Why Straight Teeth Matter */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Why Straight Teeth Matter Beyond Appearance</h2>
@@ -79,51 +127,85 @@ const BracesArticle = () => {
         <Bullet><strong>Jaw misalignment.</strong> In some cases the problem is not just the teeth but the relationship between the upper and lower jaw. Braces can address many jaw issues, and in more complex cases they can be combined with other treatments.</Bullet>
       </ul>
 
+      {/* Common Orthodontic Problems Image */}
+      <div className="my-6 rounded-xl overflow-hidden border border-border">
+        <img
+          src={bracesOrthoProblems}
+          alt="Common orthodontic problems treated with braces at Motiur's Dental Debidwar: crowding, spacing, crossbite, open bite, overbite, underbite, overjet, abnormal eruption"
+          className="w-full h-auto"
+          loading="lazy"
+        />
+      </div>
+
       {/* Types of Braces */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Types of Braces Available at Motiur's Dental</h2>
       <p className="mt-3 text-foreground/85 leading-relaxed">We offer four main types of braces at our clinic in Debidwar. Each has its own advantages and the right choice depends on your specific orthodontic needs, your lifestyle, and your budget.</p>
 
       <div className="grid gap-4 my-6">
-        {[
-          {
-            title: "Metal Braces (Traditional Braces)",
-            desc: "The most commonly used type of orthodontic appliance worldwide. Modern metal brackets are smaller and smoother than older designs. They can treat virtually any level of orthodontic complexity and are the most affordable braces option.",
-            best: "All age groups, complex cases, most affordable option",
-            cost: "BDT 30,000 to BDT 70,000",
-            duration: "12 to 36 months"
-          },
-          {
-            title: "Ceramic Braces (Tooth-Colored Braces)",
-            desc: "Work exactly the same way as metal braces but the brackets are made from a tooth-colored ceramic material, making them significantly less visible. Popular with teenagers and adults who want effective treatment with a more discreet appearance.",
-            best: "Less visible braces, teenagers and adults, moderately complex cases",
-            cost: "BDT 60,000 to BDT 120,000",
-            duration: "12 to 36 months"
-          },
-          {
-            title: "Lingual Braces (Inside Braces)",
-            desc: "Placed on the tongue-facing surfaces of the teeth rather than the outer surfaces. Completely invisible from the front. Custom-made to fit the unique contours of each patient's teeth. Particularly popular among adult professionals.",
-            best: "Completely invisible option, professionals, adults",
-            cost: "Custom quote during consultation",
-            duration: "Varies by case"
-          },
-          {
-            title: "Clear Aligners (Invisalign)",
-            desc: "A series of custom-made, removable plastic trays that gradually move the teeth in small, controlled increments. Nearly invisible when worn and removable for eating, drinking, brushing, and flossing. Must be worn 20 to 22 hours per day.",
-            best: "Mild to moderate cases, adults prioritizing discretion, good self-discipline",
-            cost: "BDT 100,000 to BDT 200,000",
-            duration: "Varies by case"
-          },
-        ].map((item) => (
-          <div key={item.title} className="bg-card border border-border rounded-xl p-5">
-            <h3 className="font-display font-bold text-lg text-foreground">{item.title}</h3>
-            <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{item.desc}</p>
-            <div className="mt-3 flex flex-wrap gap-2 text-xs">
-              <span className="bg-primary/10 text-primary px-2 py-1 rounded-lg font-medium">Best for: {item.best}</span>
-              <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Cost: {item.cost}</span>
-              <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Duration: {item.duration}</span>
+        {/* Metal Braces - image RIGHT */}
+        <div className="bg-card border border-border rounded-xl p-5">
+          <div className="flex flex-row gap-4 items-center">
+            <div className="flex-1">
+              <h3 className="font-display font-bold text-lg text-foreground">Metal Braces (Traditional Braces)</h3>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">The most commonly used type of orthodontic appliance worldwide. Modern metal brackets are smaller and smoother than older designs. They can treat virtually any level of orthodontic complexity and are the most affordable braces option.</p>
+              <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                <span className="bg-primary/10 text-primary px-2 py-1 rounded-lg font-medium">Best for: All age groups, complex cases, most affordable option</span>
+                <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Cost: BDT 30,000 to BDT 70,000</span>
+                <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Duration: 12 to 36 months</span>
+              </div>
+            </div>
+            <div className="w-28 sm:w-32 md:w-36 h-28 sm:h-32 md:h-36 shrink-0 rounded-xl overflow-hidden border border-border">
+              <img src={bracesMetal} alt="Metal braces on dental model at Motiur's Dental Debidwar" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Ceramic Braces - image LEFT */}
+        <div className="bg-card border border-border rounded-xl p-5">
+          <div className="flex flex-row-reverse gap-4 items-center">
+            <div className="flex-1">
+              <h3 className="font-display font-bold text-lg text-foreground">Ceramic Braces (Tooth-Colored Braces)</h3>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">Work exactly the same way as metal braces but the brackets are made from a tooth-colored ceramic material, making them significantly less visible. Popular with teenagers and adults who want effective treatment with a more discreet appearance.</p>
+              <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                <span className="bg-primary/10 text-primary px-2 py-1 rounded-lg font-medium">Best for: Less visible braces, teenagers and adults, moderately complex cases</span>
+                <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Cost: BDT 60,000 to BDT 120,000</span>
+                <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Duration: 12 to 36 months</span>
+              </div>
+            </div>
+            <div className="w-28 sm:w-32 md:w-36 h-28 sm:h-32 md:h-36 shrink-0 rounded-xl overflow-hidden border border-border">
+              <img src={bracesCeramic} alt="Ceramic tooth-colored braces at Motiur's Dental Debidwar Comilla" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        {/* Lingual Braces - image RIGHT */}
+        <div className="bg-card border border-border rounded-xl p-5">
+          <div className="flex flex-row gap-4 items-center">
+            <div className="flex-1">
+              <h3 className="font-display font-bold text-lg text-foreground">Lingual Braces (Inside Braces)</h3>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">Placed on the tongue-facing surfaces of the teeth rather than the outer surfaces. Completely invisible from the front. Custom-made to fit the unique contours of each patient's teeth. Particularly popular among adult professionals.</p>
+              <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                <span className="bg-primary/10 text-primary px-2 py-1 rounded-lg font-medium">Best for: Completely invisible option, professionals, adults</span>
+                <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Cost: Custom quote during consultation</span>
+                <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Duration: Varies by case</span>
+              </div>
+            </div>
+            <div className="w-28 sm:w-32 md:w-36 h-28 sm:h-32 md:h-36 shrink-0 rounded-xl overflow-hidden border border-border">
+              <img src={bracesLingual} alt="Lingual braces placed inside teeth at Motiur's Dental Debidwar" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        {/* Clear Aligners - no image */}
+        <div className="bg-card border border-border rounded-xl p-5">
+          <h3 className="font-display font-bold text-lg text-foreground">Clear Aligners (Invisalign)</h3>
+          <p className="text-muted-foreground mt-2 text-sm leading-relaxed">A series of custom-made, removable plastic trays that gradually move the teeth in small, controlled increments. Nearly invisible when worn and removable for eating, drinking, brushing, and flossing. Must be worn 20 to 22 hours per day.</p>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs">
+            <span className="bg-primary/10 text-primary px-2 py-1 rounded-lg font-medium">Best for: Mild to moderate cases, adults prioritizing discretion, good self-discipline</span>
+            <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Cost: BDT 100,000 to BDT 200,000</span>
+            <span className="bg-muted text-muted-foreground px-2 py-1 rounded-lg">Duration: Varies by case</span>
+          </div>
+        </div>
       </div>
 
       {/* Braces for Different Age Groups */}
