@@ -14,6 +14,7 @@ import work6 from "@/assets/rootcanal-work6.jpg";
 import porcelainCrownImg from "@/assets/rootcanal-porcelain-crown.jpg";
 import zirconiaCrownImg from "@/assets/rootcanal-zirconia-crown.jpg";
 import metalCrownImg from "@/assets/rootcanal-metal-crown.jpg";
+import aftercareTipsImg from "@/assets/rootcanal-aftercare-tips.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-primary/70 before:rotate-3">
