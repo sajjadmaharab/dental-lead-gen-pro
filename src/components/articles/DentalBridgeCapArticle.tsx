@@ -3,6 +3,8 @@ import { CLINIC, telLink } from "@/lib/clinic";
 import ImageCarousel from "@/components/ImageCarousel";
 import bridgeCapAB1 from "@/assets/bridge-cap-before-after-1.png";
 import bridgeCapAB2 from "@/assets/bridge-cap-before-after-2.png";
+import bridgeAB3 from "@/assets/bridge-before-after-3.png";
+import bridgeAB4 from "@/assets/bridge-before-after-4.png";
 import bridgeVsImplant from "@/assets/bridge-vs-implant.jpg";
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
@@ -86,6 +88,15 @@ const DentalBridgeCapArticle = () => {
       <p className="mt-3 text-foreground/85 leading-relaxed">
         A dental bridge is a fixed dental restoration used to replace one or more missing teeth. It literally bridges the gap where teeth are missing, using the natural teeth on either side as anchors. A traditional bridge consists of two dental crowns on the abutment teeth with one or more artificial teeth (pontics) suspended between them. The entire structure is cemented permanently into place.
       </p>
+
+      <ImageCarousel
+        images={[
+          { src: bridgeAB3, alt: "Dental bridge before and after missing teeth restoration at Motiur's Dental Debidwar Comilla", caption: "Dental bridge: before and after" },
+          { src: bridgeAB4, alt: "Dental bridge treatment before and after result Motiur's Dental Debidwar Comilla Bangladesh", caption: "Bridge restoration: before and after" },
+        ]}
+        mobileMaxH="220px"
+        desktopCols={2}
+      />
 
       {/* Dental Bridges at Motiur's Dental — video beside text */}
       <h2 className="text-2xl md:text-3xl font-display font-bold mt-12 text-foreground">Dental Bridges at Motiur's Dental</h2>
