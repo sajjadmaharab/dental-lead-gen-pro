@@ -3,6 +3,7 @@ import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { telLink, waLink } from "@/lib/clinic";
+import { Reveal } from "@/hooks/useScrollReveal";
 
 import fractured1 from "@/assets/fractured-before-after-1.png";
 import fractured2 from "@/assets/fractured-before-after-2.jpg";
@@ -108,16 +109,20 @@ const BeforeAfter = () => (
     {/* Hero */}
     <section className="bg-hero-gradient py-14 md:py-20">
       <div className="container-page text-center max-w-3xl mx-auto">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground leading-tight">
-          Life-Changing Results Through Expert Care Is{" "}
-          <span className="underline decoration-primary decoration-4 underline-offset-4">Our Commitment</span>
-        </h1>
-        <p className="mt-4 text-primary font-semibold text-sm md:text-base">
-          Here Are Some Examples Of <span className="text-primary font-bold">Motiur's Dental</span> Work
-        </p>
-        <p className="mt-3 text-muted-foreground text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-          We offer personalized, high-quality dental treatments designed to transform your smile and enhance your overall well-being. Don't just imagine your dream smile, see it come to life!
-        </p>
+        <Reveal direction="bottom">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground leading-tight">
+            Life-Changing Results Through Expert Care Is{" "}
+            <span className="underline decoration-primary decoration-4 underline-offset-4">Our Commitment</span>
+          </h1>
+        </Reveal>
+        <Reveal direction="bottom" delay={0.08}>
+          <p className="mt-4 text-primary font-semibold text-sm md:text-base">
+            Here Are Some Examples Of <span className="text-primary font-bold">Motiur's Dental</span> Work
+          </p>
+          <p className="mt-3 text-muted-foreground text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            We offer personalized, high-quality dental treatments designed to transform your smile and enhance your overall well-being. Don't just imagine your dream smile, see it come to life!
+          </p>
+        </Reveal>
       </div>
     </section>
 
@@ -125,7 +130,7 @@ const BeforeAfter = () => (
     <section className="section-pad">
       <div className="container-page space-y-14 md:space-y-16">
         {CASE_STUDIES.map((cs, i) => (
-          <div key={i}>
+          <Reveal key={i} direction={i % 2 === 0 ? "left" : "right"} delay={0.05}>
             <h2 className="font-display font-bold text-base md:text-lg text-foreground uppercase tracking-wide mb-4 border-b border-border pb-2">
               {cs.title}
             </h2>
@@ -138,20 +143,22 @@ const BeforeAfter = () => (
                 Click here to learn more about this treatment →
               </p>
             </Link>
-          </div>
+          </Reveal>
         ))}
       </div>
 
       {/* CTA */}
       <div className="container-page mt-14">
-        <div className="rounded-3xl bg-primary-gradient p-8 md:p-12 text-center text-primary-foreground shadow-medium">
-          <h2 className="text-2xl md:text-3xl font-display font-bold">Ready for your transformation?</h2>
-          <p className="mt-2 text-primary-foreground/90">Book a consultation today and let's plan your perfect smile.</p>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <a href={telLink}><Button variant="secondary" size="lg" className="gap-2 bg-card text-primary hover:bg-card/90"><Phone className="h-5 w-5" />Call Now</Button></a>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer"><Button variant="whatsapp" size="lg" className="gap-2"><MessageCircle className="h-5 w-5" />WhatsApp</Button></a>
+        <Reveal direction="bottom">
+          <div className="rounded-3xl bg-primary-gradient p-8 md:p-12 text-center text-primary-foreground shadow-medium">
+            <h2 className="text-2xl md:text-3xl font-display font-bold">Ready for your transformation?</h2>
+            <p className="mt-2 text-primary-foreground/90">Book a consultation today and let's plan your perfect smile.</p>
+            <div className="mt-6 flex flex-wrap gap-3 justify-center">
+              <a href={telLink}><Button variant="secondary" size="lg" className="gap-2 bg-card text-primary hover:bg-card/90"><Phone className="h-5 w-5" />Call Now</Button></a>
+              <a href={waLink()} target="_blank" rel="noopener noreferrer"><Button variant="whatsapp" size="lg" className="gap-2"><MessageCircle className="h-5 w-5" />WhatsApp</Button></a>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   </>
