@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { SEO } from "@/components/SEO";
 import { CLINIC, telLink, waLink } from "@/lib/clinic";
 import { toast } from "@/hooks/use-toast";
+import { Reveal } from "@/hooks/useScrollReveal";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
@@ -50,15 +51,17 @@ const Contact = () => {
       />
       <section className="bg-hero-gradient py-14 md:py-20">
         <div className="container-page text-center max-w-3xl mx-auto">
-          <span className="text-sm font-semibold text-primary">Get in Touch</span>
-          <h1 className="mt-2 text-4xl md:text-5xl font-display font-extrabold">Contact Motiur's Dental</h1>
-          <p className="mt-4 text-muted-foreground text-lg">Call, WhatsApp or visit us at Ibn Sina Hospital, Debidwar.</p>
+          <Reveal direction="bottom">
+            <span className="text-sm font-semibold text-primary">Get in Touch</span>
+            <h1 className="mt-2 text-4xl md:text-5xl font-display font-extrabold">Contact Motiur's Dental</h1>
+            <p className="mt-4 text-muted-foreground text-lg">Call, WhatsApp or visit us at Ibn Sina Hospital, Debidwar.</p>
+          </Reveal>
         </div>
       </section>
 
       <section className="section-pad">
         <div className="container-page grid lg:grid-cols-2 gap-10">
-          <div>
+          <Reveal direction="left">
             <div className="grid sm:grid-cols-2 gap-4">
               <a href={telLink} className="bg-card border border-border/60 rounded-2xl p-5 hover:shadow-medium transition-smooth flex items-start gap-3">
                 <Phone className="h-6 w-6 text-primary mt-0.5" />
@@ -91,32 +94,34 @@ const Contact = () => {
             <a href={CLINIC.facebook} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-primary font-medium">
               <Facebook className="h-4 w-4" /> Follow us on Facebook
             </a>
-          </div>
+          </Reveal>
 
-          <div className="bg-card border border-border/60 rounded-2xl p-6 md:p-8 shadow-card">
-            <h2 className="font-display text-2xl font-bold">Request an Appointment</h2>
-            <p className="text-sm text-muted-foreground mt-1">Fill in this form — it will open WhatsApp with your message ready to send.</p>
-            <form onSubmit={onSubmit} className="mt-6 space-y-4">
-              <div>
-                <Label htmlFor="name">Your Name</Label>
-                <Input id="name" name="name" placeholder="Full name" maxLength={80} />
-                {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
-              </div>
-              <div>
-                <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" name="phone" type="tel" placeholder="01XXX-XXXXXX" maxLength={20} />
-                {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone}</p>}
-              </div>
-              <div>
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" placeholder="Briefly describe your concern or preferred date" rows={4} maxLength={800} />
-                {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
-              </div>
-              <Button type="submit" variant="hero" size="lg" className="w-full gap-2" disabled={loading}>
-                <MessageCircle className="h-5 w-5" /> Send via WhatsApp
-              </Button>
-            </form>
-          </div>
+          <Reveal direction="right" delay={0.1}>
+            <div className="bg-card border border-border/60 rounded-2xl p-6 md:p-8 shadow-card">
+              <h2 className="font-display text-2xl font-bold">Request an Appointment</h2>
+              <p className="text-sm text-muted-foreground mt-1">Fill in this form — it will open WhatsApp with your message ready to send.</p>
+              <form onSubmit={onSubmit} className="mt-6 space-y-4">
+                <div>
+                  <Label htmlFor="name">Your Name</Label>
+                  <Input id="name" name="name" placeholder="Full name" maxLength={80} />
+                  {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
+                </div>
+                <div>
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input id="phone" name="phone" type="tel" placeholder="01XXX-XXXXXX" maxLength={20} />
+                  {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone}</p>}
+                </div>
+                <div>
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" name="message" placeholder="Briefly describe your concern or preferred date" rows={4} maxLength={800} />
+                  {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
+                </div>
+                <Button type="submit" variant="hero" size="lg" className="w-full gap-2" disabled={loading}>
+                  <MessageCircle className="h-5 w-5" /> Send via WhatsApp
+                </Button>
+              </form>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>
