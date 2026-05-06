@@ -151,10 +151,14 @@ const Home = () => {
                   className="absolute inset-0 w-full h-full object-cover animate-fade-in"
                   style={{ animation: "slideZoom 4s ease-in-out infinite" }}
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
-                  <h3 className="font-display font-bold text-white text-lg">{slide.service}</h3>
-                  <Link to={`/services/${slide.slug}`}>
-                    <Button variant="cta" size="sm" className="mt-2 rounded-md text-xs">View Service</Button>
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/40" />
+                {/* Centered text overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
+                  <h3 className="font-display font-bold text-white text-xl md:text-2xl leading-tight drop-shadow-lg">{slide.title}</h3>
+                  <p className="text-white/90 text-sm mt-2 max-w-xs drop-shadow-md">{slide.desc}</p>
+                  <Link to={`/services/${slide.slug}`} className="mt-4">
+                    <span className="inline-block border-2 border-white text-white text-sm font-semibold px-6 py-2 rounded hover:bg-white/20 transition-colors">Click Here</span>
                   </Link>
                 </div>
                 <button onClick={() => setSlideIdx((i) => (i - 1 + SERVICE_BA_SLIDES.length) % SERVICE_BA_SLIDES.length)} className="absolute left-2 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/90 text-primary flex items-center justify-center shadow-soft hover:bg-white" aria-label="Previous">
