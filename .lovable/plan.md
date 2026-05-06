@@ -1,36 +1,25 @@
-## Redesign Google Reviews Section (GMB Style)
+## Changes
 
-Replace the current stagger-testimonials with a Google-style review carousel matching the reference image.
+### 1. Home Page: Add text overlay on Before/After slider (like screenshot)
 
-### Design
-- **Header**: "EXCELLENT" + 5 gold stars + "Based on 201 reviews" + Google logo (keep existing)
-- **Review cards** (white rounded cards):
-  - Circular avatar with reviewer photo OR colored initials fallback
-  - Reviewer name + date (e.g. "25 March 2026")
-  - Google "G" icon (top-right, using Google colors)
-  - 5 gold stars + blue verified checkmark (✓)
-  - Review text, truncated with "Read more" for long reviews
-- **Carousel**: Horizontal swipeable, 3 cards on desktop, 1 on mobile, with left/right arrow navigation
+Each slide will get a **title** and **description** text overlay on top of the image, plus a **"Click Here"** button that links to the service page. Style matches the reference screenshot:
+- Bold title at top-center (e.g. "Expert Care for Dental Trauma")
+- Smaller description text in the middle (e.g. "A perfect cosmetic filling treatment done by Mr Motiur")
+- "Click Here" button with border outline at bottom-center
 
-### Technical Changes
+Slide text mapping:
+- Cosmetic Filling: "Expert Cosmetic Filling" / "A flawless cosmetic filling done by Mr Motiur"
+- Scaling & Polishing: "Professional Teeth Cleaning" / "Scaling and polishing results by Mr Motiur"  
+- Tooth Gap Treatment: "Tooth Gap Correction" / "A perfect gap closure treatment done by Mr Motiur"
+- Dental Bridge & Cap: "Dental Bridge and Cap" / "A custom bridge and cap work done by Mr Motiur"
 
-1. **Create `src/components/GoogleReviewCard.tsx`**
-   - Single review card component
-   - Avatar with initials fallback (colored circle + first letters)
-   - Google "G" SVG icon
-   - Star rating + verified badge (blue checkmark)
-   - Text truncation with "Read more" toggle
+The existing bottom gradient with service name and "View Service" button will be replaced by this new centered overlay style.
 
-2. **Create `src/components/GoogleReviewCarousel.tsx`**
-   - Horizontal carousel with state-based index
-   - Left/right navigation arrows
-   - Responsive: 3 cards on lg, 2 on md, 1 on sm
-   - Smooth slide animation
+### 2. Blog Page: Remove all blog posts, update H1 with SEO text
 
-3. **Update `src/pages/Home.tsx`**
-   - Replace `StaggerTestimonials` with `GoogleReviewCarousel`
-   - Update reviews data array with: name, date, text, rating, optional image URL
-   - Keep existing header (EXCELLENT, stars, Google logo)
+- Remove all blog post cards (POSTS array content)
+- Update H1 to an SEO-optimized heading like: "Dental Care Tips and Treatment Guide in Debidwar, Comilla"
+- Update meta title/description for better SEO
+- Show a "Coming Soon" message instead of blog cards
 
-### Review Data (your real GMB reviews)
-You can update the reviews array anytime. Each review has: `name`, `date`, `text`, `rating` (1-5), and optional `image` (URL). Without an image, a colored initials avatar auto-generates.
+**Files to edit:** `src/pages/Home.tsx`, `src/pages/Blog.tsx`
