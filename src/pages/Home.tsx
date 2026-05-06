@@ -28,10 +28,10 @@ import toothGapAb1 from "@/assets/tooth-gap-ab-1.png";
 import bridgeCapAB1 from "@/assets/bridge-cap-before-after-1.png";
 
 const SERVICE_BA_SLIDES = [
-  { service: "Cosmetic Filling", image: cosmeticFillingAB, slug: "cosmetic-filling" },
-  { service: "Scaling & Polishing", image: scalingAb1, slug: "scaling-polishing-whitening" },
-  { service: "Tooth Gap Treatment", image: toothGapAb1, slug: "tooth-gap-treatment" },
-  { service: "Dental Bridge & Cap", image: bridgeCapAB1, slug: "dental-bridges-caps" },
+  { service: "Cosmetic Filling", title: "Expert Cosmetic Filling", desc: "A flawless cosmetic filling done by Mr Motiur", image: cosmeticFillingAB, slug: "cosmetic-filling" },
+  { service: "Scaling & Polishing", title: "Professional Teeth Cleaning", desc: "Scaling and polishing results by Mr Motiur", image: scalingAb1, slug: "scaling-polishing-whitening" },
+  { service: "Tooth Gap Treatment", title: "Tooth Gap Correction", desc: "A perfect gap closure treatment done by Mr Motiur", image: toothGapAb1, slug: "tooth-gap-treatment" },
+  { service: "Dental Bridge & Cap", title: "Dental Bridge and Cap", desc: "A custom bridge and cap work done by Mr Motiur", image: bridgeCapAB1, slug: "dental-bridges-caps" },
 ];
 
 const HOME_SERVICES = [
