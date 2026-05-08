@@ -134,7 +134,7 @@ const BeforeAfter = () => (
             <h2 className="font-display font-bold text-base md:text-lg text-foreground uppercase tracking-wide mb-4 border-b border-border pb-2">
               {cs.title}
             </h2>
-            <Link to={`/services/${cs.slug}`} className="block">
+            <Link to={`/${cs.slug}`} className="block">
               <div className="grid grid-cols-2 gap-3 md:gap-5">
                 <ImageCard {...cs.before} />
                 <ImageCard {...cs.after} />

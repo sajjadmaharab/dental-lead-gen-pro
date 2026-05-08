@@ -157,7 +157,7 @@ const Home = () => {
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
                   <h3 className="font-display font-bold text-white text-xl md:text-2xl leading-tight drop-shadow-lg">{slide.title}</h3>
                   <p className="text-white/90 text-sm mt-2 max-w-xs drop-shadow-md">{slide.desc}</p>
-                  <Link to={`/services/${slide.slug}`} className="mt-4">
+                  <Link to={`/${slide.slug}`} className="mt-4">
                     <span className="inline-block border-2 border-white text-white text-sm font-semibold px-6 py-2 rounded hover:bg-white/20 transition-colors">Click Here</span>
                   </Link>
                 </div>

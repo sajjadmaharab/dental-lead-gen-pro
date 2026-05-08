@@ -44,7 +44,7 @@ export const ServicesDialog = () => {
             <DialogHeader>
               <DialogTitle>
                 <Link
-                  to={`/services/${mode.service.slug}`}
+                  to={`/${mode.service.slug}`}
                   onClick={() => setOpen(false)}
                   className="text-2xl md:text-3xl font-display font-extrabold text-primary hover:text-pink transition-smooth inline-flex items-center gap-2"
                 >
@@ -86,7 +86,7 @@ export const ServicesDialog = () => {
               {SERVICES.map((s) => (
                 <li key={s.slug}>
                   <Link
-                    to={`/services/${s.slug}`}
+                    to={`/${s.slug}`}
                     onClick={() => setOpen(false)}
                     className="flex items-center justify-between gap-3 py-3 group"
                   >

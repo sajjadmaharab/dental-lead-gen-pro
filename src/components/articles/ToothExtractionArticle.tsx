@@ -125,7 +125,7 @@ const ToothExtractionArticle = () => {
         Impacted teeth cause a range of problems. They can be partially erupted, creating a pocket of gum tissue where food and bacteria collect and cause recurring infection. They can press against the roots of neighboring teeth, causing damage and pain. In some cases, cysts develop around impacted teeth, which can cause significant bone destruction if left untreated.
       </p>
       <p className="mt-3 text-foreground/85 leading-relaxed">
-        When an impacted tooth is causing problems or is clearly going to cause problems based on its position, extraction is the recommended treatment. For a detailed discussion of wisdom tooth impaction and treatment, visit our dedicated <a href="/services/wisdom-teeth-treatment" className="text-primary hover:underline font-medium">wisdom teeth page</a>.
+        When an impacted tooth is causing problems or is clearly going to cause problems based on its position, extraction is the recommended treatment. For a detailed discussion of wisdom tooth impaction and treatment, visit our dedicated <a href="/wisdom-teeth-treatment" className="text-primary hover:underline font-medium">wisdom teeth page</a>.
       </p>
 
       <h3 className="text-xl font-display font-semibold mt-8 text-foreground">Fractured or Broken Teeth</h3>
@@ -276,7 +276,7 @@ const ToothExtractionArticle = () => {
         The teeth on either side of the gap begin to drift toward the empty space. The tooth above or below the gap, with nothing to bite against, begins to over-erupt. Bone loss occurs in the jaw below the missing tooth because there is no root stimulating the bone anymore. Over time, these changes affect your bite, your ability to chew properly, and the alignment of your remaining teeth.
       </p>
       <p className="mt-3 text-foreground/85 leading-relaxed">
-        At Motiur's Dental, we offer several options for replacing extracted teeth. A <a href="/services/dental-implants" className="text-primary hover:underline font-medium">dental implant</a> is the most comprehensive solution, replacing the entire tooth including the root. A <a href="/services/dental-bridges-caps" className="text-primary hover:underline font-medium">dental bridge</a> is a faster and less expensive option. A partial denture is a removable option that is the most affordable but also the least stable of the three.
+        At Motiur's Dental, we offer several options for replacing extracted teeth. A <a href="/dental-implants" className="text-primary hover:underline font-medium">dental implant</a> is the most comprehensive solution, replacing the entire tooth including the root. A <a href="/dental-bridges-caps" className="text-primary hover:underline font-medium">dental bridge</a> is a faster and less expensive option. A partial denture is a removable option that is the most affordable but also the least stable of the three.
       </p>
       <p className="mt-3 text-foreground/85 leading-relaxed">
         We discuss all options clearly during your post-extraction consultation so you can make an informed decision about the best path forward for your specific situation and budget.
