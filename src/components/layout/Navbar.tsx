@@ -86,7 +86,7 @@ export const Navbar = () => {
                     {SERVICES.map((s) => (
                       <Link
                         key={s.slug}
-                        to={`/services/${s.slug}`}
+                        to={`/${s.slug}`}
                         onClick={() => setServicesOpen(false)}
                         className="block px-5 py-2.5 text-sm text-foreground hover:bg-primary-soft hover:text-primary transition-smooth"
                       >
@@ -149,7 +149,7 @@ export const Navbar = () => {
                       {SERVICES.map((s) => (
                         <Link
                           key={s.slug}
-                          to={`/services/${s.slug}`}
+                          to={`/${s.slug}`}
                           onClick={() => { setOpen(false); setMobileServicesOpen(false); }}
                           className="block px-3 py-2 text-sm text-foreground/80 hover:text-primary rounded-md"
                         >

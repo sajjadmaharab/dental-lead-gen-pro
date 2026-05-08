@@ -238,7 +238,7 @@ const ServiceDetail = () => {
       <SEO
         title={customSeo?.title ?? `${service.name} in Debidwar, Comilla | Motiur's Dental`}
         description={customSeo?.description ?? `${service.short} Affordable ${service.name.toLowerCase()} at Motiur's Dental, Debidwar. Trusted dentist serving Comilla. Call ${CLINIC.phone}.`}
-        path={`/services/${service.slug}`}
+        path={`/${service.slug}`}
         schema={customSchema}
       />
 
