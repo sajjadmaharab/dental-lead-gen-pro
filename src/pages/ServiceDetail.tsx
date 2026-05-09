@@ -16,6 +16,7 @@ import FracturedTeethArticle from "@/components/articles/FracturedTeethArticle";
 import DentalBridgeCapArticle from "@/components/articles/DentalBridgeCapArticle";
 import ToothExtractionArticle from "@/components/articles/ToothExtractionArticle";
 import TeethReplacementArticle from "@/components/articles/TeethReplacementArticle";
+import { AutoInternalLinks } from "@/lib/autoInternalLinks";
 
 const CUSTOM_SEO: Record<string, { title: string; description: string }> = {
   "cosmetic-filling": {
@@ -244,7 +245,11 @@ const ServiceDetail = () => {
 
       <section className="section-pad">
         <div className="container-page max-w-4xl mx-auto">
-          {ArticleComponent ? <ArticleComponent /> : null}
+          {ArticleComponent ? (
+            <AutoInternalLinks currentPath={`/${service.slug}`}>
+              <ArticleComponent />
+            </AutoInternalLinks>
+          ) : null}
         </div>
       </section>
     </>
