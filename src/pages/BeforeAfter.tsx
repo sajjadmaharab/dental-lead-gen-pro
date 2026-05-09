@@ -150,9 +150,9 @@ const BeforeAfter = () => (
       {/* CTA */}
       <div className="container-page mt-14">
         <Reveal direction="bottom">
-          <div className="rounded-3xl bg-primary-gradient p-8 md:p-12 text-center text-primary-foreground shadow-medium">
-            <h2 className="text-2xl md:text-3xl font-display font-bold">Ready for your transformation?</h2>
-            <p className="mt-2 text-primary-foreground/90">Book a consultation today and let's plan your perfect smile.</p>
+          <div className="rounded-3xl bg-primary p-8 md:p-12 text-center text-primary-foreground shadow-medium">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-primary-foreground">Ready for your transformation?</h2>
+            <p className="mt-3 text-primary-foreground/95 text-base md:text-lg">Book a consultation today and let's plan your perfect smile.</p>
             <div className="mt-6 flex flex-wrap gap-3 justify-center">
               <a href={telLink}><Button variant="secondary" size="lg" className="gap-2 bg-card text-primary hover:bg-card/90"><Phone className="h-5 w-5" />Call Now</Button></a>
               <a href={waLink()} target="_blank" rel="noopener noreferrer"><Button variant="whatsapp" size="lg" className="gap-2"><MessageCircle className="h-5 w-5" />WhatsApp</Button></a>
