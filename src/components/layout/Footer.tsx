@@ -74,7 +74,7 @@ export const Footer = () => {
           <h3 className="font-display font-bold text-foreground mb-4 text-base tracking-wider">WORKING HOURS</h3>
           <ul className="space-y-2.5 text-sm text-foreground/75">
             <li className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-cta shrink-0" /><div>Saturday – Thursday<br /><span className="text-foreground/60">10:00 AM – 7:00 PM</span></div></li>
-            <li className="text-foreground/60 pl-6">Friday — Closed</li>
+            <li className="text-foreground/60 pl-6">Friday - On appointment</li>
           </ul>
         </div>
 
